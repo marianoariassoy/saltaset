@@ -161,3 +161,15 @@ export const dataContact: dataContactProps = {
     required: 'Veuillez remplir ce champ.'
   }
 }
+
+export const texts = {
+  ES: {
+    hero_title: 'DESLIZA'
+  },
+  EN: {
+    hero_title: 'SLIDE'
+  },
+  FR: {
+    hero_title: 'DIAPO'
+  }
+}

@@ -8,7 +8,7 @@ const Header = () => {
   const { lan } = useDataContext()
 
   return (
-    <section className='w-full max-w-7xl m-auto px-6 py-8 flex items-center justify-between'>
+    <section className='w-full max-w-6xl m-auto px-6 py-8 flex items-center justify-between'>
       <div>
         <Link href='/'>
           <a className='link-primary'>
@@ -18,12 +18,12 @@ const Header = () => {
       </div>
       <div>
         <nav>
-          <ul className='flex gap-x-10 items-center'>
+          <ul className='flex gap-x-6 items-center'>
             {menu.map((data, index) => (
               <li key={index}>
                 <a
                   href='#'
-                  className='hover:opacity-40'
+                  className='hover:underline underline-offset-4'
                 >
                   {data[lan].title}
                 </a>

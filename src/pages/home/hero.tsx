@@ -1,10 +1,14 @@
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
+import { useDataContext } from '../../context/useDataContext'
+import { texts } from '../../data/data'
 
 const Hero = () => {
+  const { lan } = useDataContext()
+
   return (
     <section
-      className='h-screen relative'
+      className='h-[90vh] relative'
       id='hero'
     >
       <img
@@ -21,7 +25,7 @@ const Hero = () => {
         </div>
       </div>
       <div className='absolute bottom-6 right-6 z-20 flex items-center gap-2 text-primary font-secondary text-sm text-vertical'>
-        DESLIZA <Down />
+        {texts[lan].hero_title} <Down />
       </div>
     </section>
   )

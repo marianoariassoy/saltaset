@@ -28,6 +28,10 @@ a {
   }
 }
 
+p {
+  line-height: 1.2;
+}
+
 strong {
   font-family: 'PP Neue Montreal Bold';
 }
@@ -83,7 +87,8 @@ svg {
   text-wrap: balance;
 }
 
-// input::placeholder,
-// textarea::placeholder {
-//   color: $color-primary;
-// }
+input::placeholder,
+textarea::placeholder {
+  color: $text-color-primary !important;
+  font-family: inherit;
+}
