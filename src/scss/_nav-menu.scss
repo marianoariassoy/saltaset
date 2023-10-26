@@ -1,0 +1,27 @@
+.nav-menu {
+  cursor: pointer;
+  width: 40px;
+}
+.nav-menu > span {
+  background-color: currentColor;
+  display: block;
+  height: 3px;
+  width: 40px;
+}
+.nav-menu > span:not(:last-child) {
+  margin-bottom: 8px;
+}
+.nav-menu,
+.nav-menu > span {
+  transition: all 0.3s ease;
+}
+.nav-menu.active {
+  transform: rotate(45deg);
+  transition-delay: 0.3s;
+}
+.nav-menu.active > span:nth-child(1) {
+  transform: translateY(9px);
+}
+.nav-menu.active > span:nth-child(2) {
+  transform: translateY(-2px) rotate(90deg);
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-49d7882c-68c1-44dc-8bda-29ffdcac286d" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="18.2" height="26.1" viewBox="0 0 18.2 26.1">
+  <defs>
+    <style>
+      .uuid-6f842509-348c-40b8-96d2-5cb65c7845e5 {
+        fill: none;
+        stroke: #1d1e1b;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="uuid-f07b4bc8-18b1-451f-aa4a-0aabd32192d6" data-name="Capa 1">
+    <path class="uuid-6f842509-348c-40b8-96d2-5cb65c7845e5" d="M17.9,25.7L.8,13,17.9,.4"/>
+  </g>
+</svg>

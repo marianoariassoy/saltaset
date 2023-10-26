@@ -1,0 +1,22 @@
+.indicators {
+  bottom: 2rem;
+  position: absolute;
+  left: 2.5rem;
+  z-index: 20;
+  @media (max-width: 980px) {
+    left: 1.5rem;
+  }
+  li {
+    margin: 0 0.3rem !important;
+  }
+}
+
+.text-vertical {
+  writing-mode: vertical-lr;
+}
+#hero-social {
+  background-image: url('/assets/social-top.svg');
+  background-repeat: no-repeat;
+  width: 266px;
+  height: 73px;
+}

@@ -1,0 +1,89 @@
+html,
+body {
+  accent-color: $color-primary;
+  color: $text-color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
+}
+
+a {
+  transition: all 0.2s ease;
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+strong {
+  font-family: 'PP Neue Montreal Bold';
+}
+.font-italic {
+  font-family: 'PP Neue Montreal SemiBolditalic';
+  font-weight: 600;
+  font-style: italic;
+}
+
+.font-secondary {
+  font-family: 'PP Monument Regular';
+  font-weight: 400;
+}
+.font-secondary-black {
+  font-family: 'PP Monument Black';
+  font-weight: 800;
+}
+.font-secondary-light {
+  font-family: 'PP Monument Light';
+  font-weight: 200;
+}
+
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-secondary;
+}
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}
+
+.link-primary {
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+svg {
+  fill: currentColor;
+  polyline {
+    stroke: currentColor;
+  }
+  line {
+    stroke: currentColor;
+  }
+}
+
+.text-wrap {
+  text-wrap: balance;
+}
+
+// input::placeholder,
+// textarea::placeholder {
+//   color: $color-primary;
+// }
