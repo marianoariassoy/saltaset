@@ -8,10 +8,10 @@ const Footer = () => {
   const { lan } = useDataContext()
 
   return (
-    <div className='w-full max-w-7xl m-auto px-6 py-12 text-white'>
-      <div className='w-full flex items-center justify-between gap-8 mb-6'>
+    <div className='w-full max-w-6xl m-auto px-6 py-12 text-white'>
+      <div className='w-full flex items-center justify-between mb-12'>
         <nav>
-          <ul className='flex flex-col'>
+          <ul className='flex flex-col gap-y-1'>
             {menu.map((data, index) => (
               <li key={index}>
                 <Link href={data.url}>
@@ -25,11 +25,11 @@ const Footer = () => {
           <Logo />
         </div>
       </div>
-      <div className='flex items-center gap-8'>
+      <div className='lg:flex items-center gap-8'>
         <div className='flex-grow basis-0'>
-          <Social />
+          <Social hover='link-primary' />
         </div>
-        <div className='text-center'>
+        <div className='text-center mt-8 text-sm lg:text-base lg:mt-0 '>
           Juramento 180 - Usina Cultural - A4400DMN, Salta. - Tel. + 54 387 4212296 -{' '}
           <a
             href='mailto:saltaset@edusalta.gov.ar'

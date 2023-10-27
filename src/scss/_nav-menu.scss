@@ -15,13 +15,6 @@
 .nav-menu > span {
   transition: all 0.3s ease;
 }
-.nav-menu.active {
-  transform: rotate(45deg);
-  transition-delay: 0.3s;
-}
-.nav-menu.active > span:nth-child(1) {
-  transform: translateY(9px);
-}
-.nav-menu.active > span:nth-child(2) {
-  transform: translateY(-2px) rotate(90deg);
+.nav-menu.active > span {
+  background-color: rgba($color-secondary, 0.3);
 }

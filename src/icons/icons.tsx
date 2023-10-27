@@ -99,34 +99,20 @@ export const Linkedin = () => {
 export const Back = () => {
   return (
     <svg
-      width='34.7'
-      height='67'
-      viewBox='0 0 34.7 67'
+      height='2.5em'
+      viewBox='0 0 320 512'
     >
-      <path
-        strokeMiterlimit='10'
-        strokeWidth='2px'
-        fill='none'
-        stroke='currentColor'
-        d='M34.1,66.2l-15.2-14.3L2.1,36.2c-1.5-1.4-1.5-4.1,0-5.4L18.9,15,34.1,.7'
-      />
+      <path d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z' />
     </svg>
   )
 }
 export const Forward = () => {
   return (
     <svg
-      width='34.7'
-      height='67'
-      viewBox='0 0 34.7 67'
+      height='2.5em'
+      viewBox='0 0 320 512'
     >
-      <path
-        strokeMiterlimit='10'
-        strokeWidth='2px'
-        fill='none'
-        stroke='currentColor'
-        d='M.7,.7L15.9,15l16.8,15.8c1.5,1.4,1.5,4.1,0,5.4l-16.8,15.8L.7,66.2'
-      />
+      <path d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z' />
     </svg>
   )
 }

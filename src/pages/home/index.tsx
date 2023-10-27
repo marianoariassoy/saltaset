@@ -1,10 +1,10 @@
 import Layout from '../../layout/Layout'
-import Filmar from './filmar'
-import Hero from './hero'
-import Porque from './porque'
-import Somos from './somos'
-import Locaciones from './locaciones'
-import Novedades from './novedades'
+import Filmar from './Filmar'
+import Hero from './Hero'
+import Porque from './Porque'
+import Somos from './Somos'
+import Locaciones from './Locaciones'
+import Novedades from './Novedades'
 
 const index = () => {
   return (

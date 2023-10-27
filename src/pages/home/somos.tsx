@@ -6,11 +6,11 @@ const Somos = () => {
 
   return (
     <section id='somos-salta-set'>
-      <div className='mb-12'>
+      <div className='row mb-12'>
         <img src='/assets/social-bottom.svg' />
       </div>
-      <div className='w-full max-w-6xl m-auto px-6 grid grid-cols-2 gap-6'>
-        <div className='text-6xl'>
+      <div className='row w-full max-w-6xl m-auto px-6 grid lg:grid-cols-2 gap-6'>
+        <div className='text-5xl lg:text-6xl'>
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             01 <Line />
           </span>
@@ -27,30 +27,30 @@ const Somos = () => {
               sector local y estimulando la inversión en todas las regiones de la <strong>provincia.</strong>
             </p>
           </div>
-          <div className='row flex gap-x-12 mt-32 mb-24'>
+          <div className='row flex lg:gap-x-12 mt-12 lg:mt-32 mb-24'>
             <article className='flex gap-x-3 items-center'>
-              <div className='w-14 h-14 flex justify-center items-center bg-primary rounded-full'>
+              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
                 <Film />
               </div>
               <div>
                 <a
                   href='#'
-                  className='font-bold hover:underline underline-offset-4'
+                  className='font-bold hover:underline underline-offset-4 leading-5 inline-block'
                 >
                   Registra tu producción
                 </a>
               </div>
             </article>
             <article className='flex gap-x-3 items-center'>
-              <div className='w-14 h-14 flex justify-center items-center bg-primary rounded-full'>
+              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
                 <Pin />
               </div>
               <div>
                 <a
                   href='#'
-                  className='font-bold hover:underline underline-offset-4'
+                  className='font-bold hover:underline underline-offset-4 leading-5 inline-block'
                 >
-                  Registra tu producción
+                  Sugiere una localización
                 </a>
               </div>
             </article>

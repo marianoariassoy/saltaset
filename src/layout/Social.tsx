@@ -1,13 +1,13 @@
 import { Instagram, Linkedin, Facebook } from '../icons/icons'
 
-const Social = () => {
+const Social = ({ hover }) => {
   return (
     <nav className='flex gap-x-6 items-center'>
       <a
         href='#'
         target='_blank'
         rel='noreferrer'
-        className='hover:text-white'
+        className={`${hover}`}
       >
         <Facebook />
       </a>
@@ -15,7 +15,7 @@ const Social = () => {
         href='#'
         target='_blank'
         rel='noreferrer'
-        className='hover:text-white'
+        className={`${hover}`}
       >
         <Instagram />
       </a>
@@ -23,7 +23,7 @@ const Social = () => {
         href='#'
         target='_blank'
         rel='noreferrer'
-        className='hover:text-white'
+        className={`${hover}`}
       >
         <Linkedin />
       </a>

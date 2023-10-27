@@ -1,11 +1,26 @@
-.indicators {
-  bottom: 2rem;
-  position: absolute;
-  left: 2.5rem;
-  z-index: 20;
-  @media (max-width: 980px) {
-    left: 1.5rem;
+.header {
+  transition: all 0.3s ease;
+  .logo-header {
+    svg {
+      transition: all 0.3s ease;
+      width: auto;
+    }
   }
+}
+
+.small-header {
+  transition: all 0.3s ease;
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+  .logo-header {
+    svg {
+      height: 40px;
+      width: auto;
+    }
+  }
+}
+
+.indicators {
   li {
     margin: 0 0.3rem !important;
   }
@@ -14,6 +29,7 @@
 .text-vertical {
   writing-mode: vertical-lr;
 }
+
 #hero-social {
   background-image: url('/assets/social-top.svg');
   background-repeat: no-repeat;
@@ -34,11 +50,11 @@
 
 .article-locaciones {
   transition: all 0.2s ease;
-
   &:hover {
-    background-color: rgba(0, 255, 127, 0.3);
+    background-color: rgba($color-primary, 0.4);
     .article-layer {
-      width: 85%;
+      background-color: $color-secondary;
+      color: $color-primary;
     }
   }
 }
