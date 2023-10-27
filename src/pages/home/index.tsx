@@ -1,8 +1,8 @@
 import Layout from '../../layout/Layout'
-import Hero from './Hero'
-import Somos from './Somos'
-import Filmar from './Filmar'
-import Porque from './Porque'
+import Hero from './hero'
+import Somos from './somos'
+import Filmar from './filmar'
+import Porque from './porque'
 import Locaciones from './Locaciones'
 import Novedades from './Novedades'
 
