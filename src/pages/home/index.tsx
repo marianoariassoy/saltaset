@@ -3,8 +3,8 @@ import Hero from './hero'
 import Somos from './somos'
 import Filmar from './filmar'
 import Porque from './porque'
-import Locaciones from './Locaciones'
-import Novedades from './Novedades'
+import Locaciones from './locaciones'
+import Novedades from './novedades'
 
 const index = () => {
   return (
