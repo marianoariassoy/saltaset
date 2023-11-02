@@ -1,5 +1,5 @@
 import Languages from './Languages'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { Logo } from '../icons/icons'
 import { menu } from '../data/data'
 import { useDataContext } from '../context/useDataContext'
@@ -8,6 +8,7 @@ import scroll from '../utils/scroll'
 
 const Header = () => {
   const { lan } = useDataContext()
+  const [location] = useLocation()
 
   useEffect(() => {
     scroll()
@@ -32,12 +33,15 @@ const Header = () => {
           <ul className='flex gap-x-6 items-center'>
             {menu.map((data, index) => (
               <li key={index}>
-                <a
-                  href='#'
-                  className='hover:underline underline-offset-4'
-                >
-                  {data[lan].title}
-                </a>
+                <Link href={data.url}>
+                  <a
+                    className={`underline-offset-4 decoration-2 ${
+                      location.slice(0, 8) === data.url.slice(0, 8) ? 'text-primary underline' : 'hover:underline'
+                    }`}
+                  >
+                    {data[lan].title}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>

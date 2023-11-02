@@ -1,4 +1,4 @@
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import { Logo } from '../icons/icons'
 import { menu } from '../data/data'
 import { useDataContext } from '../context/useDataContext'
@@ -6,6 +6,7 @@ import Social from './Social'
 
 const Footer = () => {
   const { lan } = useDataContext()
+  const [location] = useLocation()
 
   return (
     <div className='w-full max-w-6xl m-auto px-6 py-12 text-white'>
@@ -15,7 +16,7 @@ const Footer = () => {
             {menu.map((data, index) => (
               <li key={index}>
                 <Link href={data.url}>
-                  <a className='link-primary'>{data[lan].title}</a>
+                  <a className={`${location === data.url ? 'text-primary' : 'link-primary'}`}>{data[lan].title}</a>
                 </Link>
               </li>
             ))}

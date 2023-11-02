@@ -23,9 +23,6 @@ body {
 a {
   transition: all 0.3s ease;
   color: currentColor;
-  &:hover {
-    color: currentColor;
-  }
 }
 
 .button-primary {
@@ -46,8 +43,14 @@ a {
   }
 }
 
-p {
-  line-height: 1.2;
+.button-primary-hover:hover {
+  color: $color-secondary;
+  background-color: $color-primary;
+}
+
+.button-black-hover:hover {
+  color: white;
+  background-color: $color-secondary;
 }
 
 strong,
@@ -86,7 +89,8 @@ strong,
 .bg-primary-opacity {
   background-color: rgba($color-primary, 0.4);
 }
-.bg-secondary {
+.bg-secondary,
+.bg-black {
   background-color: $color-secondary;
 }
 
@@ -114,4 +118,8 @@ input::placeholder,
 textarea::placeholder {
   color: $text-color-primary !important;
   font-family: inherit;
+}
+
+.text-xm {
+  font-size: 0.8rem !important;
 }

@@ -42,7 +42,7 @@ const Filmar = () => {
       id='filmar-en-salta'
     >
       <div className='w-full max-w-6xl m-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center'>
-        <div className='col text-5xl lg:text-6xl'>
+        <div className='col text-4xl lg:text-5xl'>
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             02 <Line />
           </span>

@@ -10,7 +10,7 @@ const Somos = () => {
         <img src='/assets/social-bottom.svg' />
       </div>
       <div className='row w-full max-w-6xl m-auto px-6 grid lg:grid-cols-2 gap-6'>
-        <div className='text-5xl lg:text-6xl'>
+        <div className='text-4xl lg:text-5xl'>
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             01 <Line />
           </span>

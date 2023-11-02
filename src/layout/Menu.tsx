@@ -1,8 +1,10 @@
 import { menu } from '../data/data'
 import { useDataContext } from '../context/useDataContext'
+import { Link, useLocation } from 'wouter'
 
 const Menu = () => {
   const { lan } = useDataContext()
+  const [location] = useLocation()
 
   const closeMenu = () => {
     document.querySelector('.nav-menu')?.classList.toggle('active')
@@ -17,14 +19,25 @@ const Menu = () => {
           className=''
         >
           <ul className='flex flex-col text-3xl font-bold gap-y-2'>
-            {menu.map((data, index) => (
-              <li key={index}>
-                <a
-                  href='#'
-                  className='hover:underline underline-offset-4'
-                >
-                  {data[lan].title}
-                </a>
+            {menu.map(data => (
+              <li
+                key={data.id}
+                className='flex flex-col gap-y-2'
+              >
+                <Link href={data.url}>
+                  <a className={`underline-offset-4 ${location === data.url ? 'underline' : ''}`}>{data[lan].title}</a>
+                </Link>
+                {data.id === 4 &&
+                  data[lan].categories.map(category => (
+                    <Link
+                      href={category.url}
+                      key={category.id}
+                    >
+                      <a className={`underline-offset-4 ${location === category.url ? 'underline' : ''}`}>
+                        {category.title}
+                      </a>
+                    </Link>
+                  ))}
               </li>
             ))}
           </ul>

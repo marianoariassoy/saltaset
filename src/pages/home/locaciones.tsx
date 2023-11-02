@@ -1,4 +1,6 @@
+import { Link } from 'wouter'
 import LocacionesItem from '../../components/LocacionesItem'
+import Search from '../../components/Search'
 import { Line } from '../../icons/icons'
 
 const Locaciones = () => {
@@ -32,7 +34,7 @@ const Locaciones = () => {
   return (
     <section id='locaciones'>
       <div className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12 grid lg:grid-cols-2 gap-6 justify-between items-end'>
-        <div className='col text-5xl lg:text-6xl'>
+        <div className='col text-4xl lg:text-5xl'>
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             03 <Line />
           </span>
@@ -43,13 +45,7 @@ const Locaciones = () => {
           </span>
         </div>
         <div className='col flex lg:justify-end'>
-          <input
-            type='text'
-            name='search'
-            id='input-search'
-            placeholder='BUSCAR'
-            className='w-full max-w-xs pl-2 pr-8 py-2 border-b border-black text-sm mb-2'
-          />
+          <Search />
         </div>
       </div>
 
@@ -64,12 +60,9 @@ const Locaciones = () => {
       </div>
 
       <div className='flex justify-center pb-20 mt-8'>
-        <a
-          href='#'
-          className='bg-primary py-3 px-12 rounded-full font-bold button-primary text-sm'
-        >
-          VER MAS LOCACIONES
-        </a>
+        <Link href='/locaciones'>
+          <a className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm'>VER MAS LOCACIONES</a>
+        </Link>
       </div>
     </section>
   )
