@@ -137,17 +137,18 @@ const Index = () => {
               <Line />
             </div>
           </div>
-          <p className='text-wrap text-sm max-w-3xl'>
+
+          <p className='text-wrap max-w-3xl mb-3'>
             En SALTA SET ofrecemos asesoramiento a las productoras y los profesionales que quieren rodar en la Provincia
             de Salta. Aquí podrás encontrar información sobre permisos y condiciones de rodaje, de acuerdo al tipo de
             producción.
           </p>
 
-          <span className='rounded-full px-6 py-2 uppercase font-bold bg-primary text-sm text-center inline-block'>
+          <span className='rounded-full text-sm px-6 py-2 uppercase font-bold bg-primary text-center inline-block'>
             CONDICIONES GENERALES
           </span>
 
-          <p className='text-wrap text-sm mb-6'>
+          <p className='text-wrap mb-6'>
             La autorización para el rodaje en las locaciones de Salta Set requiere
             <strong>un plazo mínimo de 10 días hábiles</strong>
             para su tramitación. El uso de los espacios está <strong>sujeto a la disponibilidad</strong> de cada

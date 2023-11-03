@@ -7,6 +7,8 @@ import Profesionales from './pages/directorio/profesionales'
 import Filmografia from './pages/filmografia/index'
 import Beneficios from './pages/beneficios/index'
 import Error from './pages/error/index'
+import LocacionesDetalles from './pages/locaciones/Detalles'
+import PorqueSalta from './pages/porque-salta/index'
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
       <Route
         path='/filmar-en-salta'
         component={FilmarEnSalta}
+      />
+      <Route
+        path='/locaciones/:id'
+        component={LocacionesDetalles}
       />
       <Route
         path='/locaciones'
@@ -42,6 +48,10 @@ function App() {
       <Route
         path='/novedades'
         component={Home}
+      />
+      <Route
+        path='/porque-salta'
+        component={PorqueSalta}
       />
       <Route component={Error} />
     </Switch>

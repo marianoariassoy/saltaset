@@ -1,13 +1,14 @@
+import { Link } from 'wouter'
+
 const PorqueItem = ({ data }) => {
   return (
-    <article
-      key={data.id}
-      className='flex flex-col gap-y-4 text-center w-full mt-8 px-16 lg:px-0 lg:w-4/5 lg:ml-7 lg:max-w-xs'
-    >
+    <article className='flex flex-col gap-y-4 text-center w-full mt-8 px-16 lg:px-0 lg:w-4/5 lg:ml-7 lg:max-w-xs'>
       <div className='relative'>
-        <div className='absolute w-full h-full cursor-pointer bg-primary-opacity font-bold text-white text-4xl flex justify-center items-center z-20 opacity-0 hover:opacity-100 transition-all'>
-          +
-        </div>
+        <Link href={`/porque-salta`}>
+          <div className='absolute w-full h-full cursor-pointer bg-primary-opacity  text-white text-4xl flex justify-center items-center z-20 opacity-0 hover:opacity-100 transition-all'>
+            +
+          </div>
+        </Link>
         <img
           src={data.image}
           alt={data.title}

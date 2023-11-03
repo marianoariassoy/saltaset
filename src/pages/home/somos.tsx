@@ -6,7 +6,7 @@ const Somos = () => {
 
   return (
     <section id='somos-salta-set'>
-      <div className='row mb-12'>
+      <div className='row mb-8'>
         <img src='/assets/social-bottom.svg' />
       </div>
       <div className='row w-full max-w-6xl m-auto px-6 grid lg:grid-cols-2 gap-6'>
@@ -27,7 +27,7 @@ const Somos = () => {
               sector local y estimulando la inversión en todas las regiones de la <strong>provincia.</strong>
             </p>
           </div>
-          <div className='row flex lg:gap-x-12 mt-12 lg:mt-32 mb-24'>
+          <div className='row flex lg:gap-x-12 mt-12 lg:mt-24 mb-24'>
             <article className='flex gap-x-3 items-center'>
               <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
                 <Film />

@@ -4,7 +4,7 @@ const NovedadesItem = ({ data }) => {
   return (
     <article className='grid lg:grid-cols-2'>
       <div className='lg:pr-12 aspect-video relative'>
-        <div className='absolute w-full h-full cursor-pointer bg-primary-opacity font-bold text-white text-6xl flex justify-center items-center z-20 opacity-0 hover:opacity-100 transition-all'>
+        <div className='absolute w-full h-full cursor-pointer bg-primary-opacity  text-white text-6xl flex justify-center items-center z-20 opacity-0 hover:opacity-100 transition-all'>
           +
         </div>
         <ImageComponent

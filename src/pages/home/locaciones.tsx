@@ -6,26 +6,32 @@ import { Line } from '../../icons/icons'
 const Locaciones = () => {
   const data = [
     {
+      id: 1,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 2,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 3,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 4,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 5,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 6,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     }
@@ -49,15 +55,14 @@ const Locaciones = () => {
         </div>
       </div>
 
-      <div className='row grid lg:grid-cols-3 gap-3 px-6 pb-6'>
-        {data.map((data, index) => (
+      <section className='row grid lg:grid-cols-3 2xl:grid-cols-4 gap-3 pb-6'>
+        {data.map(data => (
           <LocacionesItem
-            key={index}
-            title={data.title}
-            image={data.image}
+            key={data.id}
+            data={data}
           />
         ))}
-      </div>
+      </section>
 
       <div className='flex justify-center pb-20 mt-8'>
         <Link href='/locaciones'>

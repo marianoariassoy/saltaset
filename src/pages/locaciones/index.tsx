@@ -17,26 +17,32 @@ const Index = () => {
 
   const data = [
     {
+      id: 1,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 2,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 3,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 4,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 5,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     },
     {
+      id: 6,
       title: 'Aeropuerto de Salta',
       image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
     }
@@ -70,6 +76,42 @@ const Index = () => {
       },
       {
         id: 3,
+        ES: {
+          title: 'Edificios centenarios'
+        },
+        EN: {
+          title: 'Bulding century'
+        },
+        FR: {
+          title: 'Bulding century'
+        }
+      },
+      {
+        id: 4,
+        ES: {
+          title: 'Campo y Agricultura'
+        },
+        EN: {
+          title: 'Farm and Agriculture'
+        },
+        FR: {
+          title: 'Farm and Agriculture'
+        }
+      },
+      {
+        id: 5,
+        ES: {
+          title: 'Agua'
+        },
+        EN: {
+          title: 'Water'
+        },
+        FR: {
+          title: 'Water'
+        }
+      },
+      {
+        id: 6,
         ES: {
           title: 'Edificios centenarios'
         },
@@ -214,7 +256,7 @@ const Index = () => {
         id='locaciones'
       >
         <section className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12'>
-          <div className='row grid lg:grid-cols-2 gap-6 justify-between items-end mb-10'>
+          <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
             <div className='col flex items-center gap-x-4'>
               <h1 className='text-3xl lg:text-4xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
               <span className='text-primary'>
@@ -259,12 +301,11 @@ const Index = () => {
           </div>
         </section>
 
-        <section className='row grid lg:grid-cols-3 gap-3 px-6 pb-6'>
-          {data.map((data, index) => (
+        <section className='row grid lg:grid-cols-3 2xl:grid-cols-4 gap-3 pb-6'>
+          {data.map(data => (
             <LocacionesItem
-              key={index}
-              title={data.title}
-              image={data.image}
+              key={data.id}
+              data={data}
             />
           ))}
         </section>
