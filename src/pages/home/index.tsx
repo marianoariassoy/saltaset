@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'wouter'
+import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import Hero from './hero'
 import Somos from './somos'
@@ -32,6 +33,9 @@ const Index = () => {
       <Porque />
       <Locaciones />
       <Novedades />
+      <HeadProvider>
+        <Title>Salta Set &bull; Film Commision</Title>
+      </HeadProvider>
     </Layout>
   )
 }

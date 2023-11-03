@@ -3,7 +3,9 @@ import Home from './pages/home/index'
 import Locaciones from './pages/locaciones/index'
 import FilmarEnSalta from './pages/filmar-en-salta/index'
 import Directorio from './pages/directorio/index'
+import EmpresasForm from './pages/directorio/EmpresasForm'
 import Profesionales from './pages/directorio/profesionales'
+import ProfesionalesForm from './pages/directorio/ProfesionalesForm'
 import Filmografia from './pages/filmografia/index'
 import Beneficios from './pages/beneficios/index'
 import Error from './pages/error/index'
@@ -34,8 +36,16 @@ function App() {
         component={Directorio}
       />
       <Route
+        path='/directorio/empresas/formulario'
+        component={EmpresasForm}
+      />
+      <Route
         path='/directorio/profesionales'
         component={Profesionales}
+      />
+      <Route
+        path='/directorio/profesionales/formulario'
+        component={ProfesionalesForm}
       />
       <Route
         path='/filmografia'

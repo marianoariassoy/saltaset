@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'wouter'
 import Layout from '../../layout/Layout'
 import { Line, Right } from '../../icons/icons'
 import DirectorioItem from './DirectorioItem'
@@ -219,13 +220,12 @@ const Index = () => {
               </span>
             </div>
             <div>
-              <a
-                href='#'
-                className='rounded-full px-6 py-2 uppercase font-bold bg-primary text-sm text-center button-black-hover flex justify-between items-center gap-x-2'
-              >
-                <span>{texts[lan].title}</span>
-                <Right />
-              </a>
+              <Link href='/directorio/profesionales/formulario'>
+                <a className='rounded-full px-6 py-2 uppercase font-bold bg-primary text-sm text-center button-black-hover flex justify-between items-center gap-x-2'>
+                  <span>{texts[lan].title}</span>
+                  <Right />
+                </a>
+              </Link>
             </div>
           </div>
           <section className='columns-2 lg:columns-3 col-span-6 justify-between items-start'>

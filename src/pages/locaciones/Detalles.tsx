@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
 import ReactPlayer from 'react-player'
+import { HeadProvider, Title } from 'react-head'
+import { menu } from '../../data/data'
+import { useDataContext } from '../../context/useDataContext'
 import { Link } from 'wouter'
 import Layout from '../../layout/Layout'
-// import { useDataContext } from '../../context/useDataContext'
 import { Line } from '../../icons/icons'
 import ImageComponent from '../../components/Image'
 
 const Detalles = () => {
-  // const { lan } = useDataContext()
+  const { lan } = useDataContext()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -84,6 +86,9 @@ const Detalles = () => {
           </div>
         </section>
       </section>
+      <HeadProvider>
+        <Title> Salta Capital</Title>
+      </HeadProvider>
     </Layout>
   )
 }

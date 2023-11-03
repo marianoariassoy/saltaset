@@ -1,8 +1,13 @@
 import { useEffect } from 'react'
+import { HeadProvider, Title } from 'react-head'
+import { menu } from '../../data/data'
+import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import BeneficiosItem from './BeneficiosItem'
 
 const Index = () => {
+  const { lan } = useDataContext()
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -17,6 +22,9 @@ const Index = () => {
           <BeneficiosItem />
         </section>
       </section>
+      <HeadProvider>
+        <Title>{menu[5][lan].title}</Title>
+      </HeadProvider>
     </Layout>
   )
 }

@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
-import Layout from '../../layout/Layout'
+import { HeadProvider, Title } from 'react-head'
+import { menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
+import Layout from '../../layout/Layout'
 import ImageComponent from '../../components/Image'
 import { Line, Pin, Center, Plane, Star, UserCheck, Sun, Money } from '../../icons/icons'
 import PorqueItem from './PorqueItem'
@@ -143,9 +145,9 @@ const Index = () => {
           </div>
         </section>
 
-        <section className='row aspect-video lg:aspect-[6/2]'>
+        <section className='row w-full aspect-video h-[50vh]'>
           <ImageComponent
-            src='/images/porque-salta.jpg'
+            src='/images/porque-salta.webp'
             alt='Porque Salta'
           />
         </section>
@@ -161,6 +163,9 @@ const Index = () => {
           ))}
         </section>
       </section>
+      <HeadProvider>
+        <Title>{menu[0][lan].title}</Title>
+      </HeadProvider>
     </Layout>
   )
 }

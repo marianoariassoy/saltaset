@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { HeadProvider, Title } from 'react-head'
+import { filmografiaMenu, menu } from '../../data/data'
 import Layout from '../../layout/Layout'
 import FilmografiaItem from './FilmografiaItem'
 import { Line } from '../../icons/icons'
-import { filmografiaMenu, menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 
 const Index = () => {
@@ -100,6 +101,9 @@ const Index = () => {
           </div>
         </section>
       </section>
+      <HeadProvider>
+        <Title>{menu[4][lan].title}</Title>
+      </HeadProvider>
     </Layout>
   )
 }

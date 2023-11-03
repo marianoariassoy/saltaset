@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
+import { HeadProvider, Title } from 'react-head'
+import { locacionesMenu, menu } from '../../data/data'
 import Layout from '../../layout/Layout'
 import LocacionesItem from '../../components/LocacionesItem'
 import { Line } from '../../icons/icons'
 import Search from '../../components/Search'
-import { locacionesMenu, menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 
 const Index = () => {
@@ -310,6 +311,9 @@ const Index = () => {
           ))}
         </section>
       </section>
+      <HeadProvider>
+        <Title>{menu[2][lan].title}</Title>
+      </HeadProvider>
     </Layout>
   )
 }

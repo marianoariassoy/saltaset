@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
+import { HeadProvider, Title } from 'react-head'
+import { menu } from '../../data/data'
 import Layout from '../../layout/Layout'
-
-// import { useDataContext } from '../../context/useDataContext'
+import { useDataContext } from '../../context/useDataContext'
 import { Line } from '../../icons/icons'
 import FilmarItem from './FilmarItem'
-// import ImageComponent from '../../components/Image'
 
 const Index = () => {
-  // const { lan } = useDataContext()
+  const { lan } = useDataContext()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -149,10 +149,10 @@ const Index = () => {
           </span>
 
           <p className='text-wrap mb-6'>
-            La autorización para el rodaje en las locaciones de Salta Set requiere
-            <strong>un plazo mínimo de 10 días hábiles</strong>
-            para su tramitación. El uso de los espacios está <strong>sujeto a la disponibilidad</strong> de cada
-            locación. Los interesados deben registrar la producción en el{' '}
+            La autorización para el rodaje en las locaciones de Salta Set requiere{' '}
+            <strong>un plazo mínimo de 10 días hábiles</strong> para su tramitación. El uso de los espacios está{' '}
+            <strong>sujeto a la disponibilidad</strong> de cada locación. Los interesados deben registrar la producción
+            en el{' '}
             <a
               href='#'
               className='underline font-bold link-primary'
@@ -179,6 +179,9 @@ const Index = () => {
           </section>
         </section>
       </section>
+      <HeadProvider>
+        <Title>{menu[1][lan].title}</Title>
+      </HeadProvider>
     </Layout>
   )
 }
