@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import { Line, Pin, Film } from '../../icons/icons'
 // import { useDataContext } from '../../context/useDataContext'
 
@@ -33,12 +34,11 @@ const Somos = () => {
                 <Film />
               </div>
               <div>
-                <a
-                  href='#'
-                  className='font-bold hover:underline underline-offset-4 leading-5 inline-block'
-                >
-                  Registra tu producción
-                </a>
+                <Link href='/filmar-en-salta/formulario'>
+                  <a className='font-bold hover:underline underline-offset-4 leading-5 inline-block'>
+                    Registra tu producción
+                  </a>
+                </Link>
               </div>
             </article>
             <article className='flex gap-x-3 items-center'>

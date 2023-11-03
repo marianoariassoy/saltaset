@@ -5,6 +5,7 @@ import Layout from '../../layout/Layout'
 import { useDataContext } from '../../context/useDataContext'
 import { Line } from '../../icons/icons'
 import FilmarItem from './FilmarItem'
+import { Link } from 'wouter'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -152,18 +153,20 @@ const Index = () => {
             La autorización para el rodaje en las locaciones de Salta Set requiere{' '}
             <strong>un plazo mínimo de 10 días hábiles</strong> para su tramitación. El uso de los espacios está{' '}
             <strong>sujeto a la disponibilidad</strong> de cada locación. Los interesados deben registrar la producción
-            en el{' '}
+            en el
+            <Link href='/filmar-en-salta/formulario'>
+              <a
+                href='#'
+                className='underline font-bold link-primary mx-1'
+              >
+                FORMULARIO
+              </a>
+            </Link>
+            de Salta Set, explicando en detalle la propuesta y alcance del rodaje. Para más información sobre locaciones
+            específicas, consultá nuestro
             <a
               href='#'
-              className='underline font-bold link-primary'
-            >
-              FORMULARIO
-            </a>{' '}
-            de Salta Set, explicando en detalle la propuesta y alcance del rodaje. (Link al registro dentro de la web)
-            Para más información sobre locaciones específicas, consultá nuestro{' '}
-            <a
-              href='#'
-              className='underline font-bold link-primary'
+              className='underline font-bold link-primary mx-1'
             >
               CATÁLOGO.
             </a>

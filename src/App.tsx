@@ -2,6 +2,7 @@ import { Route, Switch } from 'wouter'
 import Home from './pages/home/index'
 import Locaciones from './pages/locaciones/index'
 import FilmarEnSalta from './pages/filmar-en-salta/index'
+import FilmarEnSaltaFormulario from './pages/filmar-en-salta/Formulario'
 import Directorio from './pages/directorio/index'
 import EmpresasForm from './pages/directorio/EmpresasForm'
 import Profesionales from './pages/directorio/profesionales'
@@ -22,6 +23,10 @@ function App() {
       <Route
         path='/filmar-en-salta'
         component={FilmarEnSalta}
+      />
+      <Route
+        path='/filmar-en-salta/formulario'
+        component={FilmarEnSaltaFormulario}
       />
       <Route
         path='/locaciones/:id'

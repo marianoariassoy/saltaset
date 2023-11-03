@@ -37,11 +37,28 @@ const Header = () => {
                   <a
                     className={`underline-offset-4 decoration-2 ${
                       location.slice(0, 8) === data.url.slice(0, 8) ? 'text-primary underline' : 'hover:underline'
-                    }`}
+                    } ${data.id === 4 && 'handle-submenu'}`}
                   >
                     {data[lan].title}
                   </a>
                 </Link>
+                {data.id === 4 && (
+                  <div className='absolute mt-3 bg-secondary p-3 w-96 -ml-40 submenu-directorio hidden'>
+                    <div className='w-full text-white text-center flex flex-col gap-y-2 text-sm uppercase font-bold'>
+                      <Link href='/directorio/empresas'>
+                        <a className={`${location === '/directorio/empresas' ? 'text-primary' : 'link-primary'}`}>
+                          {menu[3][lan].categories[0].title}
+                        </a>
+                      </Link>
+                      <hr className='w-full border-primary' />
+                      <Link href='/directorio/profesionales'>
+                        <a className={`${location === '/directorio/profesionales' ? 'text-primary' : 'link-primary'}`}>
+                          {menu[3][lan].categories[1].title}
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

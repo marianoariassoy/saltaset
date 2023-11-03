@@ -37,36 +37,36 @@ const Index = () => {
       Comunicación: [
         { title: 'Agencias de Product Placement ', id: 3 },
         { title: 'Agencias de comunicación', id: 4 },
-        { title: 'Agencias de márqueting', id: 4 },
-        { title: 'Control de difusión y audiencia', id: 4 },
-        { title: 'Centrales compra de medios', id: 4 },
-        { title: 'Grupos de comunicación', id: 4 },
-        { title: 'Videoconferencias', id: 4 }
+        { title: 'Agencias de márqueting', id: 5 },
+        { title: 'Control de difusión y audiencia', id: 6 },
+        { title: 'Centrales compra de medios', id: 7 },
+        { title: 'Grupos de comunicación', id: 8 },
+        { title: 'Videoconferencias', id: 9 }
       ]
     },
     {
       Distribución: [
-        { title: 'Distribuidores: cine', id: 5 },
-        { title: 'Distribuidores: multimedia', id: 6 },
-        { title: 'Distribuidores: vídeo', id: 6 },
-        { title: 'Importación - exportación película', id: 6 }
+        { title: 'Distribuidores: cine', id: 15 },
+        { title: 'Distribuidores: multimedia', id: 16 },
+        { title: 'Distribuidores: vídeo', id: 17 },
+        { title: 'Importación - exportación película', id: 18 }
       ]
     },
     {
       'Asociaciones y Organismos oficiales': [
-        { title: 'Asociaciones', id: 1 },
-        { title: 'Organismos', id: 2 }
+        { title: 'Asociaciones', id: 51 },
+        { title: 'Organismos', id: 52 }
       ]
     },
     {
       Comunicación: [
-        { title: 'Agencias de Product Placement ', id: 3 },
-        { title: 'Agencias de comunicación', id: 4 },
-        { title: 'Agencias de márqueting', id: 4 },
-        { title: 'Control de difusión y audiencia', id: 4 },
-        { title: 'Centrales compra de medios', id: 4 },
-        { title: 'Grupos de comunicación', id: 4 },
-        { title: 'Videoconferencias', id: 4 }
+        { title: 'Agencias de Product Placement ', id: 63 },
+        { title: 'Agencias de comunicación', id: 74 },
+        { title: 'Agencias de márqueting', id: 84 },
+        { title: 'Control de difusión y audiencia', id: 94 },
+        { title: 'Centrales compra de medios', id: 114 },
+        { title: 'Grupos de comunicación', id: 24 },
+        { title: 'Videoconferencias', id: 14 }
       ]
     },
     {
