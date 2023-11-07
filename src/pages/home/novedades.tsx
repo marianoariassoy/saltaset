@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Line } from '../../icons/icons'
 import NovedadesItem from './NovedadesItem'
+import { menu } from '../../data/data'
 
-const Novedades = () => {
+const Novedades = ({ lan }) => {
   const [show, setShow] = useState(2)
 
   const data = [
@@ -60,11 +61,7 @@ const Novedades = () => {
           <span className='font-secondary-black mb-4 flex items-center gap-x-4'>
             04 <Line />
           </span>
-          <span className='block font-secondary-black'>
-            NOVEDA
-            <br className='lg:hidden' />
-            DES
-          </span>
+          <span className='block font-secondary-black uppercase'>{menu[6][lan].title}</span>
         </div>
         <div className='row flex flex-col gap-y-6'>
           {data.slice(0, show).map(data => (

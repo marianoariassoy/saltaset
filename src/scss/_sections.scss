@@ -60,3 +60,15 @@
     }
   }
 }
+
+.show-submenu:hover {
+  color: $color-primary;
+  & > .submenu {
+    display: block;
+    color: $color-primary;
+  }
+}
+
+.submenu {
+  width: 340px;
+}

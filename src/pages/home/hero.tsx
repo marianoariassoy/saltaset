@@ -1,11 +1,22 @@
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
-import { texts } from '../../data/data'
 import ImageComponent from '../../components/Image'
 
 const Hero = () => {
   const { lan } = useDataContext()
+
+  const texts = {
+    ES: {
+      hero_title: 'DESLIZA'
+    },
+    EN: {
+      hero_title: 'SLIDE'
+    },
+    FR: {
+      hero_title: 'DIAPO'
+    }
+  }
 
   return (
     <section

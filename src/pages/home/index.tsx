@@ -8,9 +8,11 @@ import Filmar from './filmar'
 import Porque from './porque'
 import Locaciones from './locaciones'
 import Novedades from './novedades'
+import { useDataContext } from '../../context/useDataContext'
 
 const Index = () => {
   const [location] = useLocation()
+  const { lan } = useDataContext()
 
   useEffect(() => {
     if (location === '/novedades') {
@@ -28,11 +30,11 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
-      <Somos />
-      <Filmar />
+      <Somos lan={lan} />
+      <Filmar lan={lan} />
       <Porque />
-      <Locaciones />
-      <Novedades />
+      <Locaciones lan={lan} />
+      <Novedades lan={lan} />
       <HeadProvider>
         <Title>Salta Set &bull; Film Commision</Title>
       </HeadProvider>

@@ -187,72 +187,110 @@ export const filmografiaMenu = [
   }
 ]
 
-interface dataContactProps {
-  [key: string]: {
-    name: string
-    city: string
-    email: string
-    location: string
-    phone: string
-    country: string
-    message: string
-    send: string
-    thanks: string
-    error: string
-    required: string
+export const filmarEnSalta = [
+  {
+    id: 1,
+    ES: {
+      title: 'RODAJE EN SALTA CAPITAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE EN SALTA CAPITAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE EN SALTA CAPITAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 2,
+    ES: {
+      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 3,
+    ES: {
+      title: 'RODAJE EN ÁREAS PROTEGIDAS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE EN ÁREAS PROTEGIDAS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE EN ÁREAS PROTEGIDAS',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 4,
+    ES: {
+      title: 'RODAJE EN PARQUE NACIONALES ',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE EN PARQUE NACIONALES ',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE EN PARQUE NACIONALES ',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 5,
+    ES: {
+      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 6,
+    ES: {
+      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
+  },
+  {
+    id: 7,
+    ES: {
+      title: 'RODAJE CON MENORES DE EDAD',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    EN: {
+      title: 'RODAJE CON MENORES DE EDAD',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    },
+    FR: {
+      title: 'RODAJE CON MENORES DE EDAD',
+      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
+    }
   }
-}
-
-export const dataContact: dataContactProps = {
-  ES: {
-    name: 'Nombre y apellido*',
-    city: 'Ciudad',
-    email: 'E-Mail*',
-    location: 'Localidad',
-    phone: 'Teléfono*',
-    country: 'País',
-    message: 'Mensaje',
-    send: 'Enviar',
-    thanks: '¡Su mensaje fue enviado! Gracias por contactarte con nosotros.',
-    error: 'Se produjo un error al enviar el mensaje.',
-    required: 'Por favor complete este campo.'
-  },
-  EN: {
-    name: 'Name and surname*',
-    city: 'City',
-    email: 'E-Mail*',
-    location: 'Location',
-    phone: 'Phone*',
-    country: 'Country',
-    message: 'Message',
-    send: 'Send',
-    thanks: 'Your message was sent! Thank you for contacting us.',
-    error: 'An error occurred while sending the message.',
-    required: 'Please complete this field.'
-  },
-  FR: {
-    name: 'Nom et prénom*',
-    city: 'Ville',
-    email: 'E-Mail*',
-    location: 'Localisation',
-    phone: 'Téléphone*',
-    country: 'Pays',
-    message: 'Message',
-    send: 'Envoyer',
-    thanks: 'Votre message a été envoyé ! Merci de nous avoir contactés.',
-    error: 'Une erreur sest produite lors de lenvoi du message.',
-    required: 'Veuillez remplir ce champ.'
-  }
-}
-
-export const texts = {
-  ES: {
-    hero_title: 'DESLIZA'
-  },
-  EN: {
-    hero_title: 'SLIDE'
-  },
-  FR: {
-    hero_title: 'DIAPO'
-  }
-}
+]

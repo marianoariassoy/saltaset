@@ -1,9 +1,24 @@
 import { Link } from 'wouter'
 import { Line, Pin, Film } from '../../icons/icons'
-// import { useDataContext } from '../../context/useDataContext'
 
-const Somos = () => {
-  // const { lan } = useDataContext()
+const Somos = ({ lan }) => {
+  const texts = {
+    ES: {
+      title: 'Somos',
+      link1: 'Registra tu producción',
+      link2: 'Sugiere una localización'
+    },
+    EN: {
+      title: 'We are',
+      link1: 'Register your company',
+      link2: 'Suggest a location'
+    },
+    FR: {
+      title: 'Nous sommes',
+      link1: 'Enregistrez votre entreprise',
+      link2: 'Sugère une localisation'
+    }
+  }
 
   return (
     <section id='somos-salta-set'>
@@ -15,7 +30,7 @@ const Somos = () => {
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             01 <Line />
           </span>
-          <span className='block font-secondary'>SOMOS</span>
+          <span className='block font-secondary uppercase'>{texts[lan].title}</span>
           <span className='block font-secondary-black'>SALTA SET</span>
         </div>
         <div className='pt-6'>
@@ -28,7 +43,7 @@ const Somos = () => {
               sector local y estimulando la inversión en todas las regiones de la <strong>provincia.</strong>
             </p>
           </div>
-          <div className='row flex lg:gap-x-12 mt-12 lg:mt-24 mb-24'>
+          <div className='row flex lg:gap-x-12 mt-12 lg:mt-20 mb-24'>
             <article className='flex gap-x-3 items-center'>
               <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
                 <Film />
@@ -36,7 +51,7 @@ const Somos = () => {
               <div>
                 <Link href='/filmar-en-salta/formulario'>
                   <a className='font-bold hover:underline underline-offset-4 leading-5 inline-block'>
-                    Registra tu producción
+                    {texts[lan].link1}
                   </a>
                 </Link>
               </div>
@@ -50,7 +65,7 @@ const Somos = () => {
                   href='#'
                   className='font-bold hover:underline underline-offset-4 leading-5 inline-block'
                 >
-                  Sugiere una localización
+                  {texts[lan].link2}
                 </a>
               </div>
             </article>

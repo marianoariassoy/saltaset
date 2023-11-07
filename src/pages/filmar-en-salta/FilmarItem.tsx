@@ -9,7 +9,7 @@ const FilmarItem = ({ data }) => {
   return (
     <article
       className='flex flex-col gap-y-6'
-      key={data.id}
+      id={data.id}
     >
       <button
         className={`rounded-full w-full py-2 uppercase font-bold  text-sm text-center relative button-black-hover transition-all flex items-center px-6 ${

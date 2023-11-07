@@ -2,8 +2,9 @@ import { Link } from 'wouter'
 import LocacionesItem from '../../components/LocacionesItem'
 import Search from '../../components/Search'
 import { Line } from '../../icons/icons'
+import { menu } from '../../data/data'
 
-const Locaciones = () => {
+const Locaciones = ({ lan }) => {
   const data = [
     {
       id: 1,
@@ -44,14 +45,10 @@ const Locaciones = () => {
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             03 <Line />
           </span>
-          <span className='block font-secondary-black'>
-            LOCACIO
-            <br className='lg:hidden' />
-            NES
-          </span>
+          <span className='block font-secondary-black uppercase'>{menu[2][lan].title}</span>
         </div>
         <div className='col flex lg:justify-end'>
-          <Search />
+          <Search lan={lan} />
         </div>
       </div>
 
