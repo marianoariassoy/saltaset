@@ -265,7 +265,7 @@ const Index = () => {
               </span>
             </div>
             <div className='col flex lg:justify-end'>
-              <Search />
+              <Search lan={lan} />
             </div>
           </div>
 
