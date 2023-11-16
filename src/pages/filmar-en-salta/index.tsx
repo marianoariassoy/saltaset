@@ -7,7 +7,7 @@ import { Line } from '../../icons/icons'
 import FilmarItem from './FilmarItem'
 import useFetch from '../../hooks/useFetch'
 import HTML from '../../hooks/useHTML'
-import Loader from '../../components/Loader'
+import BeatLoader from 'react-spinners/BeatLoader'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -53,18 +53,20 @@ const Index = () => {
             </div>
           </div>
 
-          <p className='text-wrap max-w-4xl mb-3'>{loadingTexts ? <Loader /> : <HTML text={dataTexts[25].text} />}</p>
+          <p className='text-wrap max-w-4xl mb-3'>
+            {loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[25].text} />}
+          </p>
 
           <span className='rounded-full text-sm px-6 py-[.65rem] uppercase font-bold bg-primary text-center inline-block'>
             {texts[lan].link}
           </span>
 
-          <p className='text-wrap mb-3'>{loadingTexts ? <Loader /> : <HTML text={dataTexts[84].text} />}</p>
+          <p className='text-wrap mb-3'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
 
           <section className='w-full flex flex-col gap-y-6 '>
             {loading ? (
-              <div className='w-full flex items-center justify-center'>
-                <Loader />
+              <div>
+                <BeatLoader />
               </div>
             ) : (
               data.map(item => (
