@@ -3,7 +3,7 @@ import { Link } from 'wouter'
 const DirectorioSubmenu = ({ lan, location, menu }) => {
   return (
     <div className='absolute submenu hidden top-6'>
-      <div className='mt-3 bg-secondary p-4 text-white text-center flex flex-col gap-y-3 text-sm uppercase font-bold'>
+      <div className='mt-3 bg-secondary p-4 text-white text-center flex flex-col gap-y-3 text-sm font-bold'>
         <Link href='/directorio/empresas'>
           <a
             className={`border-b pb-3 border-primary hover:text-white ${

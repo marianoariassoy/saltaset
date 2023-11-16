@@ -131,10 +131,10 @@ const Formulario = () => {
         className='my-24'
         id='beneficios'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'>
+        <section className='row w-full max-w-7xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'>
           <div className='col flex flex-col gap-y-6 lg:pr-12'>
             <div className='flex gap-x-6 items-center'>
-              <div className='text-3xl lg:text-4xl'>
+              <div className='text-3xl lg:text-5xl'>
                 <span className='block font-secondary uppercase'>{texts[lan].title}</span>
                 <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>
               </div>

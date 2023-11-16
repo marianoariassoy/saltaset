@@ -2,54 +2,24 @@ import { useState } from 'react'
 import { Line } from '../../icons/icons'
 import NovedadesItem from './NovedadesItem'
 import { menu } from '../../data/data'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Novedades = ({ lan }) => {
   const [show, setShow] = useState(2)
+  const { data: data, loading: loading } = useFetch(`/novedades/${lan}`)
 
-  const data = [
-    {
-      id: 1,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
+  const texts = {
+    ES: {
+      link: 'Ver noticias anteriores'
     },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
+    EN: {
+      link: 'View previous news'
     },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
-    },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
-    },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
-    },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      date: '10/10/2023',
-      image: '/images/home-1.webp',
-      text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper  suscipit  '
+    FR: {
+      link: 'Voir les anciennes nouvelles'
     }
-  ]
+  }
 
   return (
     <section
@@ -64,20 +34,25 @@ const Novedades = ({ lan }) => {
           <span className='block font-secondary-black uppercase'>{menu[6][lan].title}</span>
         </div>
         <div className='row flex flex-col gap-y-6'>
-          {data.slice(0, show).map(data => (
-            <NovedadesItem
-              key={data.id}
-              data={data}
-            />
-          ))}
+          {loading ? (
+            <Loader />
+          ) : (
+            data.slice(0, show).map(item => (
+              <NovedadesItem
+                key={item.id}
+                data={item}
+                lan={lan}
+              />
+            ))
+          )}
         </div>
         <div className='row border-t border-black mt-8 pt-12 flex justify-center'>
-          {show < data.length && (
+          {!loading && show < data.length && (
             <button
-              className='bg-secondary py-3 px-12 rounded-full font-bold inline-block button-secondary text-primary text-sm'
+              className='bg-secondary py-3 px-12 rounded-full font-bold inline-block button-secondary text-primary text-sm uppercase'
               onClick={() => setShow(show + 2)}
             >
-              + VER NOTICIAS ANTERIORES
+              + {texts[lan].link}
             </button>
           )}
         </div>

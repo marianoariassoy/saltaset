@@ -1,6 +1,18 @@
 import ImageComponent from '../../components/Image'
 
-const NovedadesItem = ({ data }) => {
+const NovedadesItem = ({ data, lan }) => {
+  const texts = {
+    ES: {
+      link: 'Ver más'
+    },
+    EN: {
+      link: 'View more'
+    },
+    FR: {
+      link: 'Voir plus'
+    }
+  }
+
   return (
     <article className='grid lg:grid-cols-2'>
       <div className='lg:pr-12 aspect-video relative'>
@@ -23,9 +35,9 @@ const NovedadesItem = ({ data }) => {
         <div>
           <a
             href='#'
-            className='bg-secondary py-3 px-16 rounded-full font-bold inline-block button-secondary text-primary text-sm'
+            className='bg-secondary py-3 px-16 rounded-full font-bold inline-block button-secondary text-primary text-sm uppercase'
           >
-            + VER MÁS
+            + {texts[lan].link}
           </a>
         </div>
       </div>

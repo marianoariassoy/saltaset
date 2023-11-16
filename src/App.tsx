@@ -11,6 +11,7 @@ import Filmografia from './pages/filmografia/index'
 import Beneficios from './pages/beneficios/index'
 import Error from './pages/error/index'
 import LocacionesDetalles from './pages/locaciones/Detalles'
+import LocacionesBuscar from './pages/locaciones/Buscar'
 import PorqueSalta from './pages/porque-salta/index'
 
 function App() {
@@ -29,7 +30,11 @@ function App() {
         component={FilmarEnSaltaFormulario}
       />
       <Route
-        path='/locaciones/:id'
+        path='/locaciones/buscar/:buscar'
+        component={LocacionesBuscar}
+      />
+      <Route
+        path='/locaciones/:id/:title'
         component={LocacionesDetalles}
       />
       <Route

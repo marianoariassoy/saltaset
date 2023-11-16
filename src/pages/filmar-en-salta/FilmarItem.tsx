@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { useDataContext } from '../../context/useDataContext'
 import { DownSmall, Close } from '../../icons/icons'
+import HTML from '../../hooks/useHTML'
 
 const FilmarItem = ({ data }) => {
-  const { lan } = useDataContext()
   const [show, setShow] = useState(false)
 
   return (
@@ -12,16 +11,22 @@ const FilmarItem = ({ data }) => {
       id={data.id}
     >
       <button
-        className={`rounded-full w-full py-2 uppercase font-bold  text-sm text-center relative button-black-hover transition-all flex items-center px-6 ${
+        className={`rounded-full w-full py-[.65rem] uppercase font-bold text-sm text-center relative button-black-hover transition-all flex items-center px-6 ${
           show ? 'bg-secondary text-white' : 'bg-primary'
         }`}
         onClick={() => setShow(!show)}
       >
         <div className='flex-grow basis-0'></div>
-        <div>{data[lan].title}</div>
+        <div>{data.title}</div>
         <div className='flex-grow basis-0 flex justify-end'>{show ? <Close /> : <DownSmall />}</div>
       </button>
-      <p className={`text-wrap fade-in mb-3 ${show ? 'block' : 'hidden'}`}>{data[lan].text}</p>
+      <p
+        className={`fade-in mb-3 ${
+          show ? 'block' : 'hidden'
+        } [&>div]:text-wrap [&>div>a]:underline [&>div>a]:font-bold [&>div>a]:underline-offset-2 [&>div>a]:decoration-2 [&>div>a:hover]:opacity-70`}
+      >
+        <HTML text={data.text} />
+      </p>
     </article>
   )
 }

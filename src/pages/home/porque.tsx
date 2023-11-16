@@ -3,71 +3,60 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { Back, Forward } from '../../icons/icons'
 import PorqueItem from './PorqueItem'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
-const Porque = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'Ubicación estratégica',
-      image: '/images/home-1.webp'
+const Porque = ({ lan }) => {
+  const { data: data, loading: loading } = useFetch(`/porquesalta/${lan}`)
+
+  const texts = {
+    ES: {
+      title: 'Por qué',
+      title2: 'Salta'
     },
-    {
-      id: 2,
-      title: 'Ubicación estratégica',
-      image: '/images/home-1.webp'
+    EN: {
+      title: 'Why',
+      title2: 'Salta'
     },
-    {
-      id: 3,
-      title: 'Ubicación estratégica',
-      image: '/images/home-1.webp'
-    },
-    {
-      id: 4,
-      title: 'Ubicación estratégica',
-      image: '/images/home-1.webp'
-    },
-    {
-      id: 5,
-      title: 'Ubicación estratégica',
-      image: '/images/home-1.webp'
+    FR: {
+      title: 'Pourquoi',
+      title2: 'Salta'
     }
-  ]
+  }
 
-  const properties = {
+  const sliderProperties = {
     autoplay: false,
     transitionDuration: 250,
     indicators: false,
     arrows: true,
     infinite: true,
-
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
     prevArrow: (
-      <div className='hover:text-white  bg-primary h-full grid content-center lg:-ml-3'>
+      <div className='hover:text-white bg-primary h-full grid content-center lg:-ml-4'>
         <Back />
       </div>
     ),
     nextArrow: (
-      <div className='hover:text-white bg-primary h-full grid content-center lg:-mr-3'>
+      <div className='hover:text-white bg-primary h-full grid content-center lg:-mr-4'>
         <Forward />
       </div>
     )
   }
-
-  const responsiveSettings = [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3
-      }
-    },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
 
   return (
     <section
@@ -79,21 +68,22 @@ const Porque = () => {
           <div className='absolute -left-20 mt-4'>
             <Plus />
           </div>
-          <span className='block font-secondary'>POR QUÉ </span>
-          <span className='block font-secondary-black'>SALTA</span>
+          <span className='block font-secondary uppercase'>{texts[lan].title}</span>
+          <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>
         </div>
         <div className='col lg:w-3/4'>
-          <Slide
-            {...properties}
-            responsive={responsiveSettings}
-          >
-            {data?.map(data => (
-              <PorqueItem
-                key={data.id}
-                data={data}
-              />
-            ))}
-          </Slide>
+          {loading ? (
+            <Loader />
+          ) : (
+            <Slide {...sliderProperties}>
+              {data?.map(item => (
+                <PorqueItem
+                  key={item.id}
+                  data={item}
+                />
+              ))}
+            </Slide>
+          )}
         </div>
       </div>
     </section>

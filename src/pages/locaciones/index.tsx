@@ -1,253 +1,44 @@
 import { useState, useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
-import { locacionesMenu, menu } from '../../data/data'
+import { menu } from '../../data/data'
 import Layout from '../../layout/Layout'
 import LocacionesItem from '../../components/LocacionesItem'
 import { Line } from '../../icons/icons'
 import Search from '../../components/Search'
 import { useDataContext } from '../../context/useDataContext'
+import useFetch from '../../hooks/useFetch'
+import BeatLoader from 'react-spinners/BeatLoader'
 
 const Index = () => {
   const { lan } = useDataContext()
-  const [category, setCategory] = useState(locacionesMenu[0]['ES'].title.toLocaleLowerCase())
-  const [location, setLocation] = useState(1)
+  const [section, setSection] = useState(1)
+  const [category, setCategory] = useState(1)
+
+  const { data: dataSections, loading: loadingSections } = useFetch(`/locaciones/secciones/${lan}`)
+  const {
+    data: dataCategories,
+    loading: loadingCategories,
+    setLoading: setLoadingCategories
+  } = useFetch(`/locaciones/secciones/categorias/${section}/${lan}`)
+  const { data, loading, setLoading } = useFetch(`/locaciones/${category}/${lan}`)
+
+  useEffect(() => {
+    !loadingCategories && setCategory(dataCategories[0].id)
+  }, [section, dataCategories, loadingCategories])
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  const data = [
-    {
-      id: 1,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 3,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 4,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 5,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 6,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    }
-  ]
+  const handleSections = (id: number) => {
+    setLoadingCategories(true)
+    setLoading(true)
+    setSection(id)
+  }
 
-  const locaciones = {
-    catalogo: [
-      {
-        id: 1,
-        ES: {
-          title: 'Campo y Agricultura'
-        },
-        EN: {
-          title: 'Farm and Agriculture'
-        },
-        FR: {
-          title: 'Farm and Agriculture'
-        }
-      },
-      {
-        id: 2,
-        ES: {
-          title: 'Agua'
-        },
-        EN: {
-          title: 'Water'
-        },
-        FR: {
-          title: 'Water'
-        }
-      },
-      {
-        id: 3,
-        ES: {
-          title: 'Edificios centenarios'
-        },
-        EN: {
-          title: 'Bulding century'
-        },
-        FR: {
-          title: 'Bulding century'
-        }
-      },
-      {
-        id: 4,
-        ES: {
-          title: 'Campo y Agricultura'
-        },
-        EN: {
-          title: 'Farm and Agriculture'
-        },
-        FR: {
-          title: 'Farm and Agriculture'
-        }
-      },
-      {
-        id: 5,
-        ES: {
-          title: 'Agua'
-        },
-        EN: {
-          title: 'Water'
-        },
-        FR: {
-          title: 'Water'
-        }
-      },
-      {
-        id: 6,
-        ES: {
-          title: 'Edificios centenarios'
-        },
-        EN: {
-          title: 'Bulding century'
-        },
-        FR: {
-          title: 'Bulding century'
-        }
-      }
-    ],
-    regiones: [
-      {
-        id: 4,
-        ES: {
-          title: 'Salta y alrededores'
-        },
-        EN: {
-          title: 'Salta y alrededores'
-        },
-        FR: {
-          title: 'Salta y alrededores'
-        }
-      },
-      {
-        id: 5,
-        ES: {
-          title: 'Valle de lerma'
-        },
-        EN: {
-          title: 'Valle de lerma'
-        },
-        FR: {
-          title: 'Valle de lerma'
-        }
-      },
-      {
-        id: 6,
-        ES: {
-          title: 'Valle calchaquí'
-        },
-        EN: {
-          title: 'Valle calchaquí'
-        },
-        FR: {
-          title: 'Valle calchaquí'
-        }
-      },
-      {
-        id: 15,
-        ES: {
-          title: 'Valle calchaquí'
-        },
-        EN: {
-          title: 'Valle calchaquí'
-        },
-        FR: {
-          title: 'Valle calchaquí'
-        }
-      },
-      {
-        id: 16,
-        ES: {
-          title: 'Valle calchaquí'
-        },
-        EN: {
-          title: 'Valle calchaquí'
-        },
-        FR: {
-          title: 'Valle calchaquí'
-        }
-      },
-      {
-        id: 111,
-        ES: {
-          title: 'Valle calchaquí'
-        },
-        EN: {
-          title: 'Valle calchaquí'
-        },
-        FR: {
-          title: 'Valle calchaquí'
-        }
-      },
-      {
-        id: 216,
-        ES: {
-          title: 'Valle calchaquí'
-        },
-        EN: {
-          title: 'Valle calchaquí'
-        },
-        FR: {
-          title: 'Valle calchaquí'
-        }
-      }
-    ],
-    'rutas turisticas': [
-      {
-        id: 7,
-        ES: {
-          title: 'Sistema de valladino'
-        },
-        EN: {
-          title: 'Sistema de valladino'
-        },
-        FR: {
-          title: 'Sistema de valladino'
-        }
-      },
-      {
-        id: 8,
-        ES: {
-          title: 'Ruta del vino'
-        },
-        EN: {
-          title: 'Ruta del vino'
-        },
-        FR: {
-          title: 'Ruta del vino'
-        }
-      },
-      {
-        id: 9,
-        ES: {
-          title: 'Turismo religioso'
-        },
-        EN: {
-          title: 'Turismo religios'
-        },
-        FR: {
-          title: 'Turismo religios'
-        }
-      }
-    ]
+  const handleCategories = (id: number) => {
+    setLoading(true)
+    setCategory(id)
   }
 
   return (
@@ -256,60 +47,81 @@ const Index = () => {
         className='my-24'
         id='locaciones'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12'>
+        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
           <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
             <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-4xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
+              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
               <span className='text-primary'>
                 <Line />
               </span>
             </div>
             <div className='col flex lg:justify-end'>
-              <Search lan={lan} />
+              <Search
+                lan={lan}
+                value=''
+              />
             </div>
           </div>
 
           <div className='row flex flex-wrap gap-4 mb-4'>
-            {locacionesMenu.map((data, index) => (
-              <button
-                key={index}
-                className={`rounded-full w-52 py-2 uppercase font-bold text-xs ${
-                  category === data['ES'].title.toLocaleLowerCase()
-                    ? 'bg-primary border-primary text-secondary'
-                    : 'bg-secondary text-white button-primary-hover'
-                }`}
-                onClick={() => setCategory(data['ES'].title.toLocaleLowerCase())}
-              >
-                {data[lan].title}
-              </button>
-            ))}
+            {loadingSections ? (
+              <div className='my-2'>
+                <BeatLoader />
+              </div>
+            ) : (
+              dataSections.map((item, index) => (
+                <button
+                  key={index}
+                  className={`rounded-full w-52 py-3 uppercase font-bold text-xs ${
+                    section === item.id
+                      ? 'bg-primary border-primary text-secondary'
+                      : 'bg-secondary text-white button-primary-hover'
+                  }`}
+                  onClick={() => handleSections(item.id)}
+                >
+                  {item.title}
+                </button>
+              ))
+            )}
           </div>
 
           <div className='row flex flex-wrap gap-4'>
-            {locaciones[category].map(data => (
-              <button
-                key={data.id}
-                className={`rounded-full w-52 py-2 uppercase font-bold text-xs  ${
-                  location === data.id
-                    ? 'bg-primary border-primary text-secondary'
-                    : 'bg-secondary text-primary button-primary-hover'
-                }`}
-                onClick={() => setLocation(data.id)}
-              >
-                {data[lan].title}
-              </button>
-            ))}
+            {loadingCategories ? (
+              <div className='my-2'>
+                <BeatLoader />
+              </div>
+            ) : (
+              dataCategories.map(item => (
+                <button
+                  key={item.id}
+                  className={`rounded-full w-52 py-3 uppercase font-bold text-xs  ${
+                    category === item.id
+                      ? 'bg-primary border-primary text-secondary'
+                      : 'bg-secondary text-primary button-primary-hover'
+                  }`}
+                  onClick={() => handleCategories(item.id)}
+                >
+                  {item.title}
+                </button>
+              ))
+            )}
           </div>
         </section>
 
-        <section className='row grid lg:grid-cols-3 2xl:grid-cols-4 gap-3 pb-6'>
-          {data.map(data => (
-            <LocacionesItem
-              key={data.id}
-              data={data}
-            />
-          ))}
-        </section>
+        {loading ? (
+          <div className='px-6 lg:px-12'>
+            <BeatLoader />
+          </div>
+        ) : (
+          <section className='row grid lg:grid-cols-3 gap-3 pb-6'>
+            {data.map(item => (
+              <LocacionesItem
+                key={item.id}
+                data={item}
+              />
+            ))}
+          </section>
+        )}
       </section>
       <HeadProvider>
         <Title>{menu[2][lan].title}</Title>

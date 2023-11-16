@@ -82,9 +82,9 @@ const Index = () => {
         className='mt-24'
         id='profesionales-form'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 mb-12'>
+        <section className='row w-full max-w-7xl m-auto px-6 pt-20 mb-12'>
           <div className='flex items-center gap-x-4'>
-            <h1 className='text-3xl lg:text-4xl font-secondary-black uppercase'>{menu[3][lan].categories[1].title}</h1>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[3][lan].categories[1].title}</h1>
             <span className='text-primary'>
               <Line />
             </span>
@@ -102,7 +102,7 @@ const Index = () => {
           action=''
           method='post'
         >
-          <section className='m-auto w-full px-6 max-w-6xl my-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
+          <section className='m-auto w-full px-6 max-w-7xl my-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
               <input
                 type='text'

@@ -210,10 +210,10 @@ const Index = () => {
         className='my-24'
         id='locaciones'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12'>
+        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
           <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-20'>
             <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-4xl font-secondary-black uppercase'>
+              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>
                 {menu[3][lan].categories[0].title}
               </h1>
               <span className='text-primary'>
@@ -232,7 +232,7 @@ const Index = () => {
               </Link>
             </div>
           </div>
-          <section className='columns-2 lg:columns-3 col-span-6 justify-between items-start'>
+          <section className='columns-2 lg:columns-3 2xl:columns-4 col-span-6 justify-between items-start'>
             {data.map((data, index) => (
               <DirectorioItem
                 key={index}

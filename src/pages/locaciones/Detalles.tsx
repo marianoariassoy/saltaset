@@ -1,19 +1,30 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { HeadProvider, Title } from 'react-head'
-// import { menu } from '../../data/data'
-// import { useDataContext } from '../../context/useDataContext'
-import { Link } from 'wouter'
+import { menu } from '../../data/data'
+import { useDataContext } from '../../context/useDataContext'
+import { useParams } from 'wouter'
 import Layout from '../../layout/Layout'
 import { Line } from '../../icons/icons'
-import ImageComponent from '../../components/Image'
+import useFetch from '../../hooks/useFetch'
+import BeatLoader from 'react-spinners/BeatLoader'
+import Imagenes from './Imagenes'
+import Modal from './Modal'
 
 const Detalles = () => {
-  // const { lan } = useDataContext()
+  const { lan } = useDataContext()
+  const { id } = useParams()
+  const { data, loading, error } = useFetch(`/locaciones/detalles/${id}/${lan}`)
+  const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${id}`)
+  const [currentImage, setCurrentImage] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  if (error) {
+    return <h1>{error}</h1>
+  }
 
   return (
     <Layout>
@@ -21,73 +32,78 @@ const Detalles = () => {
         className='my-24'
         id='locaciones-detalles'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col gap-y-12'>
-          <div className='row'>
-            <div className='text-primary font-bold text-sm mb-3'>
-              <Link href='/locaciones'>
-                <a className='hover:underline mr-1'>LOCACIONES</a>
-              </Link>
-              / CATALOGO
-            </div>
-            <div className='flex gap-x-6 items-center'>
-              <div className='text-4xl lg:text-4xl'>
-                <span className='block font-secondary uppercase'>CAMPING</span>
-                <span className='block font-secondary-black uppercase'>EL ANGOSTO</span>
+        {loading ? (
+          <div className='row w-full flex items-center justify-end'>
+            <BeatLoader />
+          </div>
+        ) : (
+          <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col gap-y-12'>
+            <div className='row'>
+              <div className='text-primary font-bold mb-3 uppercase'>
+                {menu[2][lan].title}/ {data[0].category}
               </div>
-              <div className='text-primary'>
-                <Line />
+              <div className='flex gap-x-6 items-center'>
+                <div className='text-4xl lg:text-5xl'>
+                  <span className='block font-secondary-black uppercase'>{data[0].title}</span>
+                </div>
+                <div className='text-primary'>
+                  <Line />
+                </div>
               </div>
             </div>
-          </div>
-          <div className='row w-full'>
-            <ReactPlayer
-              url='https://www.youtube.com/watch?v=W_n6DyZD2oI'
-              playing={true}
-              controls={true}
-              width='100%'
-              height='100%'
-              className='aspect-video block'
-            />
-          </div>
+            {data[0].video && (
+              <div className='row w-full'>
+                <ReactPlayer
+                  url={data[0].video}
+                  playing={true}
+                  controls={true}
+                  width='100%'
+                  height='100%'
+                  className='aspect-video block'
+                />
+              </div>
+            )}
 
-          <div className='row'>
-            <p className='text-wrap'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-              hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
-              eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
-              feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh
-              euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-              nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum
-              dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-            </p>
-          </div>
+            <div className='row'>
+              <p className='text-wrap whitespace-break-spaces'>{data[0].text}</p>
+            </div>
 
-          <div className='row grid grid-cols-3'>
-            <div className='aspect-square'>
-              <ImageComponent
-                src='https://images.pexels.com/photos/13146458/pexels-photo-13146458.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt='image'
-              />
-            </div>
-            <div className='aspect-square'>
-              <ImageComponent
-                src='https://images.pexels.com/photos/18845781/pexels-photo-18845781/free-photo-of-punto-de-referencia-iglesia-catedral-catolico.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt='image'
-              />
-            </div>
-            <div className='aspect-square'>
-              <ImageComponent
-                src='https://images.pexels.com/photos/13430634/pexels-photo-13430634.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt='image'
-              />
-            </div>
-          </div>
-        </section>
+            {loadingImages ? (
+              <div className='row w-full flex items-center justify-center'>
+                <BeatLoader />
+              </div>
+            ) : (
+              <div className='row grid grid-cols-3'>
+                {dataImages.map(item => (
+                  <Imagenes
+                    data={item}
+                    setCurrentVideo={setCurrentImage}
+                  />
+                ))}
+              </div>
+            )}
+
+            {data[0].googlemap && (
+              <iframe
+                title='Google Maps'
+                width='100%'
+                height='450'
+                style={{ border: 0 }}
+                src={data[0].googlemap}
+                allowFullScreen
+              ></iframe>
+            )}
+          </section>
+        )}
       </section>
+      {currentImage && (
+        <Modal
+          currentImage={currentImage}
+          setCurrentImage={setCurrentImage}
+        />
+      )}
       <HeadProvider>
-        <Title> Salta Capital</Title>
+        <Title>{data ? data[0].title : menu[2][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )

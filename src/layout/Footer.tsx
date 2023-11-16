@@ -9,7 +9,7 @@ const Footer = () => {
   const [location] = useLocation()
 
   return (
-    <div className='w-full max-w-6xl m-auto px-6 py-12 text-white'>
+    <div className='w-full px-6 lg:px-12 py-12 text-white'>
       <div className='w-full flex items-center justify-between mb-12'>
         <nav>
           <ul className='flex flex-col gap-y-1'>

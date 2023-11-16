@@ -3,40 +3,23 @@ import LocacionesItem from '../../components/LocacionesItem'
 import Search from '../../components/Search'
 import { Line } from '../../icons/icons'
 import { menu } from '../../data/data'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Locaciones = ({ lan }) => {
-  const data = [
-    {
-      id: 1,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
+  const { data: data, loading: loading } = useFetch(`/home/locaciones/${lan}`)
+
+  const texts = {
+    ES: {
+      link: 'VER MAS LOCACIONES'
     },
-    {
-      id: 2,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
+    EN: {
+      link: 'VIEW MORE LOCATIONS'
     },
-    {
-      id: 3,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 4,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 5,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
-    },
-    {
-      id: 6,
-      title: 'Aeropuerto de Salta',
-      image: 'https://images.pexels.com/photos/13430642/pexels-photo-13430642.jpeg?auto=compress&cs=tinysrgb&w=1600'
+    FR: {
+      link: 'VOIR PLUS DE LOCALISATIONS'
     }
-  ]
+  }
 
   return (
     <section id='locaciones'>
@@ -48,22 +31,31 @@ const Locaciones = ({ lan }) => {
           <span className='block font-secondary-black uppercase'>{menu[2][lan].title}</span>
         </div>
         <div className='col flex lg:justify-end'>
-          <Search lan={lan} />
+          <Search
+            lan={lan}
+            value=''
+          />
         </div>
       </div>
 
-      <section className='row grid lg:grid-cols-3 2xl:grid-cols-4 gap-3 pb-6'>
-        {data.map(data => (
-          <LocacionesItem
-            key={data.id}
-            data={data}
-          />
-        ))}
+      <section className='row grid lg:grid-cols-3 gap-3 pb-6'>
+        {loading ? (
+          <div className='w-full h-60 flex justify-center items-center'>
+            <Loader />
+          </div>
+        ) : (
+          data.map(item => (
+            <LocacionesItem
+              key={item.id}
+              data={item}
+            />
+          ))
+        )}
       </section>
 
       <div className='flex justify-center pb-20 mt-8'>
         <Link href='/locaciones'>
-          <a className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm'>VER MAS LOCACIONES</a>
+          <a className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm'>{texts[lan].link}</a>
         </Link>
       </div>
     </section>

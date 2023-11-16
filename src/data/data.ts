@@ -151,41 +151,6 @@ export const locacionesMenu = [
     }
   }
 ]
-export const filmografiaMenu = [
-  {
-    ES: {
-      title: 'Largometrajes'
-    },
-    EN: {
-      title: 'Feature films'
-    },
-    FR: {
-      title: 'Longs métrages'
-    }
-  },
-  {
-    ES: {
-      title: 'Series'
-    },
-    EN: {
-      title: 'Serie'
-    },
-    FR: {
-      title: 'série'
-    }
-  },
-  {
-    ES: {
-      title: 'Reality Shows'
-    },
-    EN: {
-      title: 'Reality Shows'
-    },
-    FR: {
-      title: 'Téléréalités'
-    }
-  }
-]
 
 export const filmarEnSalta = [
   {

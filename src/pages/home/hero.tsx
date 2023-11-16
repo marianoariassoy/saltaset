@@ -6,15 +6,24 @@ import ImageComponent from '../../components/Image'
 const Hero = () => {
   const { lan } = useDataContext()
 
+  const goToSomos = () => {
+    const target = '#somos-salta-set'
+    const targetElement = document.querySelector(`${target}`) as HTMLElement
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+    })
+  }
+
   const texts = {
     ES: {
-      hero_title: 'DESLIZA'
+      hero_title: 'Desliza'
     },
     EN: {
-      hero_title: 'SLIDE'
+      hero_title: 'Swipe'
     },
     FR: {
-      hero_title: 'DIAPO'
+      hero_title: 'Glisser'
     }
   }
 
@@ -36,9 +45,12 @@ const Hero = () => {
           <Social hover='hover:text-white' />
         </div>
       </div>
-      <div className='absolute bottom-6 right-6 z-20 flex items-center gap-2 text-primary font-secondary text-sm text-vertical'>
+      <button
+        className='absolute bottom-12 right-6 z-20 cursor-pointer flex items-center gap-2 text-primary font-secondary text-sm text-vertical uppercase hover:text-black'
+        onClick={goToSomos}
+      >
         {texts[lan].hero_title} <Down />
-      </div>
+      </button>
     </section>
   )
 }

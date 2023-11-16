@@ -1,10 +1,7 @@
 import ImageComponent from '../../components/Image'
 import { Triangle } from '../../icons/icons'
-import { useDataContext } from '../../context/useDataContext'
 
-const FilmografiaItem = ({ data }) => {
-  const { lan } = useDataContext()
-
+const FilmografiaItem = ({ data, lan }) => {
   const texts = {
     ES: {
       year: 'Año',
@@ -28,7 +25,7 @@ const FilmografiaItem = ({ data }) => {
         />
       </div>
       <div className='flex items-center gap-3'>
-        <div className='text-primary text-2xl'>
+        <div className='text-primary'>
           <Triangle />
         </div>
         <div className='text-sm'>

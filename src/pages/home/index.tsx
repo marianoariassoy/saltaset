@@ -32,7 +32,7 @@ const Index = () => {
       <Hero />
       <Somos lan={lan} />
       <Filmar lan={lan} />
-      <Porque />
+      <Porque lan={lan} />
       <Locaciones lan={lan} />
       <Novedades lan={lan} />
       <HeadProvider>

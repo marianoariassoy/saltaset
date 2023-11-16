@@ -1,7 +1,11 @@
 import { Link } from 'wouter'
 import { Line, Pin, Film } from '../../icons/icons'
+import useFetch from '../../hooks/useFetch'
+import HTML from '../../hooks/useHTML'
 
 const Somos = ({ lan }) => {
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos/${lan}`)
+
   const texts = {
     ES: {
       title: 'Somos',
@@ -35,17 +39,11 @@ const Somos = ({ lan }) => {
         </div>
         <div className='pt-6'>
           <div className='row'>
-            <p className='text-wrap'>
-              Somos un pro grama del <strong>Gobierno de la Provincia</strong> que tiene la misión de promocionar Salta
-              como escenario ideal para el rodaje de <strong>producciones audiovisuales.</strong>
-              <br /> <br />
-              Brindamos un <strong>servicio público</strong> a la industria, asistiendo a las productoras, apoyando al
-              sector local y estimulando la inversión en todas las regiones de la <strong>provincia.</strong>
-            </p>
+            <p className='text-wrap'>{!loadingTexts && <HTML text={dataTexts[23].text} />}</p>
           </div>
           <div className='row flex lg:gap-x-12 mt-12 lg:mt-20 mb-24'>
             <article className='flex gap-x-3 items-center'>
-              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
+              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full text-xl'>
                 <Film />
               </div>
               <div>
@@ -57,7 +55,7 @@ const Somos = ({ lan }) => {
               </div>
             </article>
             <article className='flex gap-x-3 items-center'>
-              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>
+              <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full text-xl'>
                 <Pin />
               </div>
               <div>

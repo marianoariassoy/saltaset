@@ -9,7 +9,7 @@ const Nav = () => {
   const { lan } = useDataContext()
 
   return (
-    <nav className='hidden lg:flex gap-x-6 items-center'>
+    <nav className='hidden lg:flex gap-x-10 items-center'>
       {menu.map((data, index) => (
         <div
           key={index}
