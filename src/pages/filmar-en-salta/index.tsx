@@ -42,7 +42,7 @@ const Index = () => {
         className='my-24'
         id='filmar-en-salta'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 flex flex-col items-start gap-y-6'>
+        <section className='row w-full max-w-6xl m-auto px-6 lg:px-12 pt-20 flex flex-col items-start gap-y-6'>
           <div className='flex gap-x-6 items-center'>
             <div className='text-4xl lg:text-5xl'>
               <span className='block font-secondary uppercase'>{texts[lan].title}</span>
@@ -59,9 +59,9 @@ const Index = () => {
             {texts[lan].link}
           </span>
 
-          <p className='text-wrap max-w-4xl mb-6'>{loadingTexts ? <Loader /> : <HTML text={dataTexts[84].text} />}</p>
+          <p className='text-wrap mb-3'>{loadingTexts ? <Loader /> : <HTML text={dataTexts[84].text} />}</p>
 
-          <section className='w-full flex flex-col gap-y-6 max-w-6xl'>
+          <section className='w-full flex flex-col gap-y-6 '>
             {loading ? (
               <div className='w-full flex items-center justify-center'>
                 <Loader />

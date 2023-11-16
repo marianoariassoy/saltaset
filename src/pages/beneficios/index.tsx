@@ -21,7 +21,7 @@ const Index = () => {
         className='my-24'
         id='beneficios'
       >
-        <section className='row w-full max-w-7xl m-auto px-6 pt-20'>
+        <section className='row w-full max-w-6xl m-auto px-6 pt-20'>
           {loading ? (
             <div className='w-full flex justify-center items-center h-96'>
               <Loader />
