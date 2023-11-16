@@ -87,7 +87,7 @@ const Detalles = () => {
               <iframe
                 title='Google Maps'
                 width='100%'
-                height='450'
+                height='500'
                 style={{ border: 0 }}
                 src={data[0].googlemap}
                 allowFullScreen
