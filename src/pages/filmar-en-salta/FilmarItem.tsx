@@ -20,11 +20,7 @@ const FilmarItem = ({ data }) => {
         <div>{data.title}</div>
         <div className='flex-grow basis-0 flex justify-end'>{show ? <Close /> : <DownSmall />}</div>
       </button>
-      <p
-        className={`fade-in mb-3 ${
-          show ? 'block' : 'hidden'
-        } [&>div]:text-wrap [&>div>a]:underline [&>div>a]:font-bold [&>div>a]:underline-offset-2 [&>div>a]:decoration-2 [&>div>a:hover]:opacity-70`}
-      >
+      <p className={`fade-in mb-3 ${show ? 'block' : 'hidden'} links-html`}>
         <HTML text={data.text} />
       </p>
     </article>

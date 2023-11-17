@@ -39,7 +39,7 @@ const Index = () => {
     <Layout>
       <section
         className='my-24'
-        id='locaciones'
+        id='locaciones-buscar'
       >
         <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
           <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
@@ -77,7 +77,7 @@ const Index = () => {
         )}
       </section>
       <HeadProvider>
-        <Title>{menu[2][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[2][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )
