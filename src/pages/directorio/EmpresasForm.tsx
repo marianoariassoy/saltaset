@@ -65,9 +65,9 @@ const Index = () => {
     <Layout>
       <section
         className='mt-24'
-        id='profesionales-form'
+        id='empresas-form'
       >
-        <section className='row w-full max-w-7xl m-auto px-6 pt-20 mb-12'>
+        <section className='row w-full px-6 lg:px-12 pt-20 mb-6 lg:mb-12'>
           <div className='flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[3][lan].categories[0].title}</h1>
             <span className='text-primary'>
@@ -87,7 +87,7 @@ const Index = () => {
           action=''
           method='post'
         >
-          <section className='m-auto w-full px-6 max-w-7xl my-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
+          <section className='m-auto w-full px-6 max-w-6xl my-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
               <input
                 type='text'
@@ -181,7 +181,7 @@ const Index = () => {
                 </div>
               </div>
               <div className='flex justify-end mt-3'>
-                <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-6 uppercase'>
+                <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
                   {texts[lan].send}
                   <Right />
                 </button>
@@ -192,7 +192,7 @@ const Index = () => {
       </section>
       <HeadProvider>
         <Title>
-          {menu[3][lan].title} {menu[3][lan].categories[0].title}
+          Salta Set &bull; {menu[3][lan].title} {menu[3][lan].categories[0].title}
         </Title>
       </HeadProvider>
     </Layout>

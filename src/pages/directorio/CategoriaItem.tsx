@@ -1,14 +1,13 @@
+import { Link } from 'wouter'
 import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
 
 const DirectorioItem = ({ id, title, lan, type }) => {
   const { data, loading } = useFetch(`/directorios/subcategorias/${id}/${lan}`)
 
-  console.log(type)
   return (
     <article className='mb-6'>
       <h2 className='font-bold'>{title}</h2>
-
       {loading ? (
         <div>
           <BeatLoader />
@@ -16,13 +15,12 @@ const DirectorioItem = ({ id, title, lan, type }) => {
       ) : (
         <div className='flex flex-col gap-x-2'>
           {data.map(item => (
-            <a
-              href='#'
-              className='link-primary'
+            <Link
               key={item.id}
+              to={`/directorio/${type}/listado/${item.id}`}
             >
-              {item.title}
-            </a>
+              <a className='link-primary'>{item.title}</a>
+            </Link>
           ))}
         </div>
       )}

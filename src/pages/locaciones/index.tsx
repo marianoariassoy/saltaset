@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='my-24'
+        className='mt-24'
         id='locaciones'
       >
         <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
@@ -108,11 +108,11 @@ const Index = () => {
         </section>
 
         {loading ? (
-          <div className='px-6 lg:px-12'>
+          <div className='px-6 lg:px-12 mb-12'>
             <BeatLoader />
           </div>
         ) : (
-          <section className='row grid lg:grid-cols-3 gap-3 pb-6'>
+          <section className='row grid lg:grid-cols-2 2xl:grid-cols-3 gap-3 pb-12'>
             {data.map(item => (
               <LocacionesItem
                 key={item.id}
