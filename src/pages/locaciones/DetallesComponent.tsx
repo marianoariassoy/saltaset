@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'wouter'
 import { Line } from '../../icons/icons'
 import ReactPlayer from 'react-player'
 import Imagenes from './Imagenes'
@@ -14,7 +15,10 @@ const DetallesComponent = ({ data, title, texts }) => {
     <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
       <div className='row'>
         <div className='text-primary font-bold mb-3 uppercase text-sm'>
-          {title}/ {data.category}
+          <Link to={`/locaciones`}>
+            <a className='hover:text-black mr-1'>{title}</a>
+          </Link>
+          / {data.category}
         </div>
         <div className='flex gap-x-6 items-center'>
           <div className='text-4xl lg:text-5xl'>

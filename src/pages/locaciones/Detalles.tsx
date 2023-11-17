@@ -5,7 +5,7 @@ import { menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import useFetch from '../../hooks/useFetch'
-import BeatLoader from 'react-spinners/BeatLoader'
+import Loader from '../../components/Loader'
 import DetallesComponent from './DetallesComponent'
 
 const Detalles = () => {
@@ -39,21 +39,19 @@ const Detalles = () => {
         id='locaciones-detalles'
       >
         {loading ? (
-          <div>
-            <BeatLoader />
-          </div>
-        ) : data ? (
-          <DetallesComponent
-            data={data[0]}
-            title={menu[2][lan].title}
-            texts={texts[lan]}
-          />
+          <Loader />
         ) : (
-          <div className='text-2xl'>{texts[lan].error}</div>
+          data && (
+            <DetallesComponent
+              data={data[0]}
+              title={menu[2][lan].title}
+              texts={texts[lan]}
+            />
+          )
         )}
       </section>
       <HeadProvider>
-        <Title>{data ? data[0].title : menu[2][lan].title}</Title>
+        <Title>Salta Set {data && '• ' + data[0].title}</Title>
       </HeadProvider>
     </Layout>
   )

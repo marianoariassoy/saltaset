@@ -97,7 +97,7 @@ const Listado = () => {
         </section>
       </section>
       <HeadProvider>
-        <Title>Salta Set &bull; {data && data[0].subcategory}</Title>
+        <Title>Salta Set {data && '• ' + data[0].subcategory}</Title>
       </HeadProvider>
     </Layout>
   )

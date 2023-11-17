@@ -16,9 +16,11 @@ import ProfesionalesForm from './pages/directorio/ProfesionalesForm'
 
 import Filmografia from './pages/filmografia/index'
 import Beneficios from './pages/beneficios/index'
-import Error from './pages/error/index'
 
 import PorqueSalta from './pages/porque-salta/index'
+import NovedadesDetalles from './pages/novedades/index'
+
+import Error from './pages/error/index'
 
 function App() {
   return (
@@ -99,8 +101,8 @@ function App() {
         component={Home}
       />
       <Route
-        path='/novedades/detalles/:id'
-        component={Home}
+        path='/novedades/:id/:title'
+        component={NovedadesDetalles}
       />
 
       <Route

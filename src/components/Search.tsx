@@ -3,7 +3,6 @@ import { useLocation } from 'wouter'
 
 const Search = ({ lan, value }) => {
   const [location, setLocation] = useLocation()
-  console.log(location)
 
   const texts = {
     ES: {
@@ -27,6 +26,7 @@ const Search = ({ lan, value }) => {
     const { value } = document.getElementById('input-search') as HTMLInputElement
     if (value) {
       setLocation(`/locaciones/buscar/${value}`)
+      console.log(location)
     }
   }
 

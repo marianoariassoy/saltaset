@@ -8,6 +8,7 @@ import { Line, Right } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
 import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
+import Masonry from 'react-masonry-css'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -51,6 +52,13 @@ const Index = () => {
     setLoading(true)
   }, [location, setLoading])
 
+  const breakpointColumnsObj = {
+    default: 4,
+    1280: 3,
+    700: 2,
+    500: 1
+  }
+
   return (
     <Layout>
       <section
@@ -74,21 +82,27 @@ const Index = () => {
               </Link>
             </div>
           </div>
-          <section className='grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-6'>
+          <section className=''>
             {loading ? (
               <div>
                 <BeatLoader />
               </div>
             ) : (
-              data.map(item => (
-                <Categorias
-                  key={item.id}
-                  title={item.title}
-                  id={item.id}
-                  lan={lan}
-                  type={texts.type}
-                />
-              ))
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className='my-masonry-grid'
+                columnClassName='my-masonry-grid_column'
+              >
+                {data.map(item => (
+                  <Categorias
+                    key={item.id}
+                    title={item.title}
+                    id={item.id}
+                    lan={lan}
+                    type={texts.type}
+                  />
+                ))}
+              </Masonry>
             )}
           </section>
         </section>

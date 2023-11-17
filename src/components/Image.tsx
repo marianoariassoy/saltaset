@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 import BeatLoader from 'react-spinners/BeatLoader'
 
 const ImageComponent = ({ src, alt }) => {
@@ -16,7 +15,7 @@ const ImageComponent = ({ src, alt }) => {
   return (
     <>
       {isLoading ? (
-        <div className='h-full w-full flex justify-center items-center'>
+        <div className='aspect-square h-full w-full flex justify-center items-center'>
           <BeatLoader />
         </div>
       ) : (

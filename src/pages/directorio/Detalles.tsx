@@ -74,7 +74,6 @@ const Listado = () => {
               </Link>
             </div>
           </div>
-
           {loading ? (
             <div>
               <BeatLoader />
@@ -102,7 +101,7 @@ const Listado = () => {
         </section>
       </section>
       <HeadProvider>
-        <Title>Salta Set </Title>
+        <Title>Salta Set {data && '• ' + data[0].title}</Title>
       </HeadProvider>
     </Layout>
   )

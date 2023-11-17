@@ -8,38 +8,18 @@ import Search from '../../components/Search'
 import { useDataContext } from '../../context/useDataContext'
 import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
+import Categorias from './Categorias'
 
 const Index = () => {
   const { lan } = useDataContext()
   const [section, setSection] = useState(1)
   const [category, setCategory] = useState(1)
 
-  const { data: dataSections, loading: loadingSections } = useFetch(`/locaciones/secciones/${lan}`)
-  const {
-    data: dataCategories,
-    loading: loadingCategories,
-    setLoading: setLoadingCategories
-  } = useFetch(`/locaciones/secciones/categorias/${section}/${lan}`)
   const { data, loading, setLoading } = useFetch(`/locaciones/${category}/${lan}`)
-
-  useEffect(() => {
-    !loadingCategories && setCategory(dataCategories[0].id)
-  }, [section, dataCategories, loadingCategories])
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-  const handleSections = (id: number) => {
-    setLoadingCategories(true)
-    setLoading(true)
-    setSection(id)
-  }
-
-  const handleCategories = (id: number) => {
-    setLoading(true)
-    setCategory(id)
-  }
 
   return (
     <Layout>
@@ -47,7 +27,7 @@ const Index = () => {
         className='mt-24'
         id='locaciones'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
+        <section className='px-6 lg:px-12 pt-20'>
           <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
             <div className='col flex items-center gap-x-4'>
               <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
@@ -62,50 +42,16 @@ const Index = () => {
               />
             </div>
           </div>
-
-          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-4'>
-            {loadingSections ? (
-              <div className='my-2'>
-                <BeatLoader />
-              </div>
-            ) : (
-              dataSections.map((item, index) => (
-                <button
-                  key={index}
-                  className={`rounded-full w-52 py-3 uppercase font-bold text-xs ${
-                    section === item.id
-                      ? 'bg-primary border-primary text-secondary'
-                      : 'bg-secondary text-white button-primary-hover'
-                  }`}
-                  onClick={() => handleSections(item.id)}
-                >
-                  {item.title}
-                </button>
-              ))
-            )}
-          </div>
-          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4'>
-            {loadingCategories ? (
-              <div className='my-2'>
-                <BeatLoader />
-              </div>
-            ) : (
-              dataCategories.map(item => (
-                <button
-                  key={item.id}
-                  className={`rounded-full w-52 py-3 uppercase font-bold text-xs  ${
-                    category === item.id
-                      ? 'bg-primary border-primary text-secondary'
-                      : 'bg-secondary text-primary button-primary-hover'
-                  }`}
-                  onClick={() => handleCategories(item.id)}
-                >
-                  {item.title}
-                </button>
-              ))
-            )}
-          </div>
         </section>
+
+        <Categorias
+          lan={lan}
+          section={section}
+          setSection={setSection}
+          category={category}
+          setCategory={setCategory}
+          setLoading={setLoading}
+        />
 
         {loading ? (
           <div className='px-6 lg:px-12 mb-12'>
