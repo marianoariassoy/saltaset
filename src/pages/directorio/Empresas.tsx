@@ -47,10 +47,7 @@ const Index = () => {
             </div>
             <div>
               <Link href='/directorio/empresas/formulario'>
-                <a
-                  href='#'
-                  className='rounded-full px-6 py-2 uppercase font-bold bg-primary text-sm text-center button-black-hover flex justify-between items-center gap-x-2'
-                >
+                <a className='rounded-full px-6 py-2 uppercase font-bold bg-primary text-sm text-center button-black-hover flex justify-between items-center gap-x-2'>
                   <span>{texts[lan].title}</span>
                   <Right />
                 </a>

@@ -4,9 +4,13 @@ import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import { Line, Right } from '../../icons/icons'
 import ImageComponent from '../../components/Image'
+import useFetch from '../../hooks/useFetch'
+import HTML from '../../hooks/useHTML'
+import BeatLoader from 'react-spinners/BeatLoader'
 
 const Formulario = () => {
   const { lan } = useDataContext()
+  const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos/${lan}`)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -129,9 +133,9 @@ const Formulario = () => {
     <Layout>
       <section
         className='my-24'
-        id='beneficios'
+        id='registro-produccion'
       >
-        <section className='row w-full max-w-7xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'>
+        <section className='row w-full max-w-6xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'>
           <div className='col flex flex-col gap-y-6 lg:pr-12'>
             <div className='flex gap-x-6 items-center'>
               <div className='text-3xl lg:text-5xl'>
@@ -142,18 +146,7 @@ const Formulario = () => {
                 <Line />
               </div>
             </div>
-            <p className='text-wrap mb-6'>
-              Registrá tu rodaje para acceder al apoyo logístico y operativo de Salta Set y a todos los beneficios
-              contemplados para las producciones. <br /> <br />
-              La información que brindes servirá además para dimensionar el crecimiento de la actividad en la provincia
-              y, consecuentemente, reforzar los beneficios para el sector. Conocé más sobre los
-              <a
-                href='#'
-                className='text-primary font-bold mx-1 hover:underline underline-offset-2'
-              >
-                permisos de filmación.
-              </a>
-            </p>
+            <p className='text-wrap mb-6'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[83].text} />}</p>
             <div className='aspect-[5/7]'>
               <ImageComponent
                 src='/images/registro-produccion.webp'

@@ -63,7 +63,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className='row flex flex-wrap justify-around gap-4 mb-4'>
+          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-4'>
             {loadingSections ? (
               <div className='my-2'>
                 <BeatLoader />
@@ -84,7 +84,7 @@ const Index = () => {
               ))
             )}
           </div>
-          <div className='row flex flex-wrap justify-around gap-4'>
+          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4'>
             {loadingCategories ? (
               <div className='my-2'>
                 <BeatLoader />

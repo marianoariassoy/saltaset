@@ -26,6 +26,18 @@ const Detalles = () => {
     return <h1>{error}</h1>
   }
 
+  const texts = {
+    ES: {
+      link: 'VER LINK'
+    },
+    EN: {
+      link: 'VIEW LINK'
+    },
+    FR: {
+      link: 'VOIR LE LIEN'
+    }
+  }
+
   return (
     <Layout>
       <section
@@ -33,13 +45,13 @@ const Detalles = () => {
         id='locaciones-detalles'
       >
         {loading ? (
-          <div className='row w-full flex items-center justify-end'>
+          <div>
             <BeatLoader />
           </div>
         ) : (
-          <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col gap-y-12'>
+          <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
             <div className='row'>
-              <div className='text-primary font-bold mb-3 uppercase'>
+              <div className='text-primary font-bold mb-3 uppercase text-sm'>
                 {menu[2][lan].title}/ {data[0].category}
               </div>
               <div className='flex gap-x-6 items-center'>
@@ -63,13 +75,13 @@ const Detalles = () => {
                 />
               </div>
             )}
-
-            <div className='row'>
-              <p className='text-wrap whitespace-break-spaces'>{data[0].text}</p>
-            </div>
-
+            {data[0].text && (
+              <div>
+                <p className='text-wrap whitespace-break-spaces'>{data[0].text}</p>
+              </div>
+            )}
             {loadingImages ? (
-              <div className='row w-full flex items-center justify-center'>
+              <div>
                 <BeatLoader />
               </div>
             ) : (
@@ -82,7 +94,6 @@ const Detalles = () => {
                 ))}
               </div>
             )}
-
             {data[0].googlemap && (
               <iframe
                 title='Google Maps'
@@ -92,6 +103,16 @@ const Detalles = () => {
                 src={data[0].googlemap}
                 allowFullScreen
               ></iframe>
+            )}
+            {data[0].url && (
+              <a
+                href={data[0].url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='rounded-full px-6 w-52 py-3 font-bold bg-primary text-sm text-center button-black-hover'
+              >
+                {texts[lan].link}
+              </a>
             )}
           </section>
         )}

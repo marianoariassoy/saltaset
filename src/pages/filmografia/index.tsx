@@ -38,7 +38,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className='row flex flex-wrap justify-around gap-4 mb-12'>
+          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-12'>
             {loadingCategories ? (
               <div>
                 <BeatLoader />
@@ -47,7 +47,7 @@ const Index = () => {
               dataCategories.map(item => (
                 <button
                   key={item.id}
-                  className={`rounded-full w-52 py-3 uppercase font-bold text-xm  ${
+                  className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
                     category === item.id
                       ? 'bg-primary border-primary text-secondary'
                       : 'bg-secondary text-white button-primary-hover'
