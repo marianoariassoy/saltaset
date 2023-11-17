@@ -73,7 +73,7 @@ const Detalles = () => {
                 <BeatLoader />
               </div>
             ) : (
-              <div className='row grid grid-cols-3'>
+              <div className='row grid grid-cols-2 lg:grid-cols-3'>
                 {dataImages.map(item => (
                   <Imagenes
                     data={item}
