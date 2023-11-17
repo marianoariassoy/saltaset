@@ -62,49 +62,47 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='mt-24'
+        className='my-24 row w-full px-6 lg:px-12 pt-20'
         id='directorio'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
-          <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12 lg:mb-20'>
-            <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{texts.title}</h1>
-              <span className='text-primary'>
-                <Line />
-              </span>
-            </div>
-            <div>
-              <Link href={`/directorio/${texts.type}/formulario`}>
-                <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
-                  <span>{texts[lan].link}</span>
-                  <Right />
-                </a>
-              </Link>
-            </div>
+        <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12'>
+          <div className='col flex items-center gap-x-4'>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{texts.title}</h1>
+            <span className='text-primary'>
+              <Line />
+            </span>
           </div>
-          <section className=''>
-            {loading ? (
-              <div>
-                <BeatLoader />
-              </div>
-            ) : (
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className='my-masonry-grid'
-                columnClassName='my-masonry-grid_column'
-              >
-                {data.map(item => (
-                  <Categorias
-                    key={item.id}
-                    title={item.title}
-                    id={item.id}
-                    lan={lan}
-                    type={texts.type}
-                  />
-                ))}
-              </Masonry>
-            )}
-          </section>
+          <div>
+            <Link href={`/directorio/${texts.type}/formulario`}>
+              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
+                <span>{texts[lan].link}</span>
+                <Right />
+              </a>
+            </Link>
+          </div>
+        </div>
+        <section className=''>
+          {loading ? (
+            <div>
+              <BeatLoader />
+            </div>
+          ) : (
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className='my-masonry-grid'
+              columnClassName='my-masonry-grid_column'
+            >
+              {data.map(item => (
+                <Categorias
+                  key={item.id}
+                  title={item.title}
+                  id={item.id}
+                  lan={lan}
+                  type={texts.type}
+                />
+              ))}
+            </Masonry>
+          )}
         </section>
       </section>
       <HeadProvider>

@@ -25,60 +25,58 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='my-24'
+        className='my-24 px-6 lg:px-12 pt-20'
         id='filmografia'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20'>
-          <div className='row mb-12'>
-            <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[4][lan].title}</h1>
-              <span className='text-primary'>
-                <Line />
-              </span>
+        <div className='row mb-12'>
+          <div className='col flex items-center gap-x-4'>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[4][lan].title}</h1>
+            <span className='text-primary'>
+              <Line />
+            </span>
+          </div>
+        </div>
+
+        <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-12'>
+          {loadingCategories ? (
+            <div>
+              <BeatLoader />
             </div>
-          </div>
+          ) : (
+            dataCategories.map(item => (
+              <button
+                key={item.id}
+                className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
+                  category === item.id
+                    ? 'bg-primary border-primary text-secondary'
+                    : 'bg-secondary text-white button-primary-hover'
+                }`}
+                onClick={() => handleCategory(item.id)}
+              >
+                {item.title}
+              </button>
+            ))
+          )}
+        </div>
 
-          <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-12'>
-            {loadingCategories ? (
-              <div>
-                <BeatLoader />
-              </div>
-            ) : (
-              dataCategories.map(item => (
-                <button
-                  key={item.id}
-                  className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
-                    category === item.id
-                      ? 'bg-primary border-primary text-secondary'
-                      : 'bg-secondary text-white button-primary-hover'
-                  }`}
-                  onClick={() => handleCategory(item.id)}
-                >
-                  {item.title}
-                </button>
-              ))
-            )}
-          </div>
-
-          <div className='row grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-12'>
-            {loading ? (
-              <div>
-                <BeatLoader />
-              </div>
-            ) : (
-              data.map(item => (
-                <FilmografiaItem
-                  key={item.id}
-                  data={item}
-                  lan={lan}
-                />
-              ))
-            )}
-          </div>
-        </section>
+        <div className='row grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-12'>
+          {loading ? (
+            <div>
+              <BeatLoader />
+            </div>
+          ) : (
+            data.map(item => (
+              <FilmografiaItem
+                key={item.id}
+                data={item}
+                lan={lan}
+              />
+            ))
+          )}
+        </div>
       </section>
       <HeadProvider>
-        <Title>{menu[4][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[4][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )

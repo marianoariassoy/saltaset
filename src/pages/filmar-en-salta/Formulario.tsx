@@ -132,284 +132,282 @@ const Formulario = () => {
   return (
     <Layout>
       <section
-        className='my-24'
+        className='my-24 max-w-6xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'
         id='registro-produccion'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'>
-          <div className='col flex flex-col gap-y-6 lg:pr-12'>
-            <div className='flex gap-x-6 items-center'>
-              <div className='text-3xl lg:text-5xl'>
-                <span className='block font-secondary uppercase'>{texts[lan].title}</span>
-                <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>
-              </div>
-              <div className='text-primary'>
-                <Line />
-              </div>
+        <div className='col flex flex-col gap-y-6 lg:pr-12'>
+          <div className='flex gap-x-6 items-center'>
+            <div className='text-3xl lg:text-5xl'>
+              <span className='block font-secondary uppercase'>{texts[lan].title}</span>
+              <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>
             </div>
-            <p className='text-wrap mb-6'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[83].text} />}</p>
-            <div className='aspect-[5/7]'>
-              <ImageComponent
-                src='/images/registro-produccion.webp'
-                alt='Imagen de camaras de video'
-              />
+            <div className='text-primary'>
+              <Line />
             </div>
           </div>
-          <div className='col flex flex-col gap-y-3'>
-            <select
-              name='production'
-              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          <p className='text-wrap mb-6'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[83].text} />}</p>
+          <div className='aspect-[5/7]'>
+            <ImageComponent
+              src='http://marianoarias.soy/sites/saltaset-backend/images-statics/registro-produccion.webp'
+              alt='Imagen de camaras de video'
+            />
+          </div>
+        </div>
+        <div className='col flex flex-col gap-y-3'>
+          <select
+            name='production'
+            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          >
+            <option
+              disabled
+              selected
             >
-              <option
-                disabled
-                selected
-              >
-                {texts[lan].production[0]}
-              </option>
-              {texts[lan].production.slice(1).map((item, index) => {
-                return <option key={index}>{item}</option>
-              })}
-            </select>
-            <select
-              name='genere'
-              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              {texts[lan].production[0]}
+            </option>
+            {texts[lan].production.slice(1).map((item, index) => {
+              return <option key={index}>{item}</option>
+            })}
+          </select>
+          <select
+            name='genere'
+            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          >
+            <option
+              disabled
+              selected
             >
-              <option
-                disabled
-                selected
-              >
-                {texts[lan].genere[0]}
-              </option>
-              {texts[lan].genere.slice(1).map((item, index) => {
-                return <option key={index}>{item}</option>
-              })}
-            </select>
-            <select
-              name='exhibition'
-              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              {texts[lan].genere[0]}
+            </option>
+            {texts[lan].genere.slice(1).map((item, index) => {
+              return <option key={index}>{item}</option>
+            })}
+          </select>
+          <select
+            name='exhibition'
+            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          >
+            <option
+              disabled
+              selected
             >
-              <option
-                disabled
-                selected
-              >
-                {texts[lan].exhibition[0]}
-              </option>
-              {texts[lan].exhibition.slice(1).map((item, index) => {
-                return <option key={index}>{item}</option>
-              })}
-            </select>
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].location}</div>
-            <div className='grid grid-cols-2 gap-3'>
-              <input
-                type='text'
-                name='country'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].country}
-              />
-              <input
-                type='text'
-                name='state'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].state}
-              />
-            </div>
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].owner}</div>
-            <div className='grid grid-cols-2 gap-3'>
-              <input
-                type='text'
-                name='name'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].name}
-              />
-              <input
-                type='text'
-                name='lastname'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].lastname}
-              />
-              <input
-                type='text'
-                name='phone'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].phone}
-              />
-              <input
-                type='email'
-                name='email'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].email}
-              />
-            </div>
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].referent}</div>
-            <div className='grid grid-cols-2 gap-3'>
-              <input
-                type='text'
-                name='name_referent'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].name}
-              />
-              <input
-                type='text'
-                name='lastname_referent'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].lastname}
-              />
-              <input
-                type='text'
-                name='phone_referent'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].phone}
-              />
-              <input
-                type='email'
-                name='email_referent'
-                className='w-full border border-black h-10 px-2 rounded-none'
-                placeholder={texts[lan].email}
-              />
-            </div>
+              {texts[lan].exhibition[0]}
+            </option>
+            {texts[lan].exhibition.slice(1).map((item, index) => {
+              return <option key={index}>{item}</option>
+            })}
+          </select>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].location}</div>
+          <div className='grid grid-cols-2 gap-3'>
+            <input
+              type='text'
+              name='country'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].country}
+            />
+            <input
+              type='text'
+              name='state'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].state}
+            />
+          </div>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].owner}</div>
+          <div className='grid grid-cols-2 gap-3'>
+            <input
+              type='text'
+              name='name'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].name}
+            />
+            <input
+              type='text'
+              name='lastname'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].lastname}
+            />
+            <input
+              type='text'
+              name='phone'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].phone}
+            />
+            <input
+              type='email'
+              name='email'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].email}
+            />
+          </div>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].referent}</div>
+          <div className='grid grid-cols-2 gap-3'>
+            <input
+              type='text'
+              name='name_referent'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].name}
+            />
+            <input
+              type='text'
+              name='lastname_referent'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].lastname}
+            />
+            <input
+              type='text'
+              name='phone_referent'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].phone}
+            />
+            <input
+              type='email'
+              name='email_referent'
+              className='w-full border border-black h-10 px-2 rounded-none'
+              placeholder={texts[lan].email}
+            />
+          </div>
 
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].descriptionTitle}</div>
-            <textarea
-              name='description'
-              className='border border-black h-32 p-2 rounded-none'
-              placeholder={texts[lan].description}
-            ></textarea>
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].dateTitle}</div>
-            <div className='grid grid-cols-4 gap-3 items-center'>
-              <div>{texts[lan].from}</div>
-              <select
-                name='day_from'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].day}
-                </option>
-                {days.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-              <select
-                name='month_from'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].month}
-                </option>
-                {months.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-              <select
-                name='year_from'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].year}
-                </option>
-                {years.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-            </div>
-            <div className='grid grid-cols-4 gap-3 items-center'>
-              <div>{texts[lan].to}</div>
-              <select
-                name='day_to'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].day}
-                </option>
-                {days.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-              <select
-                name='month_to'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].month}
-                </option>
-                {months.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-              <select
-                name='year_to'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
-                >
-                  {texts[lan].year}
-                </option>
-                {years.map((item, index) => {
-                  return <option key={index}>{item}</option>
-                })}
-              </select>
-            </div>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].descriptionTitle}</div>
+          <textarea
+            name='description'
+            className='border border-black h-32 p-2 rounded-none'
+            placeholder={texts[lan].description}
+          ></textarea>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].dateTitle}</div>
+          <div className='grid grid-cols-4 gap-3 items-center'>
+            <div>{texts[lan].from}</div>
             <select
-              name='peopleArrived'
+              name='day_from'
               className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
             >
               <option
                 disabled
                 selected
               >
-                {texts[lan].peopleArrived}
+                {texts[lan].day}
               </option>
-              {people.map((item, index) => {
+              {days.map((item, index) => {
                 return <option key={index}>{item}</option>
               })}
             </select>
             <select
-              name='people'
+              name='month_from'
               className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
             >
               <option
                 disabled
                 selected
               >
-                {texts[lan].people}
+                {texts[lan].month}
               </option>
-              {people.map((item, index) => {
+              {months.map((item, index) => {
                 return <option key={index}>{item}</option>
               })}
             </select>
-            <div className='border-b border-black h-10 font-bold'>{texts[lan].messageTitle}</div>
-            <textarea
-              name='message'
-              className='border border-black h-32 p-2 rounded-none'
-              placeholder={texts[lan].message}
-            ></textarea>
-            <div className='flex justify-end mt-3'>
-              <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-6 uppercase'>
-                {texts[lan].send}
-                <Right />
-              </button>
-            </div>
+            <select
+              name='year_from'
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+            >
+              <option
+                disabled
+                selected
+              >
+                {texts[lan].year}
+              </option>
+              {years.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
           </div>
-        </section>
+          <div className='grid grid-cols-4 gap-3 items-center'>
+            <div>{texts[lan].to}</div>
+            <select
+              name='day_to'
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+            >
+              <option
+                disabled
+                selected
+              >
+                {texts[lan].day}
+              </option>
+              {days.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
+            <select
+              name='month_to'
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+            >
+              <option
+                disabled
+                selected
+              >
+                {texts[lan].month}
+              </option>
+              {months.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
+            <select
+              name='year_to'
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+            >
+              <option
+                disabled
+                selected
+              >
+                {texts[lan].year}
+              </option>
+              {years.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
+          </div>
+          <select
+            name='peopleArrived'
+            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          >
+            <option
+              disabled
+              selected
+            >
+              {texts[lan].peopleArrived}
+            </option>
+            {people.map((item, index) => {
+              return <option key={index}>{item}</option>
+            })}
+          </select>
+          <select
+            name='people'
+            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+          >
+            <option
+              disabled
+              selected
+            >
+              {texts[lan].people}
+            </option>
+            {people.map((item, index) => {
+              return <option key={index}>{item}</option>
+            })}
+          </select>
+          <div className='border-b border-black h-10 font-bold'>{texts[lan].messageTitle}</div>
+          <textarea
+            name='message'
+            className='border border-black h-32 p-2 rounded-none'
+            placeholder={texts[lan].message}
+          ></textarea>
+          <div className='flex justify-end mt-3'>
+            <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-6 uppercase'>
+              {texts[lan].send}
+              <Right />
+            </button>
+          </div>
+        </div>
       </section>
       <HeadProvider>
         <Title>
-          {texts[lan].title} {texts[lan].title2}
+          Salta Set &bull; {texts[lan].title} {texts[lan].title2}
         </Title>
       </HeadProvider>
     </Layout>

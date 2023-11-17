@@ -51,49 +51,47 @@ const Listado = () => {
   return (
     <Layout>
       <section
-        className='mt-24'
+        className='my-24 px-6 lg:px-12 pt-20'
         id='directorio-listado'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
-          <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12 lg:mb-20'>
-            <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{options.title}</h1>
-              <span className='text-primary'>
-                <Line />
-              </span>
-            </div>
-            <div>
-              <Link href={`/directorio/${options.type}`}>
-                <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
-                  <span>{texts[lan].link}</span>
-                  <Right />
-                </a>
-              </Link>
-            </div>
+        <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12'>
+          <div className='col flex items-center gap-x-4'>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{options.title}</h1>
+            <span className='text-primary'>
+              <Line />
+            </span>
           </div>
-          <section>
-            <h2 className='font-bold'>{data && data[0].subcategory}</h2>
-            {loading ? (
-              <div>
-                <BeatLoader />
-              </div>
-            ) : (
-              <div className='flex flex-col items-start'>
-                {data ? (
-                  data.map(item => (
-                    <Link
-                      to={`/directorio/${options.type}/detalles/${item.id}`}
-                      key={item.id}
-                    >
-                      <a className='link-primary'>{item.title}</a>
-                    </Link>
-                  ))
-                ) : (
-                  <p className='text-2xl'>{texts[lan].error}</p>
-                )}
-              </div>
-            )}
-          </section>
+          <div>
+            <Link href={`/directorio/${options.type}`}>
+              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
+                <span>{texts[lan].link}</span>
+                <Right />
+              </a>
+            </Link>
+          </div>
+        </div>
+        <section>
+          <h2 className='font-bold'>{data && data[0].subcategory}</h2>
+          {loading ? (
+            <div>
+              <BeatLoader />
+            </div>
+          ) : (
+            <div className='flex flex-col items-start'>
+              {data ? (
+                data.map(item => (
+                  <Link
+                    to={`/directorio/${options.type}/detalles/${item.id}`}
+                    key={item.id}
+                  >
+                    <a className='link-primary'>{item.title}</a>
+                  </Link>
+                ))
+              ) : (
+                <p className='text-2xl'>{texts[lan].error}</p>
+              )}
+            </div>
+          )}
         </section>
       </section>
       <HeadProvider>

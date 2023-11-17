@@ -54,51 +54,49 @@ const Listado = () => {
   return (
     <Layout>
       <section
-        className='mt-24'
+        className='my-24 px-6 lg:px-12 pt-20'
         id='directorios-detalles'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
-          <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12 lg:mb-20'>
-            <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{options.title}</h1>
-              <span className='text-primary'>
-                <Line />
-              </span>
-            </div>
-            <div>
-              <Link href={`/directorio/${options.type}`}>
-                <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
-                  <span>{texts[lan].link}</span>
-                  <Right />
-                </a>
-              </Link>
-            </div>
+        <div className='row flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12'>
+          <div className='col flex items-center gap-x-4'>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{options.title}</h1>
+            <span className='text-primary'>
+              <Line />
+            </span>
           </div>
-          {loading ? (
-            <div>
-              <BeatLoader />
-            </div>
-          ) : data ? (
-            data.map(item => (
-              <section className='max-w-4xl'>
-                <h2 className='text-3xl font-bold mb-3'>{item.title}</h2>
-                <p className='text-wrap'>{item.text}</p>
-                {item.url && (
-                  <a
-                    href={item.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='mt-6 rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
-                  >
-                    {texts[lan].link2}
-                  </a>
-                )}
-              </section>
-            ))
-          ) : (
-            <p className='text-2xl'>{texts[lan].error}</p>
-          )}
-        </section>
+          <div>
+            <Link href={`/directorio/${options.type}`}>
+              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
+                <span>{texts[lan].link}</span>
+                <Right />
+              </a>
+            </Link>
+          </div>
+        </div>
+        {loading ? (
+          <div>
+            <BeatLoader />
+          </div>
+        ) : data ? (
+          data.map(item => (
+            <section className='max-w-4xl'>
+              <h2 className='text-3xl font-bold mb-3'>{item.title}</h2>
+              <p className='text-wrap'>{item.text}</p>
+              {item.url && (
+                <a
+                  href={item.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='mt-6 rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
+                >
+                  {texts[lan].link2}
+                </a>
+              )}
+            </section>
+          ))
+        ) : (
+          <p className='text-2xl'>{texts[lan].error}</p>
+        )}
       </section>
       <HeadProvider>
         <Title>Salta Set {data && '• ' + data[0].title}</Title>

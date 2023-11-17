@@ -69,7 +69,7 @@ const Index = () => {
         )}
       </section>
       <HeadProvider>
-        <Title>{menu[2][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[2][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )

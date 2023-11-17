@@ -79,7 +79,7 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='mt-24'
+        className='my-24'
         id='profesionales-form'
       >
         <section className='row w-full px-6 lg:px-12 pt-20 mb-6 lg:mb-12'>
@@ -93,7 +93,7 @@ const Index = () => {
 
         <section className='row w-full aspect-video h-[50vh]'>
           <ImageComponent
-            src='/images/formulario.webp'
+            src='http://marianoarias.soy/sites/saltaset-backend/images-statics/formulario.webp'
             alt='Imagen para el formulario'
           />
         </section>
@@ -102,7 +102,7 @@ const Index = () => {
           action=''
           method='post'
         >
-          <section className='m-auto w-full px-6 max-w-6xl my-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
+          <section className='m-auto w-full px-6 max-w-6xl mt-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
               <input
                 type='text'

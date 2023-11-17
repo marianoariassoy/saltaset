@@ -61,9 +61,9 @@ const Index = () => {
             {texts[lan].link}
           </span>
 
-          <p className='text-wrap mb-3'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
+          <p className='text-wrap'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
 
-          <section className='w-full flex flex-col gap-y-6 '>
+          <section className='w-full flex flex-col gap-y-3'>
             {loading ? (
               <div>
                 <BeatLoader />
@@ -80,7 +80,7 @@ const Index = () => {
         </section>
       </section>
       <HeadProvider>
-        <Title>{menu[1][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[1][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )

@@ -18,27 +18,25 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='my-24'
+        className='my-24 max-w-6xl m-auto px-6 pt-20'
         id='beneficios'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20'>
-          {loading ? (
-            <div className='w-full flex justify-center items-center h-96'>
-              <Loader />
-            </div>
-          ) : (
-            data.map(item => (
-              <BeneficiosItem
-                key={item.id}
-                data={item}
-                lan={lan}
-              />
-            ))
-          )}
-        </section>
+        {loading ? (
+          <div className='w-full flex justify-center items-center h-96'>
+            <Loader />
+          </div>
+        ) : (
+          data.map(item => (
+            <BeneficiosItem
+              key={item.id}
+              data={item}
+              lan={lan}
+            />
+          ))
+        )}
       </section>
       <HeadProvider>
-        <Title>{menu[5][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[5][lan].title}</Title>
       </HeadProvider>
     </Layout>
   )

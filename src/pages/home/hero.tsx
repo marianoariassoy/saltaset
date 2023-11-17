@@ -33,10 +33,9 @@ const Hero = () => {
       id='hero'
     >
       <ImageComponent
-        src='/images/home-1.webp'
+        src='http://marianoarias.soy/sites/saltaset-backend/images-statics/home-1.webp'
         alt='Hombre con una camara'
       />
-
       <div
         className='absolute bottom-0 left-0 z-20 text-primary pl-6'
         id='hero-social'
