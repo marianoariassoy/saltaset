@@ -39,7 +39,7 @@ const Search = ({ lan, value }) => {
         maxLength={50}
         onKeyPress={presionarEnter}
         placeholder={`${value ? value : texts[lan].placeholder}`}
-        className='w-full pl-2 pr-8 py-2 border-b text-sm font-bold input-search uppercase'
+        className='w-full pl-2 pr-8 py-2 border-b text-sm font-bold input-search uppercase rounded-none'
       />
       <button
         className='absolute right-0 top-2 link-primary'

@@ -41,7 +41,7 @@ const BeneficiosItem = ({ data, lan }) => {
         )}
       </div>
       <div className='col lg:w-3/5'>
-        <div className='aspect-[6/4]'>
+        <div className='aspect-square lg:aspect-[6/4]'>
           <ImageComponent
             src={data.image}
             alt={data.title}

@@ -38,9 +38,9 @@ const Index = () => {
             </div>
           </div>
 
-          <div className='row flex flex-wrap gap-4 mb-12'>
+          <div className='row flex flex-wrap justify-around gap-4 mb-12'>
             {loadingCategories ? (
-              <div className='my-2'>
+              <div>
                 <BeatLoader />
               </div>
             ) : (
@@ -60,7 +60,7 @@ const Index = () => {
             )}
           </div>
 
-          <div className='row grid lg:grid-cols-4 2xl:grid-cols-5  gap-12'>
+          <div className='row grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-12'>
             {loading ? (
               <div>
                 <BeatLoader />

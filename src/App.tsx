@@ -1,11 +1,10 @@
 import { Route, Switch } from 'wouter'
 import Home from './pages/home/index'
-import Locaciones from './pages/locaciones/index'
+import Locaciones from './pages/locaciones'
 import FilmarEnSalta from './pages/filmar-en-salta/index'
 import FilmarEnSaltaFormulario from './pages/filmar-en-salta/Formulario'
-import Directorio from './pages/directorio/index'
+import Empresas from './pages/directorio/Empresas'
 import EmpresasForm from './pages/directorio/EmpresasForm'
-import Profesionales from './pages/directorio/profesionales'
 import ProfesionalesForm from './pages/directorio/ProfesionalesForm'
 import Filmografia from './pages/filmografia/index'
 import Beneficios from './pages/beneficios/index'
@@ -13,6 +12,7 @@ import Error from './pages/error/index'
 import LocacionesDetalles from './pages/locaciones/Detalles'
 import LocacionesBuscar from './pages/locaciones/Buscar'
 import PorqueSalta from './pages/porque-salta/index'
+import Profesionales from './pages/directorio/profesionales'
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
       />
       <Route
         path='/directorio/empresas'
-        component={Directorio}
+        component={Empresas}
       />
       <Route
         path='/directorio/empresas/formulario'

@@ -28,7 +28,7 @@ const FilmografiaItem = ({ data, lan }) => {
         <div className='text-primary'>
           <Triangle />
         </div>
-        <div className='text-sm'>
+        <div>
           <h3 className='font-bold'>{data.title}</h3>
           <p>
             <strong>{texts[lan].year}:</strong> {data.year}

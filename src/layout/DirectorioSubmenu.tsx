@@ -7,7 +7,7 @@ const DirectorioSubmenu = ({ lan, location, menu }) => {
         <Link href='/directorio/empresas'>
           <a
             className={`border-b pb-3 border-primary hover:text-white ${
-              location === '/directorio/empresas' ? 'text-white' : 'text-primary'
+              location === '/directorio/empresas' ? 'text-primary' : 'text-white'
             }`}
           >
             {menu[3][lan].categories[0].title}
@@ -15,7 +15,7 @@ const DirectorioSubmenu = ({ lan, location, menu }) => {
         </Link>
 
         <Link href='/directorio/profesionales'>
-          <a className={`hover:text-white ${location === '/directorio/profesionales' ? 'text-white' : 'text-primary'}`}>
+          <a className={`hover:text-white ${location === '/directorio/profesionales' ? 'text-primary' : 'text-white'}`}>
             {menu[3][lan].categories[1].title}
           </a>
         </Link>
