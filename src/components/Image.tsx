@@ -12,21 +12,17 @@ const ImageComponent = ({ src, alt }) => {
     }
   }, [src])
 
-  return (
-    <>
-      {isLoading ? (
-        <div className='aspect-square h-full w-full flex justify-center items-center'>
-          <BeatLoader />
-        </div>
-      ) : (
-        <img
-          loading='lazy'
-          src={src}
-          alt={alt}
-          className='fade-in h-full w-full object-cover object-center'
-        />
-      )}
-    </>
+  return isLoading ? (
+    <div className='h-full w-full flex justify-center items-center'>
+      <BeatLoader />
+    </div>
+  ) : (
+    <img
+      loading='lazy'
+      src={src}
+      alt={alt}
+      className='fade-in h-full w-full object-cover object-center'
+    />
   )
 }
 

@@ -1,16 +1,26 @@
-import { Line } from '../../icons/icons'
+import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import Image from '../../components/Image'
+import { menu } from '../../data/data'
+import useFetch from '../../hooks/useFetch'
+import Modal from '../locaciones/Modal'
+import Imagenes from '../locaciones/Imagenes'
+import BeatLoader from 'react-spinners/BeatLoader'
 
-const DetallesComponent = ({ data, texts }) => {
+const DetallesComponent = ({ data, texts, lan }) => {
+  const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${data.id}`)
+  const [currentImage, setCurrentImage] = useState(null)
+
   return (
     <section className='max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
-      <div className='row flex gap-x-6 items-center'>
-        <div className='text-4xl lg:text-5xl'>
-          <span className='block font-secondary-black uppercase'>{data.title}</span>
-        </div>
-        <div className='text-primary'>
-          <Line />
+      <div className='row flex flex-col gap-y-3'>
+        <h2 className='text-primary font-secondary uppercase text-sm'>{menu[6][lan].title}</h2>
+        <h1 className='text-4xl lg:text-5xl font-secondary-black uppercase text-wrap border-b pb-6 border-black'>
+          {data.title}
+        </h1>
+        <div className='text-right font-bold text-2xl'>
+          <span className='text-primary mr-1'>_</span>
+          {data.date}
         </div>
       </div>
       {data.video && (
@@ -33,9 +43,23 @@ const DetallesComponent = ({ data, texts }) => {
           />
         </div>
       )}
-      {data.text && (
+      {data.text.lenght > 10 && (
         <div>
           <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
+        </div>
+      )}
+      {loadingImages ? (
+        <div>
+          <BeatLoader />
+        </div>
+      ) : (
+        <div className='row grid grid-cols-2 lg:grid-cols-3 w-full'>
+          {dataImages.map(item => (
+            <Imagenes
+              data={item}
+              setCurrentVideo={setCurrentImage}
+            />
+          ))}
         </div>
       )}
       {data.url && (
@@ -47,6 +71,13 @@ const DetallesComponent = ({ data, texts }) => {
         >
           {texts.link}
         </a>
+      )}
+
+      {currentImage && (
+        <Modal
+          currentImage={currentImage}
+          setCurrentImage={setCurrentImage}
+        />
       )}
     </section>
   )

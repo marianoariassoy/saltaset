@@ -44,6 +44,7 @@ const Index = () => {
             <DetallesComponent
               data={data[0]}
               texts={texts[lan]}
+              lan={lan}
             />
           )
         )}
