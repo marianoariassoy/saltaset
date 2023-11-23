@@ -41,8 +41,8 @@ const Index = () => {
         className='my-24'
         id='locaciones-buscar'
       >
-        <section className='row w-full px-6 lg:px-12 pt-20 pb-12'>
-          <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
+        <section className='row w-full px-6 lg:px-12 pt-20 pb-6'>
+          <div className='row grid lg:grid-cols-2 gap-x-3 justify-between items-center mb-10'>
             <div className='col flex items-center gap-x-4'>
               <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
               <span className='text-primary'>

@@ -24,8 +24,8 @@ const FilmografiaItem = ({ data, lan }) => {
           alt={data.title}
         />
       </div>
-      <div className='flex items-center gap-3'>
-        <div className='text-primary'>
+      <div className='flex gap-4'>
+        <div className='text-primary text-xl pt-7'>
           <Triangle />
         </div>
         <div>

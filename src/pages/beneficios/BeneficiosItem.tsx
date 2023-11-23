@@ -16,8 +16,8 @@ const BeneficiosItem = ({ data, lan }) => {
   }
 
   return (
-    <article className='row flex flex-col lg:flex-row gap-12 mb-16'>
-      <div className='col lg:w-2/5 flex flex-col gap-y-6 items-start'>
+    <article className='row grid lg:grid-cols-2 gap-12 mb-16'>
+      <div className='col flex flex-col gap-y-6 items-start'>
         <div className='flex gap-x-6 items-center'>
           <div className='text-4xl lg:text-5xl'>
             <span className='block font-secondary-black uppercase'>{data.title}</span>
@@ -34,14 +34,14 @@ const BeneficiosItem = ({ data, lan }) => {
             href={data.url}
             target='_blank'
             rel='noopener noreferrer'
-            className='rounded-full px-6 py-[.65rem] uppercase font-bold bg-primary text-sm button-black-hover text-center'
+            className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover text-center'
           >
             {texts[lan].link}
           </a>
         )}
       </div>
-      <div className='col lg:w-3/5'>
-        <div className='aspect-square lg:aspect-[6/4]'>
+      <div className='col'>
+        <div className='aspect-square'>
           <ImageComponent
             src={data.image}
             alt={data.title}

@@ -17,9 +17,9 @@ const NovedadesItem = ({ data, lan }) => {
 
   return (
     <article className='grid lg:grid-cols-2'>
-      <div className='lg:pr-12 aspect-video relative'>
+      <div className='aspect-video relative'>
         <Link href={`/novedades/${data.id}/${sanitizeTitleForURL(data.title)}`}>
-          <div className='absolute w-full h-full cursor-pointer bg-primary-opacity text-white text-6xl flex justify-center items-center z-20 opacity-0 hover:opacity-100 transition-all'>
+          <div className='absolute w-full h-full cursor-pointer text-white text-6xl flex justify-center items-center opacity-0 hover:opacity-100 article-locaciones z-20'>
             +
           </div>
         </Link>
@@ -28,7 +28,7 @@ const NovedadesItem = ({ data, lan }) => {
           alt={data.title}
         />
       </div>
-      <div className='flex flex-col gap-y-3 py-3'>
+      <div className='flex flex-col gap-y-3 py-3 lg:pl-12'>
         <div className='col flex flex-col gap-y-3'>
           <div className='lg:text-xl'>{data.date}</div>
           <div className='border-b border-t border-black py-3'>

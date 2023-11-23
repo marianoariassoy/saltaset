@@ -1,10 +1,12 @@
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
-import ImageComponent from '../../components/Image'
+import Slider from './Slider'
+import useFetch from '../../hooks/useFetch'
 
 const Hero = () => {
   const { lan } = useDataContext()
+  const { data, loading } = useFetch(`/home`)
 
   const goToSomos = () => {
     const target = '#somos-salta-set'
@@ -32,10 +34,8 @@ const Hero = () => {
       className='h-[80vh] lg:h-[90vh] relative'
       id='hero'
     >
-      <ImageComponent
-        src='http://marianoarias.soy/sites/saltaset-backend/images-statics/home-1.webp'
-        alt='Hombre con una camara'
-      />
+      <div>{!loading && <Slider data={data} />}</div>
+
       <div
         className='absolute bottom-0 left-0 z-20 text-primary pl-6'
         id='hero-social'

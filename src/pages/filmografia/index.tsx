@@ -36,7 +36,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-12'>
+        <div className='row flex flex-wrap gap-4 mb-12'>
           {menu[4][lan].categories.map(item => (
             <button
               key={item.id}

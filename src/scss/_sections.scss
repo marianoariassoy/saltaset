@@ -52,7 +52,7 @@
 .article-locaciones {
   transition: all 0.2s ease;
   &:hover {
-    background-color: rgba($color-secondary, 0.3);
+    background-color: rgba($color-secondary, 0.2);
     backdrop-filter: blur(8px);
     .article-layer {
       background-color: $color-secondary;
