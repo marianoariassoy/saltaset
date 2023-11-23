@@ -14,7 +14,7 @@ const DetallesComponent = ({ data, title, texts }) => {
   return (
     <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
       <div className='row flex flex-col gap-y-3'>
-        <div className='text-primary font-secondary uppercase text-sm'>
+        <div className='text-primary font-secondary uppercase text-xs'>
           <Link to={`/locaciones`}>
             <a className='hover:text-black mr-1'>{title}</a>
           </Link>

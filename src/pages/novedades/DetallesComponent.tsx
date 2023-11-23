@@ -13,8 +13,8 @@ const DetallesComponent = ({ data, texts, lan }) => {
 
   return (
     <section className='max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
-      <div className='row flex flex-col gap-y-3'>
-        <h2 className='text-primary font-secondary uppercase text-sm'>{menu[6][lan].title}</h2>
+      <div className='row w-full flex flex-col gap-y-3'>
+        <h2 className='text-primary font-secondary uppercase text-xs'>{menu[6][lan].title}</h2>
         <h1 className='text-4xl lg:text-5xl font-secondary-black uppercase text-wrap border-b pb-6 border-black'>
           {data.title}
         </h1>

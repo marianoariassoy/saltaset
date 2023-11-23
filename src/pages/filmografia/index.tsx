@@ -12,7 +12,6 @@ const Index = () => {
   const { lan } = useDataContext()
   const [category, setCategory] = useState(4)
   const { data, loading, setLoading } = useFetch(`/filmografia/${category}/${lan}`)
-  const { data: dataCategories, loading: loadingCategories } = useFetch(`/filmografia/categorias/${lan}`)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -38,25 +37,19 @@ const Index = () => {
         </div>
 
         <div className='row flex flex-wrap justify-around lg:justify-normal gap-4 mb-12'>
-          {loadingCategories ? (
-            <div>
-              <BeatLoader />
-            </div>
-          ) : (
-            dataCategories.map(item => (
-              <button
-                key={item.id}
-                className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
-                  category === item.id
-                    ? 'bg-primary border-primary text-secondary'
-                    : 'bg-secondary text-white button-primary-hover'
-                }`}
-                onClick={() => handleCategory(item.id)}
-              >
-                {item.title}
-              </button>
-            ))
-          )}
+          {menu[4][lan].categories.map(item => (
+            <button
+              key={item.id}
+              className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
+                category === item.id
+                  ? 'bg-primary border-primary text-secondary'
+                  : 'bg-secondary text-white button-primary-hover'
+              }`}
+              onClick={() => handleCategory(item.id)}
+            >
+              {item.title}
+            </button>
+          ))}
         </div>
 
         <div className='row grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-12'>

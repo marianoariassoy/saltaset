@@ -1,6 +1,9 @@
 const PorqueItem = ({ data }) => {
   return (
-    <article className='w-full border-b'>
+    <article
+      className='w-full border-b'
+      id={`porque-salta-${data.id}`}
+    >
       <div className='w-full max-w-6xl lg:px-6 m-auto flex gap-x-6 lg:gap-x-12 items-center  pb-6'>
         <div>
           <div className='w-14 h-14 aspect-square flex justify-center items-center bg-primary rounded-full'>

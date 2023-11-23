@@ -1,8 +1,8 @@
-import { Instagram, Linkedin, Facebook } from '../icons/icons'
+import { Instagram, Facebook } from '../icons/icons'
 
 const Social = ({ hover }) => {
   return (
-    <nav className='flex gap-x-6 items-center'>
+    <nav className='flex gap-x-6 items-center lg:pl-6 text-xl'>
       <a
         href='#'
         target='_blank'
@@ -18,14 +18,6 @@ const Social = ({ hover }) => {
         className={`${hover}`}
       >
         <Instagram />
-      </a>
-      <a
-        href='#'
-        target='_blank'
-        rel='noreferrer'
-        className={`${hover}`}
-      >
-        <Linkedin />
       </a>
     </nav>
   )

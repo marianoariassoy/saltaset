@@ -12,9 +12,8 @@ import Categorias from './Categorias'
 
 const Index = () => {
   const { lan } = useDataContext()
-  const [section, setSection] = useState(1)
+  const [section, setSection] = useState(2)
   const [category, setCategory] = useState(1)
-
   const { data, loading, setLoading } = useFetch(`/locaciones/${category}/${lan}`)
 
   useEffect(() => {
@@ -27,22 +26,20 @@ const Index = () => {
         className='mt-24'
         id='locaciones'
       >
-        <section className='px-6 lg:px-12 pt-20'>
-          <div className='row grid lg:grid-cols-2 gap-6 justify-between items-center mb-10'>
-            <div className='col flex items-center gap-x-4'>
-              <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
-              <span className='text-primary'>
-                <Line />
-              </span>
-            </div>
-            <div className='col flex lg:justify-end'>
-              <Search
-                lan={lan}
-                value=''
-              />
-            </div>
+        <div className='px-6 lg:px-12 pt-20 mb-12 row grid lg:grid-cols-2 gap-6 justify-between items-center'>
+          <div className='col flex items-center gap-x-4'>
+            <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
+            <span className='text-primary'>
+              <Line />
+            </span>
           </div>
-        </section>
+          <div className='col flex lg:justify-end'>
+            <Search
+              lan={lan}
+              value=''
+            />
+          </div>
+        </div>
 
         <Categorias
           lan={lan}

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
+import { useParams } from 'wouter'
 import { menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
@@ -11,7 +12,18 @@ import Loader from '../../components/Loader'
 
 const Index = () => {
   const { lan } = useDataContext()
+  const { id } = useParams()
   const { data, loading } = useFetch(`/porquesalta/${lan}`)
+
+  useEffect(() => {
+    if (!loading) {
+      const targetElement = document.querySelector(`#porque-salta-${id}`) as HTMLElement
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: 'smooth'
+      })
+    }
+  }, [id, loading])
 
   const texts = {
     ES: {
@@ -27,10 +39,6 @@ const Index = () => {
       title2: 'Salta'
     }
   }
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <Layout>

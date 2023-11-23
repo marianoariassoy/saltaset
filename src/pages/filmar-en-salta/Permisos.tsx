@@ -9,7 +9,7 @@ import useFetch from '../../hooks/useFetch'
 import HTML from '../../hooks/useHTML'
 import BeatLoader from 'react-spinners/BeatLoader'
 
-const Index = () => {
+const Permisos = () => {
   const { lan } = useDataContext()
   const { data, loading } = useFetch(`/filmarensalta/${lan}`)
   const { data: dataTexts, loading: loadingTexts } = useFetch(`/textos/${lan}`)
@@ -61,7 +61,7 @@ const Index = () => {
             {texts[lan].link}
           </span>
 
-          <p className='text-wrap'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
+          <p className='text-wrap mb-6'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
 
           <section className='w-full flex flex-col gap-y-3'>
             {loading ? (
@@ -86,4 +86,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Permisos

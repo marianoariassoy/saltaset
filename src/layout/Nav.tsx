@@ -1,8 +1,7 @@
 import { menu } from '../data/data'
 import { Link, useLocation } from 'wouter'
 import { useDataContext } from '../context/useDataContext'
-import DirectorioSubmenu from './DirectorioSubmenu'
-import FilmarSubmenu from './FilmarSubmenu'
+import Submenu from './Submenu'
 
 const Nav = () => {
   const [location] = useLocation()
@@ -26,14 +25,24 @@ const Nav = () => {
               {data[lan].title}
             </a>
           </Link>
+
+          {data.id === 2 && (
+            <Submenu
+              lan={lan}
+              menu={menu}
+              location={location}
+              pos={1}
+            />
+          )}
+
           {data.id === 4 && (
-            <DirectorioSubmenu
+            <Submenu
               lan={lan}
               location={location}
               menu={menu}
+              pos={3}
             />
           )}
-          {data.id === 2 && <FilmarSubmenu lan={lan} />}
         </div>
       ))}
     </nav>

@@ -27,26 +27,53 @@ export const menu = [
   {
     id: 2,
     ES: {
-      title: 'Filmar en Salta'
+      title: 'Filmar en Salta',
+      categories: [
+        { title: 'Permisos', url: '/filmar-en-salta/permisos' },
+        { title: 'Sostenibilidad ', url: '/filmar-en-salta/sostenibilidad' }
+      ]
     },
     EN: {
-      title: 'Filming in Salta'
+      title: 'Filming in Salta',
+      categories: [
+        { title: 'Permissions', url: '/filmar-en-salta/permisos' },
+        { title: 'Sustainability', url: '/filmar-en-salta/sostenibilidad' }
+      ]
     },
     FR: {
-      title: 'Filming in Salta'
+      title: 'Filming in Salta',
+      categories: [
+        { title: 'Permis', url: '/filmar-en-salta/permisos' },
+        { title: 'Durabilité', url: '/filmar-en-salta/sostenibilidad  ' }
+      ]
     },
-    url: '/filmar-en-salta'
+    url: '/filmar-en-salta/permisos'
   },
   {
     id: 3,
     ES: {
-      title: 'Locaciones'
+      title: 'Locaciones',
+      categories: [
+        { title: 'Regiones', url: '' },
+        { title: 'Categorías ', url: '' },
+        { title: 'Rutas turisticas ', url: '/locaciones/rutas-turisticas' }
+      ]
     },
     EN: {
-      title: 'Locations'
+      title: 'Locations',
+      categories: [
+        { title: 'Regions', url: '' },
+        { title: 'Categories', url: '' },
+        { title: 'Tourist routes', url: '/locaciones/rutas-turisticas' }
+      ]
     },
     FR: {
-      title: 'Locations'
+      title: 'Locations',
+      categories: [
+        { title: 'Regions', url: '' },
+        { title: 'Catégories', url: '' },
+        { title: 'Routes touristiques', url: '/locaciones/rutas-turisticas' }
+      ]
     },
     url: '/locaciones'
   },
@@ -78,13 +105,28 @@ export const menu = [
   {
     id: 5,
     ES: {
-      title: 'Filmografía'
+      title: 'Filmografía',
+      categories: [
+        { title: 'Largometrajes', id: 4 },
+        { title: 'Series', id: 5 },
+        { title: 'Otros', id: 6 }
+      ]
     },
     EN: {
-      title: 'Filmography'
+      title: 'Filmography',
+      categories: [
+        { title: 'Feature Films', id: 4 },
+        { title: 'TV Serie', id: 5 },
+        { title: 'Other', id: 6 }
+      ]
     },
     FR: {
-      title: 'Filmography'
+      title: 'Filmography',
+      categories: [
+        { title: 'Longs métrages', id: 4 },
+        { title: 'Série', id: 5 },
+        { title: 'Autres', id: 6 }
+      ]
     },
     url: '/filmografia'
   },
@@ -113,149 +155,5 @@ export const menu = [
       title: 'News'
     },
     url: '/novedades'
-  }
-]
-
-export const locacionesMenu = [
-  {
-    ES: {
-      title: 'Catalogo'
-    },
-    EN: {
-      title: 'Catalogue'
-    },
-    FR: {
-      title: 'Catalogue'
-    }
-  },
-  {
-    ES: {
-      title: 'Regiones'
-    },
-    EN: {
-      title: 'Regions'
-    },
-    FR: {
-      title: 'Régions'
-    }
-  },
-  {
-    ES: {
-      title: 'Rutas turisticas'
-    },
-    EN: {
-      title: 'Tourist routes'
-    },
-    FR: {
-      title: 'Itinéraires touristiques'
-    }
-  }
-]
-
-export const filmarEnSalta = [
-  {
-    id: 1,
-    ES: {
-      title: 'RODAJE EN SALTA CAPITAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE EN SALTA CAPITAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE EN SALTA CAPITAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 2,
-    ES: {
-      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE EN EL RESTO DE LOS MUNICIPIOS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 3,
-    ES: {
-      title: 'RODAJE EN ÁREAS PROTEGIDAS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE EN ÁREAS PROTEGIDAS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE EN ÁREAS PROTEGIDAS',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 4,
-    ES: {
-      title: 'RODAJE EN PARQUE NACIONALES ',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE EN PARQUE NACIONALES ',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE EN PARQUE NACIONALES ',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 5,
-    ES: {
-      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE EN EL AEROPUERTO DE SALTA',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 6,
-    ES: {
-      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE QUE IMPLIQUE VIALIDAD NACIONAL',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
-  },
-  {
-    id: 7,
-    ES: {
-      title: 'RODAJE CON MENORES DE EDAD',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    EN: {
-      title: 'RODAJE CON MENORES DE EDAD',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    },
-    FR: {
-      title: 'RODAJE CON MENORES DE EDAD',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolore assumenda, iste, reiciendis deleniti vero earum amet, numquam quas accusamus debitis. Maxime fugiat laudantium qui modi sunt quas ex nihil.'
-    }
   }
 ]

@@ -40,7 +40,7 @@ const Hero = () => {
         className='absolute bottom-0 left-0 z-20 text-primary pl-6'
         id='hero-social'
       >
-        <div className='absolute bottom-3'>
+        <div className='absolute bottom-[10px]'>
           <Social hover='hover:text-white' />
         </div>
       </div>
