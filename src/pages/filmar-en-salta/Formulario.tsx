@@ -398,7 +398,7 @@ const Formulario = () => {
             placeholder={texts[lan].message}
           ></textarea>
           <div className='flex justify-end mt-3'>
-            <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-6 uppercase'>
+            <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
               {texts[lan].send}
               <Right />
             </button>

@@ -6,13 +6,11 @@ import { Line } from '../../icons/icons'
 import Search from '../../components/Search'
 import { useDataContext } from '../../context/useDataContext'
 import Locaciones from './Locaciones'
-import Categorias from './Categorias'
 import RutasTuristicas from './RutasTuristicas'
 
 const Index = () => {
   const { lan } = useDataContext()
   const [section, setSection] = useState(2)
-  const [category, setCategory] = useState(1)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -28,8 +26,8 @@ const Index = () => {
         className='mt-24'
         id='locaciones'
       >
-        <section className='px-6 lg:px-12 pt-20 mb-12'>
-          <div className='row grid lg:grid-cols-2 gap-x-3 justify-between items-center mb-12'>
+        <section className='px-6 lg:px-12 pt-20'>
+          <header className='row grid lg:grid-cols-2 gap-x-3 justify-between items-center mb-12'>
             <div className='col flex items-center gap-x-4'>
               <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>
               <span className='text-primary'>
@@ -42,7 +40,7 @@ const Index = () => {
                 value=''
               />
             </div>
-          </div>
+          </header>
           <div className='row flex flex-wrap gap-4 mb-4'>
             {menu[2][lan].categories.map(item => (
               <button
@@ -58,20 +56,12 @@ const Index = () => {
               </button>
             ))}
           </div>
-          {section <= 2 && (
-            <Categorias
-              lan={lan}
-              section={section}
-              category={category}
-              setCategory={setCategory}
-            />
-          )}
         </section>
 
         {section <= 2 && (
           <Locaciones
             lan={lan}
-            category={category}
+            section={section}
           />
         )}
 

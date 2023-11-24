@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { Link, useLocation, useParams } from 'wouter'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
+import { Line, Left } from '../../icons/icons'
 import { menu } from '../../data/data'
-import { Line, Right } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
 import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
@@ -17,17 +17,17 @@ const Listado = () => {
   const texts = {
     ES: {
       link: 'Volver',
-      link2: 'Ver link',
+      link2: 'Sitio web',
       error: 'No se encontraron resultados'
     },
     EN: {
       link: 'Back',
-      link2: 'View link',
+      link2: 'Web site',
       error: 'No results found'
     },
     FR: {
       link: 'Retour',
-      link2: 'Voir le lien',
+      link2: 'Site internet',
       error: 'Aucun résultat'
     }
   }
@@ -67,8 +67,8 @@ const Listado = () => {
           <div>
             <Link href={`/directorio/${options.type}`}>
               <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
+                <Left />
                 <span>{texts[lan].link}</span>
-                <Right />
               </a>
             </Link>
           </div>
@@ -79,19 +79,37 @@ const Listado = () => {
           </div>
         ) : data ? (
           data.map(item => (
-            <section className='max-w-4xl'>
-              <h2 className='text-3xl font-bold mb-3'>{item.title}</h2>
+            <section className='max-w-5xl'>
+              <h2 className='text-3xl font-bold mb-6'>{item.title}</h2>
+              <div className='flex gap-4 mb-6 flex-wrap'>
+                {item.email && (
+                  <a
+                    href={`mailto:${item.url}`}
+                    className='rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
+                  >
+                    {item.email}
+                  </a>
+                )}
+                {item.phone && (
+                  <a
+                    href={`tel:${item.phone}`}
+                    className='rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
+                  >
+                    {item.phone}
+                  </a>
+                )}
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
+                  >
+                    {texts[lan].link2}
+                  </a>
+                )}
+              </div>
               <p className='text-wrap'>{item.text}</p>
-              {item.url && (
-                <a
-                  href={item.url}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='mt-6 rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
-                >
-                  {texts[lan].link2}
-                </a>
-              )}
             </section>
           ))
         ) : (

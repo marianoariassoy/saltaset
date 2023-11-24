@@ -5,7 +5,7 @@ import { menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import useFetch from '../../hooks/useFetch'
-import Loader from '../../components/Loader'
+import BeatLoader from 'react-spinners/BeatLoader'
 import DetallesComponent from './DetallesComponent'
 
 const Detalles = () => {
@@ -34,12 +34,11 @@ const Detalles = () => {
 
   return (
     <Layout>
-      <section
-        className='my-24'
-        id='locaciones-detalles'
-      >
+      <section className='my-24'>
         {loading ? (
-          <Loader />
+          <div>
+            <BeatLoader />
+          </div>
         ) : (
           data && (
             <DetallesComponent
