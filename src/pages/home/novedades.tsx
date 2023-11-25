@@ -27,7 +27,7 @@ const Novedades = ({ lan }) => {
       id='novedades'
     >
       <div className='w-full max-w-6xl m-auto px-6 py-20'>
-        <div className='row text-4xl lg:text-5xl mb-12'>
+        <div className='row text-4xl lg:text-5xl mb-12 reveal-on-scroll'>
           <span className='font-secondary-black mb-4 flex items-center gap-x-4'>
             04 <Line />
           </span>

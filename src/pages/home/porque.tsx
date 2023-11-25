@@ -64,14 +64,14 @@ const Porque = ({ lan }) => {
       id='porque-salta'
     >
       <div className='w-full max-w-6xl m-auto px-6 pb-12 pt-12 gap-6 items-center lg:flex'>
-        <div className='col text-4xl relative lg:w-1/4'>
+        <div className='col text-4xl relative lg:w-1/4 reveal-on-scroll'>
           <div className='absolute -left-20 mt-4'>
             <Plus />
           </div>
           <span className='block font-secondary uppercase'>{texts[lan].title}</span>
           <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>
         </div>
-        <div className='col lg:w-3/4'>
+        <div className='col lg:w-3/4 reveal-on-scroll'>
           {loading ? (
             <Loader />
           ) : (

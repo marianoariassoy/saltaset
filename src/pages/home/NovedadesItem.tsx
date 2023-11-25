@@ -16,7 +16,7 @@ const NovedadesItem = ({ data, lan }) => {
   }
 
   return (
-    <article className='grid lg:grid-cols-2'>
+    <article className='grid lg:grid-cols-2 reveal-on-scroll-opacity'>
       <div className='aspect-video relative'>
         <Link href={`/novedades/${data.id}/${sanitizeTitleForURL(data.title)}`}>
           <div className='absolute w-full h-full cursor-pointer text-white text-6xl flex justify-center items-center opacity-0 hover:opacity-100 article-locaciones z-20'>

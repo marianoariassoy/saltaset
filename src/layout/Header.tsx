@@ -28,7 +28,7 @@ const Header = () => {
       <div>
         <Nav />
       </div>
-      <div className='flex items-end flex-col gap-y-2'>
+      <div className='flex items-end flex-col gap-y-2 '>
         <div
           className='nav-menu lg:hidden'
           onClick={OpenMenu}

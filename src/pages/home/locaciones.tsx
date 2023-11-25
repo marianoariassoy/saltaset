@@ -23,7 +23,7 @@ const Locaciones = ({ lan }) => {
 
   return (
     <section id='locaciones'>
-      <div className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12 grid lg:grid-cols-2 gap-6 justify-between items-end'>
+      <div className='row w-full max-w-6xl m-auto px-6 pt-20 pb-12 grid lg:grid-cols-2 gap-6 justify-between items-end reveal-on-scroll'>
         <div className='col text-4xl lg:text-5xl'>
           <span className='text-primary font-secondary-black mb-4 flex items-center gap-x-4'>
             03 <Line />

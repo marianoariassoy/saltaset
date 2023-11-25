@@ -45,7 +45,7 @@ const Hero = () => {
         </div>
       </div>
       <button
-        className='absolute bottom-12 right-6 z-20 cursor-pointer flex items-center gap-2 text-primary font-secondary text-sm text-vertical uppercase hover:text-black'
+        className='absolute bottom-12 right-6 z-20 cursor-pointer flex items-center gap-2 text-primary font-secondary text-sm text-vertical uppercase hover:text-black fade-in-delay'
         onClick={goToSomos}
       >
         {texts[lan].hero_title} <Down />

@@ -17,7 +17,7 @@ const FilmografiaItem = ({ data, lan }) => {
     }
   }
   return (
-    <article className='relative'>
+    <article className='relative reveal-on-scroll-opacity'>
       <div className='aspect-[4/6] mb-3'>
         <ImageComponent
           src={data.image}
