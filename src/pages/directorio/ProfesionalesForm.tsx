@@ -3,7 +3,7 @@ import { HeadProvider, Title } from 'react-head'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import { Line, Right } from '../../icons/icons'
-import { menu } from '../../data/data'
+import { menu, activities } from '../../data/data'
 import ImageComponent from '../../components/Image'
 
 const Index = () => {
@@ -195,8 +195,14 @@ const Index = () => {
                 >
                   {texts[lan].activity1}
                 </option>
-                <option>Canada</option>
-                <option>Mexico</option>
+                {activities.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
               </select>
               <select
                 name='actity2'
@@ -208,8 +214,14 @@ const Index = () => {
                 >
                   {texts[lan].activity2}
                 </option>
-                <option>Canada</option>
-                <option>Mexico</option>
+                {activities.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
               </select>
               <select
                 name='actity3'
@@ -221,17 +233,23 @@ const Index = () => {
                 >
                   {texts[lan].activity3}
                 </option>
-                <option>Canada</option>
-                <option>Mexico</option>
+                {activities.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
               </select>
 
-              <input
-                type='text'
+              <textarea
                 name='experience'
                 placeholder={texts[lan].experience}
-                className='w-full px-2 h-10 border border-black rounded-non'
+                className='p-2 h-20 border border-black rounded-none'
                 required
-              />
+              ></textarea>
+
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
               <div className='flex items-center gap-x-6'>
                 <div className='flex items-center gap-x-2'>
@@ -256,7 +274,7 @@ const Index = () => {
               <textarea
                 name='message'
                 placeholder={texts[lan].message}
-                className='p-2 h-20 border border-black rounded-none lg:h-[118px]'
+                className='p-2 h-20 border border-black rounded-none'
                 required
               ></textarea>
               <div className='flex justify-end mt-3'>

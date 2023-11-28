@@ -33,7 +33,7 @@ const DetallesComponent = ({ data, title, texts }) => {
 
   return (
     <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start'>
-      <header className='row flex flex-col gap-y-3 mb-3'>
+      <header className='row flex flex-col gap-y-3 mb-12'>
         <div className='text-primary font-secondary uppercase text-xs'>
           <Link to={`/locaciones`}>
             <a className='hover:text-black mr-1'>{title}</a>
@@ -60,7 +60,7 @@ const DetallesComponent = ({ data, title, texts }) => {
         </div>
       )}
       {data.text && (
-        <div className='mb-6'>
+        <div className='mb-12'>
           <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
         </div>
       )}
@@ -79,7 +79,7 @@ const DetallesComponent = ({ data, title, texts }) => {
           <BeatLoader />
         </div>
       ) : (
-        <div className='row grid grid-cols-2 lg:grid-cols-3 justify-between gap-3 mb-12'>
+        <div className='row w-full bg-red-300 grid grid-cols-2 lg:grid-cols-3 justify-between gap-3 mb-12'>
           {dataImages.map(item => (
             <Imagenes
               data={item}

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import { useDataContext } from '../../context/useDataContext'
-import { menu } from '../../data/data'
+import { menu, iva } from '../../data/data'
 import Layout from '../../layout/Layout'
 import { Line, Right } from '../../icons/icons'
 import ImageComponent from '../../components/Image'
@@ -23,6 +23,7 @@ const Index = () => {
       email: 'Correo electrónico*',
       phone: 'Teléfono*',
       iva: 'Situación ante el IVA*',
+      services: 'Describa sus servicios',
       web: 'Sitio web o red social',
       auth: ['Autorizo a publicar mis datos en el Directorio de la web de Salta Set FC', 'Si', 'No'],
       send: 'Enviar',
@@ -38,6 +39,7 @@ const Index = () => {
       email: 'Email*',
       phone: 'Phone*',
       iva: 'State tax*',
+      services: 'Describe your services',
       web: 'Website or social network',
       auth: ['I authorize the publication of my data on the Salta Set web directory', 'Yes', 'No'],
       send: 'Send',
@@ -53,6 +55,7 @@ const Index = () => {
       email: 'Email*',
       phone: 'Telephone*',
       iva: 'Situation fiscale*',
+      services: 'Description des services',
       web: 'Site web ou reseau social',
       auth: ["J'autorise la publication de mes données sur le site Web de Salta Set FC", 'Oui', 'Non'],
       send: 'Envoyer',
@@ -147,6 +150,14 @@ const Index = () => {
                 className='px-2 py-2 border border-black rounded-none'
                 required
               />
+
+              <textarea
+                name='services'
+                placeholder={texts[lan].services}
+                className='p-2 h-20 border border-black rounded-none'
+                required
+              ></textarea>
+
               <select
                 name='iva'
                 className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
@@ -157,8 +168,14 @@ const Index = () => {
                 >
                   {texts[lan].iva}
                 </option>
-                <option>0</option>
-                <option>1</option>
+                {iva.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
               </select>
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
               <div className='flex items-center gap-x-6'>
