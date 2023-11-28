@@ -1,10 +1,10 @@
 import ImageComponent from '../../components/Image'
 
-const Imagenes = ({ data, setCurrentVideo }) => {
+const Imagenes = ({ data, setCurrentImage }) => {
   return (
     <article
       className='aspect-square w-full h-full relative'
-      onClick={() => setCurrentVideo(data.image)}
+      onClick={() => setCurrentImage(data.image)}
     >
       <div className='absolute w-full h-full cursor-pointer text-white text-4xl flex justify-center items-center opacity-0 hover:opacity-100 article-locaciones z-20'>
         +

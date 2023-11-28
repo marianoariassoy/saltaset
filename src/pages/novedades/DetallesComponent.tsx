@@ -10,6 +10,26 @@ import BeatLoader from 'react-spinners/BeatLoader'
 const DetallesComponent = ({ data, texts, lan }) => {
   const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${data.id}`)
   const [currentImage, setCurrentImage] = useState(null)
+  const [currentIndex, setcurrentIndex] = useState(0)
+
+  const handelNext = () => {
+    if (currentIndex === dataImages.length - 1) {
+      setCurrentImage(dataImages[0].image)
+      setcurrentIndex(0)
+    } else {
+      setCurrentImage(dataImages[currentIndex + 1].image)
+      setcurrentIndex(currentIndex + 1)
+    }
+  }
+  const handelPrev = () => {
+    if (currentIndex === 0) {
+      setCurrentImage(dataImages[dataImages.length - 1].image)
+      setcurrentIndex(dataImages.length - 1)
+    } else {
+      setCurrentImage(dataImages[currentIndex - 1].image)
+      setcurrentIndex(currentIndex - 1)
+    }
+  }
 
   return (
     <section className='max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
@@ -67,7 +87,7 @@ const DetallesComponent = ({ data, texts, lan }) => {
           {dataImages.map(item => (
             <Imagenes
               data={item}
-              setCurrentVideo={setCurrentImage}
+              setCurrentImage={setCurrentImage}
             />
           ))}
         </div>
@@ -77,6 +97,8 @@ const DetallesComponent = ({ data, texts, lan }) => {
         <Modal
           currentImage={currentImage}
           setCurrentImage={setCurrentImage}
+          handelNext={handelNext}
+          handelPrev={handelPrev}
         />
       )}
     </section>

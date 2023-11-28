@@ -19,12 +19,12 @@ const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
         />
       </div>
 
-      {/* <button
+      <button
         className='absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-black dismiss z-30'
         onClick={handelClick}
       >
         <Close />
-      </button> */}
+      </button>
       <button
         className='absolute top-1/2 left-8 text-white cursor-pointer hover:text-black z-40 hidden lg:block'
         onClick={handelPrev}

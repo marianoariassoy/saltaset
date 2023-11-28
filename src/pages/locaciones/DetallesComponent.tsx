@@ -83,7 +83,7 @@ const DetallesComponent = ({ data, title, texts }) => {
           {dataImages.map(item => (
             <Imagenes
               data={item}
-              setCurrentVideo={setCurrentImage}
+              setCurrentImage={setCurrentImage}
             />
           ))}
         </div>
