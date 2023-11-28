@@ -83,7 +83,7 @@ const DetallesComponent = ({ data, texts, lan }) => {
           <BeatLoader />
         </div>
       ) : (
-        <div className='row grid grid-cols-2 lg:grid-cols-3 w-full'>
+        <div className='row w-full grid grid-cols-2 lg:grid-cols-3 justify-between gap-3 mb-12'>
           {dataImages.map(item => (
             <Imagenes
               data={item}

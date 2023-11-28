@@ -1,7 +1,6 @@
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
-import Slider from './Slider'
 import useFetch from '../../hooks/useFetch'
 
 const Hero = () => {
@@ -34,7 +33,24 @@ const Hero = () => {
       className='h-[80vh] lg:h-[90vh] relative'
       id='hero'
     >
-      <div>{!loading && <Slider data={data} />}</div>
+      {!loading && (
+        <>
+          <video
+            src={data[0].video}
+            className='h-[90vh] w-full object-cover object-center hidden lg:block'
+            autoPlay
+            muted
+            loop
+          ></video>
+          <video
+            src={data[0].image}
+            className='h-[80vh] w-full object-cover object-center lg:hidden'
+            autoPlay
+            muted
+            loop
+          ></video>
+        </>
+      )}
 
       <div
         className='absolute bottom-0 left-0 z-20 text-primary pl-6'

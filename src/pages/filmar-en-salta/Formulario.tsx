@@ -273,7 +273,7 @@ const Formulario = () => {
             placeholder={texts[lan].description}
           ></textarea>
           <div className='border-b border-black h-10 font-bold'>{texts[lan].dateTitle}</div>
-          <div className='grid grid-cols-4 gap-3 items-center'>
+          <div className='grid lg:grid-cols-4 gap-3 items-center'>
             <div>{texts[lan].from}</div>
             <select
               name='day_from'
@@ -318,7 +318,7 @@ const Formulario = () => {
               })}
             </select>
           </div>
-          <div className='grid grid-cols-4 gap-3 items-center'>
+          <div className='grid lg:grid-cols-4 gap-3 items-center'>
             <div>{texts[lan].to}</div>
             <select
               name='day_to'
