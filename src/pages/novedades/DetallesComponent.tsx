@@ -35,14 +35,6 @@ const DetallesComponent = ({ data, texts, lan }) => {
           />
         </div>
       )}
-      {data.image_main && (
-        <div className='row w-full'>
-          <Image
-            src={data.image_main}
-            alt={data.title}
-          />
-        </div>
-      )}
       {data.text && (
         <div>
           <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
@@ -57,6 +49,14 @@ const DetallesComponent = ({ data, texts, lan }) => {
         >
           {texts.link}
         </a>
+      )}
+      {data.image_main && (
+        <div className='row w-full'>
+          <Image
+            src={data.image_main}
+            alt={data.title}
+          />
+        </div>
       )}
       {loadingImages ? (
         <div>
