@@ -1,4 +1,6 @@
-const Modal = ({ setCurrentImage, currentImage }) => {
+import { Close, Back, Forward } from '../../icons/icons'
+
+const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
   const handelClick = e => {
     if (e.target.classList.contains('dismiss')) {
       setCurrentImage(null)
@@ -17,12 +19,24 @@ const Modal = ({ setCurrentImage, currentImage }) => {
         />
       </div>
 
-      <span
-        className='absolute top-8 right-8 text-white font-bold text-4xl cursor-pointer hover:text-black dismiss'
+      {/* <button
+        className='absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-black dismiss z-30'
         onClick={handelClick}
       >
-        X
-      </span>
+        <Close />
+      </button> */}
+      <button
+        className='absolute top-1/2 left-8 text-white cursor-pointer hover:text-black z-40 hidden lg:block'
+        onClick={handelPrev}
+      >
+        <Back />
+      </button>
+      <button
+        className='absolute top-1/2 right-8 text-white cursor-pointer hover:text-black z-40 hidden lg:block'
+        onClick={handelNext}
+      >
+        <Forward />
+      </button>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import Search from '../../components/Search'
 import { useDataContext } from '../../context/useDataContext'
 import Locaciones from './Locaciones'
 import RutasTuristicas from './RutasTuristicas'
+import LocacionesTodas from './LocacionesTodas'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -64,6 +65,16 @@ const Index = () => {
                 {item.title}
               </button>
             ))}
+            <button
+              className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
+                section === 0
+                  ? 'bg-primary border-primary text-secondary'
+                  : 'bg-secondary text-white button-primary-hover'
+              }`}
+              onClick={() => handleSections(0)}
+            >
+              Todas
+            </button>
           </div>
           <div className='lg:hidden'>
             <select
@@ -83,7 +94,16 @@ const Index = () => {
           </div>
         </section>
 
-        {section <= 2 && (
+        {section === 0 && <LocacionesTodas lan={lan} />}
+
+        {section === 1 && (
+          <Locaciones
+            lan={lan}
+            section={section}
+          />
+        )}
+
+        {section === 2 && (
           <Locaciones
             lan={lan}
             section={section}

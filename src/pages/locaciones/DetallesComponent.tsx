@@ -10,10 +10,30 @@ import Modal from './Modal'
 const DetallesComponent = ({ data, title, texts }) => {
   const { data: dataImages, loading: loadingImages } = useFetch(`/imagenes/${data.id}`)
   const [currentImage, setCurrentImage] = useState(null)
+  const [currentIndex, setcurrentIndex] = useState(0)
+
+  const handelNext = () => {
+    if (currentIndex === dataImages.length - 1) {
+      setCurrentImage(dataImages[0].image)
+      setcurrentIndex(0)
+    } else {
+      setCurrentImage(dataImages[currentIndex + 1].image)
+      setcurrentIndex(currentIndex + 1)
+    }
+  }
+  const handelPrev = () => {
+    if (currentIndex === 0) {
+      setCurrentImage(dataImages[dataImages.length - 1].image)
+      setcurrentIndex(dataImages.length - 1)
+    } else {
+      setCurrentImage(dataImages[currentIndex - 1].image)
+      setcurrentIndex(currentIndex - 1)
+    }
+  }
 
   return (
-    <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start gap-y-12'>
-      <div className='row flex flex-col gap-y-3'>
+    <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start'>
+      <header className='row flex flex-col gap-y-3 mb-3'>
         <div className='text-primary font-secondary uppercase text-xs'>
           <Link to={`/locaciones`}>
             <a className='hover:text-black mr-1'>{title}</a>
@@ -26,9 +46,9 @@ const DetallesComponent = ({ data, title, texts }) => {
             <Line />
           </div>
         </div>
-      </div>
+      </header>
       {data.video && (
-        <div className='row w-full'>
+        <div className='row w-full mb-6'>
           <ReactPlayer
             url={data.video}
             playing={true}
@@ -40,7 +60,7 @@ const DetallesComponent = ({ data, title, texts }) => {
         </div>
       )}
       {data.text && (
-        <div>
+        <div className='mb-6'>
           <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
         </div>
       )}
@@ -49,7 +69,7 @@ const DetallesComponent = ({ data, title, texts }) => {
           href={data.url}
           target='_blank'
           rel='noopener noreferrer'
-          className='rounded-full px-6 w-52 py-3 font-bold bg-primary text-sm text-center button-black-hover'
+          className='rounded-full px-6 w-52 py-3 font-bold bg-primary text-sm text-center button-black-hover mb-6'
         >
           {texts.link}
         </a>
@@ -59,7 +79,7 @@ const DetallesComponent = ({ data, title, texts }) => {
           <BeatLoader />
         </div>
       ) : (
-        <div className='row grid grid-cols-2 lg:grid-cols-3 justify-between'>
+        <div className='row grid grid-cols-2 lg:grid-cols-3 justify-between gap-3 mb-12'>
           {dataImages.map(item => (
             <Imagenes
               data={item}
@@ -83,6 +103,8 @@ const DetallesComponent = ({ data, title, texts }) => {
         <Modal
           currentImage={currentImage}
           setCurrentImage={setCurrentImage}
+          handelNext={handelNext}
+          handelPrev={handelPrev}
         />
       )}
     </section>

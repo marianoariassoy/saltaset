@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import BeatLoader from 'react-spinners/BeatLoader'
+import HTML from '../../hooks/useHTML'
 
 const Categorias = ({ lan, section, category, setCategory }) => {
   const [text, setText] = useState()
@@ -58,7 +59,11 @@ const Categorias = ({ lan, section, category, setCategory }) => {
           ))}
         </select>
       </div>
-      {text && <div className='mt-6'>{text}</div>}
+      {text && (
+        <div className='mt-6'>
+          <HTML text={text} />
+        </div>
+      )}
     </div>
   )
 }
