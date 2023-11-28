@@ -39,10 +39,20 @@ const DetallesComponent = ({ data, title, texts }) => {
           />
         </div>
       )}
-      {data.text.lenght > 0 && (
+      {data.text && (
         <div>
           <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
         </div>
+      )}
+      {data.url && (
+        <a
+          href={data.url}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='rounded-full px-6 w-52 py-3 font-bold bg-primary text-sm text-center button-black-hover'
+        >
+          {texts.link}
+        </a>
       )}
       {loadingImages ? (
         <div>
@@ -67,16 +77,6 @@ const DetallesComponent = ({ data, title, texts }) => {
           src={data.googlemap}
           allowFullScreen
         ></iframe>
-      )}
-      {data.url && (
-        <a
-          href={data.url}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='rounded-full px-6 w-52 py-3 font-bold bg-primary text-sm text-center button-black-hover'
-        >
-          {texts.link}
-        </a>
       )}
 
       {currentImage && (

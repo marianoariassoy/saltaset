@@ -55,9 +55,7 @@ const Permisos = () => {
 
           <div className='text-wrap mb-3'>{!loadingTexts && <HTML text={dataTexts[25].text} />}</div>
 
-          <span className='rounded-full text-sm px-6 py-3 uppercase font-bold bg-primary text-center inline-block'>
-            {texts[lan].link}
-          </span>
+          <h2 className='uppercase font-bold text-xl'>{texts[lan].link}</h2>
 
           <div className='text-wrap mb-6'>{!loadingTexts && <HTML text={dataTexts[84].text} />}</div>
 

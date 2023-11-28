@@ -54,7 +54,7 @@ const Locaciones = ({ lan }) => {
       </section>
 
       <div className='flex justify-center pb-20 mt-8'>
-        <Link href='/locaciones'>
+        <Link href='/locaciones/regiones'>
           <a className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm'>{texts[lan].link}</a>
         </Link>
       </div>

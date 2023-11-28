@@ -12,9 +12,7 @@ const Nav = () => {
       {menu.map((data, index) => (
         <div
           key={index}
-          className={`flex justify-center relative ${
-            data.id === 4 ? 'show-submenu' : data.id === 2 ? 'show-submenu' : ''
-          }`}
+          className={`flex justify-center relative ${data.id >= 2 && data.id <= 4 ? 'show-submenu' : ''}`}
         >
           <Link href={data.url}>
             <a
@@ -34,12 +32,19 @@ const Nav = () => {
               pos={1}
             />
           )}
-
+          {data.id === 3 && (
+            <Submenu
+              lan={lan}
+              menu={menu}
+              location={location}
+              pos={2}
+            />
+          )}
           {data.id === 4 && (
             <Submenu
               lan={lan}
-              location={location}
               menu={menu}
+              location={location}
               pos={3}
             />
           )}

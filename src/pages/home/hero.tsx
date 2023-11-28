@@ -40,12 +40,12 @@ const Hero = () => {
         className='absolute bottom-0 left-0 z-20 text-primary pl-6'
         id='hero-social'
       >
-        <div className='absolute bottom-[10px]'>
+        <div className='absolute bottom-[10px] lg:pl-6'>
           <Social hover='hover:text-white' />
         </div>
       </div>
       <button
-        className='absolute bottom-12 right-6 z-20 cursor-pointer flex items-center gap-2 text-primary font-secondary text-sm text-vertical uppercase hover:text-black fade-in-delay'
+        className='absolute bottom-12 right-6 z-20 cursor-pointer flex items-center gap-2 text-primary font-secondary text-sm text-vertical uppercase hover:text-white fade-in-delay'
         onClick={goToSomos}
       >
         {texts[lan].hero_title} <Down />

@@ -11,23 +11,18 @@ const Languages = () => {
   }
 
   return (
-    <nav>
-      <ul className='flex gap-x-1 [&>li>a:hover]:opacity-100 [&>li>a]:decoration-2 [&>li>a]:underline-offset-4 [&>li:last-child]:hidden text-sm font-secondary-light'>
+    <nav className='nav-languajes'>
+      <ul className='flex gap-x-1 [&>li>a:hover]:opacity-100 [&>li>a]:decoration-2 [&>li>a]:underline-offset-4 [&>li:last-child::after]:hidden text-sm font-secondary'>
         {languages.map(({ title }: { title: string }, index) => (
-          <>
-            <li key={index}>
-              <a
-                href='#'
-                className={`${title === lan ? 'font-secondary-black' : 'opacity-50'}`}
-                onClick={changeLanguage}
-              >
-                {title}
-              </a>
-            </li>
-            <li>
-              <span className='opacity-50'>/</span>
-            </li>
-          </>
+          <li key={index}>
+            <a
+              href='#'
+              className={`${title === lan ? 'font-secondary-black' : 'opacity-50'}`}
+              onClick={changeLanguage}
+            >
+              {title}
+            </a>
+          </li>
         ))}
       </ul>
     </nav>

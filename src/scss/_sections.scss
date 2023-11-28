@@ -62,7 +62,6 @@
 }
 
 .show-submenu:hover {
-  color: $color-primary;
   & > .submenu {
     display: block;
     color: $color-primary;
@@ -70,7 +69,7 @@
 }
 
 .submenu {
-  width: 400px;
+  width: 250px;
 }
 
 .links-html {
@@ -79,6 +78,15 @@
     font-weight: 700;
     &:hover {
       color: $color-secondary;
+    }
+  }
+}
+
+.nav-languajes {
+  ul {
+    li::after {
+      content: ' /';
+      opacity: 0.5;
     }
   }
 }

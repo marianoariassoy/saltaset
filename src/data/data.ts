@@ -54,28 +54,28 @@ export const menu = [
     ES: {
       title: 'Locaciones',
       categories: [
-        { title: 'Regiones', id: 2 },
-        { title: 'Categorías ', id: 1 },
-        { title: 'Rutas turisticas ', id: 3 }
+        { title: 'Regiones', url: '/locaciones/regiones', id: 2 },
+        { title: 'Categorías ', url: '/locaciones/categorias', id: 1 },
+        { title: 'Rutas turisticas', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
     EN: {
       title: 'Locations',
       categories: [
-        { title: 'Regions', id: 2 },
-        { title: 'Categories', id: 1 },
-        { title: 'Tourist routes', id: 3 }
+        { title: 'Regions', url: '/locaciones/regiones', id: 2 },
+        { title: 'Categories', url: '/locaciones/categorias', id: 1 },
+        { title: 'Tourist routes', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
     FR: {
       title: 'Locations',
       categories: [
-        { title: 'Regions', id: 2 },
-        { title: 'Catégories', id: 1 },
-        { title: 'Routes touristiques', id: 3 }
+        { title: 'Regions', url: '/locaciones/regiones', id: 2 },
+        { title: 'Catégories', url: '/locaciones/categorias', id: 1 },
+        { title: 'Routes touristiques', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
-    url: '/locaciones'
+    url: '/locaciones/regiones'
   },
   {
     id: 4,

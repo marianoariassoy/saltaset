@@ -57,9 +57,7 @@ const Sostenibilidad = () => {
             </div>
           </header>
 
-          <span className='rounded-full text-sm px-6 py-3 uppercase font-bold bg-primary text-center w-full'>
-            {menu[1][lan]['categories'][1]['title']}
-          </span>
+          <h2 className='uppercase font-bold text-xl'>{menu[1][lan]['categories'][1]['title']}</h2>
 
           <div className='text-wrap mb-6'>{!loadingTexts && <HTML text={dataTexts[306].text} />}</div>
 

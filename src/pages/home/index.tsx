@@ -16,12 +16,8 @@ const Index = () => {
 
   useEffect(() => {
     if (location === '/novedades') {
-      const target = location.replace('/', '#') as string
-      const targetElement = document.querySelector(`${target}`) as HTMLElement
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth'
-      })
+      const targetElement = document.querySelector('#novedades') as HTMLElement
+      window.scrollTo(0, targetElement.offsetTop)
     } else {
       window.scrollTo(0, 0)
     }

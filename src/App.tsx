@@ -53,7 +53,15 @@ function App() {
         component={LocacionesDetalles}
       />
       <Route
-        path='/locaciones'
+        path='/locaciones/regiones'
+        component={Locaciones}
+      />
+      <Route
+        path='/locaciones/categorias'
+        component={Locaciones}
+      />
+      <Route
+        path='/locaciones/rutas-turisticas'
         component={Locaciones}
       />
 

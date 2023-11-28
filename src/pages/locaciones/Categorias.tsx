@@ -29,12 +29,12 @@ const Categorias = ({ lan, section, category, setCategory }) => {
 
   return (
     <div className='mb-12 px-6 lg:px-12'>
-      <div className='flex flex-wrap gap-4 text-white'>
+      <div className='flex-wrap gap-4 hidden lg:flex'>
         {data.map(item => (
           <button
             key={item.id}
-            className={`rounded-full w-52 py-3 uppercase font-bold text-xm  ${
-              category === item.id ? 'bg-zinc-500' : 'bg-zinc-400 hover:bg-zinc-500'
+            className={`rounded-full w-52 py-3 uppercase text-xm font-bold border-black border  ${
+              category === item.id ? 'bg-zinc-300 border-0' : 'hover:border-0 hover:bg-zinc-300'
             }`}
             onClick={() => handleCategories(item.id)}
           >
@@ -42,7 +42,23 @@ const Categorias = ({ lan, section, category, setCategory }) => {
           </button>
         ))}
       </div>
-      {text && <div className='mt-6 max-w-6xl'>{text}</div>}
+      <div className='lg:hidden'>
+        <select
+          name='category'
+          className='w-full rounded-full py-3 font-bold px-6 appearance-none'
+        >
+          {data.map(item => (
+            <option
+              key={item.id}
+              className='text-sm '
+              onClick={() => handleCategories(item.id)}
+            >
+              {item.title}
+            </option>
+          ))}
+        </select>
+      </div>
+      {text && <div className='mt-6'>{text}</div>}
     </div>
   )
 }

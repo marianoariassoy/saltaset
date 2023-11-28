@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
+import { useLocation } from 'wouter'
 import { menu } from '../../data/data'
 import Layout from '../../layout/Layout'
 import { Line } from '../../icons/icons'
@@ -10,11 +11,19 @@ import RutasTuristicas from './RutasTuristicas'
 
 const Index = () => {
   const { lan } = useDataContext()
+  const [location] = useLocation()
   const [section, setSection] = useState(2)
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+    if (location === '/locaciones/rutas-turisticas') {
+      setSection(3)
+    } else if (location === '/locaciones/categorias') {
+      setSection(1)
+    } else if (location === '/locaciones/regiones') {
+      setSection(2)
+    }
+  }, [location])
 
   const handleSections = (id: number) => {
     setSection(id)
@@ -41,7 +50,7 @@ const Index = () => {
               />
             </div>
           </header>
-          <div className='row flex flex-wrap gap-4 mb-4'>
+          <div className='row flex-wrap gap-4 mb-4 hidden lg:flex'>
             {menu[2][lan].categories.map(item => (
               <button
                 key={item.id}
@@ -55,6 +64,22 @@ const Index = () => {
                 {item.title}
               </button>
             ))}
+          </div>
+          <div className='lg:hidden'>
+            <select
+              name='section'
+              className='w-full bg-primary font-bold px-6 py-3 rounded-full mb-3 appearance-none'
+            >
+              {menu[2][lan].categories.map(item => (
+                <option
+                  key={item.id}
+                  className='text-sm '
+                  onClick={() => handleSections(item.id)}
+                >
+                  {item.title}
+                </option>
+              ))}
+            </select>
           </div>
         </section>
 
