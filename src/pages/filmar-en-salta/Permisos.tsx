@@ -53,15 +53,13 @@ const Permisos = () => {
             </div>
           </div>
 
-          <p className='text-wrap max-w-4xl mb-3'>
-            {loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[25].text} />}
-          </p>
+          <div className='text-wrap mb-3'>{!loadingTexts && <HTML text={dataTexts[25].text} />}</div>
 
-          <span className='rounded-full text-sm px-6 py-[.65rem] uppercase font-bold bg-primary text-center inline-block'>
+          <span className='rounded-full text-sm px-6 py-3 uppercase font-bold bg-primary text-center inline-block'>
             {texts[lan].link}
           </span>
 
-          <p className='text-wrap mb-6'>{loadingTexts ? <BeatLoader /> : <HTML text={dataTexts[84].text} />}</p>
+          <div className='text-wrap mb-6'>{!loadingTexts && <HTML text={dataTexts[84].text} />}</div>
 
           <section className='w-full flex flex-col gap-y-3'>
             {loading ? (
@@ -80,7 +78,7 @@ const Permisos = () => {
         </section>
       </section>
       <HeadProvider>
-        <Title>Salta Set &bull; {menu[1][lan].title}</Title>
+        <Title>Salta Set &bull; {menu[1][lan]['categories'][0]['title']}</Title>
       </HeadProvider>
     </Layout>
   )

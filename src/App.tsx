@@ -6,6 +6,7 @@ import LocacionesDetalles from './pages/locaciones/Detalles'
 import LocacionesBuscar from './pages/locaciones/Buscar'
 
 import FilmarEnSaltaPermisos from './pages/filmar-en-salta/Permisos'
+import FilmarEnSaltaSostenibilidad from './pages/filmar-en-salta/Sostenibilidad'
 import FilmarEnSaltaFormulario from './pages/filmar-en-salta/Formulario'
 
 import Directorio from './pages/directorio/index'
@@ -33,6 +34,10 @@ function App() {
       <Route
         path='/filmar-en-salta/permisos'
         component={FilmarEnSaltaPermisos}
+      />
+      <Route
+        path='/filmar-en-salta/sostenibilidad'
+        component={FilmarEnSaltaSostenibilidad}
       />
       <Route
         path='/filmar-en-salta/formulario'

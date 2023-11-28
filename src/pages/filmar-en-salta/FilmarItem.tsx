@@ -11,7 +11,7 @@ const FilmarItem = ({ data }) => {
       id={data.id}
     >
       <button
-        className={`rounded-full w-full py-[.65rem] uppercase font-bold text-sm text-center relative button-black-hover transition-all flex items-center px-6 ${
+        className={`rounded-full w-full py-2 uppercase font-bold text-sm text-center relative button-black-hover transition-all flex items-center px-6 ${
           show ? 'bg-secondary text-white' : 'bg-primary'
         }`}
         onClick={() => setShow(!show)}

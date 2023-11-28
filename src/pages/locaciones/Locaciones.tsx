@@ -6,7 +6,7 @@ import Categorias from './Categorias'
 
 const Locaciones = ({ lan, section }) => {
   const [category, setCategory] = useState(1)
-  const { data, loading, setLoading } = useFetch(`/locaciones/${category}/${lan}`)
+  const { data, loading } = useFetch(`/locaciones/${category}/${lan}`)
 
   if (loading)
     return (
@@ -22,7 +22,6 @@ const Locaciones = ({ lan, section }) => {
         section={section}
         category={category}
         setCategory={setCategory}
-        setLoading={setLoading}
       />
 
       <div className='row grid lg:grid-cols-3 gap-3 pb-12'>
