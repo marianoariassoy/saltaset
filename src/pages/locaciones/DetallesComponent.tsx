@@ -35,7 +35,7 @@ const DetallesComponent = ({ data, title, texts }) => {
     <section className='row w-full max-w-6xl m-auto px-6 pt-20 flex flex-col items-start'>
       <header className='row flex flex-col gap-y-3 mb-6 lg:mb-12'>
         <div className='text-primary font-secondary uppercase text-xs'>
-          <Link to={`/locaciones`}>
+          <Link to={`/locaciones/regiones`}>
             <a className='hover:text-black mr-1'>{title}</a>
           </Link>
           / {data.category}
