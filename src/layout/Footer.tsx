@@ -22,7 +22,7 @@ const Footer = () => {
             ))}
           </ul>
         </nav>
-        <div>
+        <div className='logo-footer'>
           <Logo />
         </div>
       </div>
