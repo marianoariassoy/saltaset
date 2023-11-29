@@ -5,6 +5,9 @@ const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
     if (e.target.classList.contains('dismiss')) {
       setCurrentImage(null)
     }
+
+    console.log('cicks')
+    console.log(e.target)
   }
   return (
     <div
@@ -20,7 +23,7 @@ const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
       </div>
 
       <button
-        className='absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-black dismiss z-30'
+        className='absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-black z-30'
         onClick={handelClick}
       >
         <Close />

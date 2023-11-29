@@ -46,7 +46,7 @@ const Categorias = ({ lan, section, category, setCategory }) => {
       <div className='lg:hidden'>
         <select
           name='category'
-          className='w-full rounded-full py-3 font-bold px-6 appearance-none'
+          className='w-full rounded-full py-3 font-bold px-6 appearance-none select'
         >
           {data.map(item => (
             <option

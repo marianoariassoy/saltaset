@@ -62,7 +62,7 @@ const Index = () => {
             <BeatLoader />
           </div>
         ) : data.length > 0 ? (
-          <section className='row grid lg:grid-cols-3 gap-3 pb-6'>
+          <section className='row w-full grid lg:grid-cols-3 gap-3 pb-6'>
             {data.map(item => (
               <LocacionesItem
                 key={item.id}

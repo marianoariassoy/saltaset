@@ -27,16 +27,16 @@ const Index = () => {
         className='my-24 px-6 lg:px-12 pt-20'
         id='filmografia'
       >
-        <div className='row mb-12'>
+        <header className='row mb-12'>
           <div className='col flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[4][lan].title}</h1>
             <span className='text-primary'>
               <Line />
             </span>
           </div>
-        </div>
+        </header>
 
-        <div className='row flex flex-wrap gap-4 mb-12'>
+        <div className='row flex-wrap gap-4 mb-12 hidden lg:flex'>
           {menu[4][lan].categories.map(item => (
             <button
               key={item.id}
@@ -50,6 +50,22 @@ const Index = () => {
               {item.title}
             </button>
           ))}
+        </div>
+        <div className='lg:hidden'>
+          <select
+            name='category'
+            className='w-full rounded-full bg-primary py-3 font-bold px-6 appearance-none select mb-12'
+          >
+            {menu[4][lan].categories.map(item => (
+              <option
+                key={item.id}
+                className='text-sm '
+                onClick={() => handleCategory(item.id)}
+              >
+                {item.title}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className='row grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-12'>

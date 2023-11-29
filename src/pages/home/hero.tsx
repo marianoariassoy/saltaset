@@ -1,11 +1,14 @@
+import { useEffect } from 'react'
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
 import useFetch from '../../hooks/useFetch'
+import ReactPlayer from 'react-player'
 
 const Hero = () => {
   const { lan } = useDataContext()
   const { data, loading } = useFetch(`/home`)
+  let video = ''
 
   const goToSomos = () => {
     const target = '#somos-salta-set'
@@ -34,22 +37,22 @@ const Hero = () => {
       id='hero'
     >
       {!loading && (
-        <>
-          <video
-            src={data[0].video}
-            className='h-[90vh] w-full object-cover object-center hidden lg:block'
-            autoPlay
-            muted
-            loop
-          ></video>
-          <video
-            src={data[0].image}
-            className='h-[80vh] w-full object-cover object-center lg:hidden'
-            autoPlay
-            muted
-            loop
-          ></video>
-        </>
+        <div className='h-full overflow-hidden'>
+          <ReactPlayer
+            url={window.innerWidth > 768 ? data[0].video : data[0].image}
+            playing={true}
+            controls={false}
+            loop={true}
+            muted={true}
+            autplay={true}
+            height='auto'
+            width='auto'
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
+        </div>
       )}
 
       <div

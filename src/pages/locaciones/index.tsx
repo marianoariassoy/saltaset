@@ -79,7 +79,7 @@ const Index = () => {
           <div className='lg:hidden'>
             <select
               name='section'
-              className='w-full bg-primary font-bold px-6 py-3 rounded-full mb-3 appearance-none'
+              className='w-full bg-primary font-bold px-6 py-3 rounded-full mb-3 appearance-none select'
             >
               {menu[2][lan].categories.map(item => (
                 <option
