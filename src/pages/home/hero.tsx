@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import Social from '../../layout/Social'
 import { Down } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
@@ -8,7 +7,6 @@ import ReactPlayer from 'react-player'
 const Hero = () => {
   const { lan } = useDataContext()
   const { data, loading } = useFetch(`/home`)
-  let video = ''
 
   const goToSomos = () => {
     const target = '#somos-salta-set'
