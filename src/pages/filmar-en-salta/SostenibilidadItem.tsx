@@ -11,7 +11,7 @@ const SostenibilidadItem = ({ data, number }) => {
       </div>
       <div className='flex-grow basis-0 lg:pr-6'>
         <h2 className='font-secondary-black text-xl lg:text-2xl uppercase'>{data.title}</h2>
-        <p className='text-wrap'>{data.text}</p>
+        <p className='text-wrap whitespace-break-spaces'>{data.text}</p>
       </div>
       <div>
         <div className='w-14 h-14 lg:w-16 lg:h-16 aspect-square flex justify-center items-center bg-primary rounded-full'>
