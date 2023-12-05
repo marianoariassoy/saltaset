@@ -44,7 +44,7 @@ const Hero = () => {
             muted={true}
             autplay={true}
             height='auto'
-            width='auto'
+            width='100%'
             style={{
               objectFit: 'cover',
               objectPosition: 'center'
