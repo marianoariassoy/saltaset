@@ -43,8 +43,9 @@ const Hero = () => {
             loop={true}
             muted={true}
             autplay={true}
-            height='100%'
+            height='auto'
             width='100%'
+            className='object-cover'
             style={{
               objectFit: 'cover',
               objectPosition: 'center'
