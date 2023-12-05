@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { HeadProvider, Title } from 'react-head'
 import { useDataContext } from '../../context/useDataContext'
-import { menu, iva } from '../../data/data'
+import { menu, iva, production, servicesList, complementarieServices, otherServices } from '../../data/data'
 import Layout from '../../layout/Layout'
 import { Line, Right } from '../../icons/icons'
 import ImageComponent from '../../components/Image'
@@ -23,12 +23,16 @@ const Index = () => {
       email: 'Correo electrónico*',
       phone: 'Teléfono*',
       iva: 'Situación ante el IVA*',
-      services: 'Describa sus servicios',
+      services: 'Describa sus servicios, el texto que usted escriba se verá en la página web',
       web: 'Sitio web o red social',
       auth: ['Autorizo a publicar mis datos en el Directorio de la web de Salta Set FC', 'Si', 'No'],
       send: 'Enviar',
       thanks: '¡El formulario fue enviado! Muchas gracias por contactarnos.',
-      error: 'Se produjo un error al enviar el formulario.'
+      error: 'Se produjo un error al enviar el formulario.',
+      production: 'Producción y postproducción audiovisual',
+      servicesList: 'Servicios para la producción',
+      complementarieServices: 'Servicios complementarios',
+      otherServices: 'Otros servicios'
     },
     EN: {
       company: 'Name of the company or reason social*',
@@ -44,7 +48,11 @@ const Index = () => {
       auth: ['I authorize the publication of my data on the Salta Set web directory', 'Yes', 'No'],
       send: 'Send',
       thanks: 'The form was sent! Thank you for contacting us.',
-      error: 'An error occurred while sending the form.'
+      error: 'An error occurred while sending the form.',
+      production: 'Production and postproduction audiovisual',
+      servicesList: 'Services for the production',
+      complementarieServices: 'Services complementaries',
+      otherServices: 'Other services'
     },
     FR: {
       company: 'Nom de la société ou raison sociale*',
@@ -60,7 +68,11 @@ const Index = () => {
       auth: ["J'autorise la publication de mes données sur le site Web de Salta Set FC", 'Oui', 'Non'],
       send: 'Envoyer',
       thanks: 'Le formulaire a été envoyé. Merci pour votre contact.',
-      error: "Une erreur est survenue lors de l'envoi du formulaire."
+      error: "Une erreur est survenue lors de l'envoi du formulaire.",
+      production: 'Production et postproduction audiovisuelle',
+      servicesList: 'Services pour la production',
+      complementarieServices: 'Services complementaires',
+      otherServices: 'Autres services'
     }
   }
 
@@ -127,8 +139,6 @@ const Index = () => {
                 className='w-full px-2 h-10 border border-black rounded-none'
                 required
               />
-            </div>
-            <div className='flex flex-col gap-y-3'>
               <input
                 type='email'
                 name='email'
@@ -150,14 +160,8 @@ const Index = () => {
                 className='px-2 py-2 border border-black rounded-none'
                 required
               />
-
-              <textarea
-                name='services'
-                placeholder={texts[lan].services}
-                className='p-2 h-20 border border-black rounded-none'
-                required
-              ></textarea>
-
+            </div>
+            <div className='flex flex-col gap-y-3'>
               <select
                 name='iva'
                 className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
@@ -177,6 +181,7 @@ const Index = () => {
                   </option>
                 ))}
               </select>
+
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
               <div className='flex items-center gap-x-6'>
                 <div className='flex items-center gap-x-2'>
@@ -197,6 +202,94 @@ const Index = () => {
                   <label>{texts[lan].auth[2]}</label>
                 </div>
               </div>
+
+              <select
+                name='production'
+                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              >
+                <option
+                  disabled
+                  selected
+                >
+                  {texts[lan].production}
+                </option>
+                {production.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                name='servicesList'
+                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              >
+                <option
+                  disabled
+                  selected
+                >
+                  {texts[lan].servicesList}
+                </option>
+                {servicesList.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                name='complementarieServices'
+                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              >
+                <option
+                  disabled
+                  selected
+                >
+                  {texts[lan].complementarieServices}
+                </option>
+                {complementarieServices.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                name='otherServices'
+                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              >
+                <option
+                  disabled
+                  selected
+                >
+                  {texts[lan].otherServices}
+                </option>
+                {otherServices.map(item => (
+                  <option
+                    key={item}
+                    value={item}
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <textarea
+                name='services'
+                placeholder={texts[lan].services}
+                className='p-2 h-20 border border-black rounded-none'
+                required
+              ></textarea>
+
               <div className='flex justify-end mt-3'>
                 <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
                   {texts[lan].send}
