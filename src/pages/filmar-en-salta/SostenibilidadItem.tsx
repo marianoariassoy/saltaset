@@ -3,8 +3,8 @@ import { Line } from '../../icons/icons'
 const SostenibilidadItem = ({ data, number }) => {
   return (
     <article className='w-full border-b flex gap-x-6 items-center pb-6'>
-      <div className='flex gap-x-6 items-center w-12 lg:w-44'>
-        <span className='text-3xl lg:text-7xl font-secondary-black'>{number}</span>
+      <div className='flex gap-x-4 items-center w-12 lg:w-44'>
+        <span className='text-3xl lg:text-5xl font-secondary-black'>{number < 10 ? `0${number}` : number}</span>
         <div className='text-primary hidden lg:block'>
           <Line />
         </div>
