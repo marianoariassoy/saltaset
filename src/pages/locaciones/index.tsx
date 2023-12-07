@@ -13,7 +13,7 @@ import LocacionesTodas from './LocacionesTodas'
 const Index = () => {
   const { lan } = useDataContext()
   const [location] = useLocation()
-  const [section, setSection] = useState(2)
+  const [section, setSection] = useState(1)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -65,7 +65,7 @@ const Index = () => {
                 {item.title}
               </button>
             ))}
-            <button
+            {/* <button
               className={`rounded-full w-52 py-3 uppercase font-bold text-xm ${
                 section === 0
                   ? 'bg-primary border-primary text-secondary'
@@ -74,7 +74,7 @@ const Index = () => {
               onClick={() => handleSections(0)}
             >
               Todas
-            </button>
+            </button> */}
           </div>
           <div className='lg:hidden'>
             <select
@@ -94,7 +94,7 @@ const Index = () => {
           </div>
         </section>
 
-        {section === 0 && <LocacionesTodas lan={lan} />}
+        {/* {section === 0 && <LocacionesTodas lan={lan} />} */}
 
         {section === 1 && (
           <Locaciones

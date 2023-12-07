@@ -82,10 +82,12 @@ const Listado = () => {
             <section className='max-w-5xl'>
               <h2 className='text-3xl font-bold mb-6'>{item.title}</h2>
               <div className='flex gap-4 mb-6 flex-wrap'>
+                <p className='text-wrap mb-3'>{item.text}</p>
+
                 {item.email && (
                   <a
                     href={`mailto:${item.url}`}
-                    className='rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover uppercase inline-block'
+                    className='rounded-full px-6 py-3 font-bold bg-primary text-sm button-black-hover  inline-block'
                   >
                     {item.email}
                   </a>
@@ -109,7 +111,6 @@ const Listado = () => {
                   </a>
                 )}
               </div>
-              <p className='text-wrap'>{item.text}</p>
             </section>
           ))
         ) : (

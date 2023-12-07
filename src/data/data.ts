@@ -54,8 +54,8 @@ export const menu = [
     ES: {
       title: 'Locaciones',
       categories: [
-        { title: 'Regiones', url: '/locaciones/regiones', id: 2 },
         { title: 'Categorías ', url: '/locaciones/categorias', id: 1 },
+        { title: 'Regiones', url: '/locaciones/regiones', id: 2 },
         { title: 'Rutas turisticas', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
@@ -75,7 +75,7 @@ export const menu = [
         { title: 'Routes touristiques', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
-    url: '/locaciones/regiones'
+    url: '/locaciones/categorias'
   },
   {
     id: 4,
@@ -301,4 +301,167 @@ export const otherServices = [
   'Streaming',
   'Videomapping',
   'Formación audiovisual'
+]
+
+export const productionTypes = [
+  {
+    ES: {
+      title: 'Publicidad'
+    },
+    EN: {
+      title: 'Advertising'
+    },
+    FR: {
+      title: 'Publicité'
+    }
+  },
+  {
+    ES: {
+      title: 'Largometraje'
+    },
+    EN: {
+      title: 'Long Film'
+    },
+    FR: {
+      title: 'Long métrage'
+    }
+  },
+  {
+    ES: {
+      title: 'Cortometraje'
+    },
+    EN: {
+      title: 'Short Film'
+    },
+    FR: {
+      title: 'Court métrage'
+    }
+  },
+  {
+    ES: {
+      title: 'Programa de TV'
+    },
+    EN: {
+      title: 'TV Program'
+    },
+    FR: {
+      title: 'Programme TV'
+    }
+  },
+  {
+    ES: {
+      title: 'Serie'
+    },
+    EN: {
+      title: 'Series'
+    },
+    FR: {
+      title: 'Séries'
+    }
+  },
+  {
+    ES: {
+      title: 'Videoclip'
+    },
+    EN: {
+      title: 'Video Clip'
+    },
+    FR: {
+      title: 'Videoclip'
+    }
+  },
+  {
+    ES: {
+      title: 'Otro'
+    },
+    EN: {
+      title: 'Other'
+    },
+    FR: {
+      title: 'Autre'
+    }
+  }
+]
+
+export const genere = [
+  {
+    ES: {
+      title: 'Ficción'
+    },
+    EN: {
+      title: 'Fiction'
+    },
+    FR: {
+      title: 'Fiction'
+    }
+  },
+  {
+    ES: {
+      title: 'Documental'
+    },
+    EN: {
+      title: 'Documental'
+    },
+    FR: {
+      title: 'Documentaire'
+    }
+  }
+]
+
+export const exhibition = [
+  {
+    ES: {
+      title: 'Salas de Cine'
+    },
+    EN: {
+      title: 'Cinema'
+    },
+    FR: {
+      title: 'Cine'
+    }
+  },
+  {
+    ES: {
+      title: 'TV'
+    },
+    EN: {
+      title: 'TV'
+    },
+    FR: {
+      title: 'TV'
+    }
+  },
+  {
+    ES: {
+      title: 'Plataforma / VOD'
+    },
+    EN: {
+      title: 'Plataform / VOD'
+    },
+    FR: {
+      title: 'Plateforme / VOD'
+    }
+  },
+  {
+    ES: {
+      title: 'Redes Sociales'
+    },
+    EN: {
+      title: 'Social Media'
+    },
+    FR: {
+      title: 'Media sociale'
+    }
+  },
+  {
+    ES: {
+      title: 'Otro'
+    },
+    EN: {
+      title: 'Other'
+    },
+    FR: {
+      title: 'Autre'
+    }
+  }
 ]

@@ -58,7 +58,7 @@ const Index = () => {
 
         <section className='row w-full aspect-video h-[50vh]'>
           <ImageComponent
-            src='http://marianoarias.soy/sites/saltaset-backend/images-statics/porque-salta.webp'
+            src='https://api.saltaset.gob.ar/images-statics/porque-salta.webp'
             alt='Porque Salta'
           />
         </section>

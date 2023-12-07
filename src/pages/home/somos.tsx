@@ -10,7 +10,7 @@ const Somos = ({ lan }) => {
     ES: {
       title: 'Somos',
       link1: 'Registra tu producción',
-      link2: 'Sugiere una localización',
+      link2: 'Sugiere una locación',
       link3: 'Sumate al directorio'
     },
     EN: {
@@ -22,7 +22,7 @@ const Somos = ({ lan }) => {
     FR: {
       title: 'Nous sommes',
       link1: 'Enregistrez votre entreprise',
-      link2: 'Sugère une localisation',
+      link2: 'Suggère une location',
       link3: 'Rejoignez le répertoire'
     }
   }

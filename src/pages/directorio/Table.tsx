@@ -46,18 +46,40 @@ const Table = ({ data, section, lan }) => {
           </thead>
           <tbody className='[&>tr>td]:py-2'>
             {data.map(item => (
-              <Link
-                to={`/directorio/${section}/detalles/${item.id}`}
-                key={item.id}
-              >
-                <tr className='border-b bg button-black-hover cursor-pointer'>
-                  <td>{item.title}</td>
-                  <td>{item.location}</td>
-                  <td>{item.phone}</td>
-                  <td>{item.email}</td>
-                  <td>{item.url}</td>
-                </tr>
-              </Link>
+              <tr className='border-b'>
+                <td>
+                  <Link
+                    to={`/directorio/${section}/detalles/${item.id}`}
+                    key={item.id}
+                  >
+                    <a className='link-primary font-bold'>{item.title}</a>
+                  </Link>
+                </td>
+                <td>{item.location}</td>
+                <td>{item.phone}</td>
+                <td>
+                  {item.email && (
+                    <a
+                      href={`mailto:${item.email}`}
+                      className='link-primary'
+                      target='_blank'
+                    >
+                      {item.email}
+                    </a>
+                  )}
+                </td>
+                <td>
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      className='link-primary'
+                      target='_blank'
+                    >
+                      {item.url}
+                    </a>
+                  )}
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>

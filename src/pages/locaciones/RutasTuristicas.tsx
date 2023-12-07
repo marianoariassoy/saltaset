@@ -10,7 +10,7 @@ const RutasTuristicas = ({ lan }) => {
     <section className='mb-24 mt-12'>
       <div className='row w-full aspect-video h-[50vh]'>
         <ImageComponent
-          src='http://marianoarias.soy/sites/saltaset-backend/images-statics/rutas-turisticas.webp'
+          src='https://api.saltaset.gob.ar/images-statics/rutas-turisticas.webp'
           alt='Imagen de rutas turisticas'
         />
       </div>

@@ -2,7 +2,7 @@ import { Link, useLocation } from 'wouter'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import { menu } from '../../data/data'
-import { Line, Right } from '../../icons/icons'
+import { Line } from '../../icons/icons'
 import { useDataContext } from '../../context/useDataContext'
 import Categorias from './Categorias'
 
@@ -16,13 +16,16 @@ const Index = () => {
       title: menu[3][lan].categories[0].title,
       type: 'empresas',
       ES: {
-        link: 'Inscribí tu empresa'
+        link: 'Inscribí tu empresa',
+        link2: 'Profesionales'
       },
       EN: {
-        link: 'Register your company'
+        link: 'Register your company',
+        link2: 'Professionals'
       },
       FR: {
-        link: 'Enregistrez votre entreprise'
+        link: 'Enregistrez votre entreprise',
+        link2: 'Professionnels'
       }
     }
   } else {
@@ -30,13 +33,16 @@ const Index = () => {
       title: menu[3][lan].categories[1].title,
       type: 'profesionales',
       ES: {
-        link: 'Registrate'
+        link: 'Registrate',
+        link2: 'Empresas'
       },
       EN: {
-        link: 'Register'
+        link: 'Register',
+        link2: 'Companies'
       },
       FR: {
-        link: 'Enregistrez'
+        link: 'Enregistrez',
+        link2: 'Entreprises'
       }
     }
   }
@@ -54,11 +60,15 @@ const Index = () => {
               <Line />
             </span>
           </div>
-          <div>
+          <div className='flex gap-x-3'>
             <Link href={`/directorio/${texts.type}/formulario`}>
-              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
-                <span>{texts[lan].link}</span>
-                <Right />
+              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover'>
+                {texts[lan].link}
+              </a>
+            </Link>
+            <Link href={`${texts.type === 'empresas' ? '/directorio/profesionales' : '/directorio/empresas'}`}>
+              <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover'>
+                {texts[lan].link2}
               </a>
             </Link>
           </div>

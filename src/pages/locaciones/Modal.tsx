@@ -1,4 +1,4 @@
-import { Close, Back, Forward } from '../../icons/icons'
+import { Back, Forward } from '../../icons/icons'
 
 const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
   const handelClick = e => {
@@ -23,10 +23,10 @@ const Modal = ({ currentImage, setCurrentImage, handelNext, handelPrev }) => {
       </div>
 
       <button
-        className='absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-black z-30'
+        className='absolute top-8 right-8 text-white text-4xl dismiss cursor-pointer hover:text-black z-30 font-bold'
         onClick={handelClick}
       >
-        <Close />
+        X
       </button>
       <button
         className='absolute top-1/2 left-8 text-white cursor-pointer hover:text-black z-40 hidden lg:block'
