@@ -8,7 +8,7 @@ import Search from '../../components/Search'
 import { useDataContext } from '../../context/useDataContext'
 import Locaciones from './Locaciones'
 import RutasTuristicas from './RutasTuristicas'
-import LocacionesTodas from './LocacionesTodas'
+// import LocacionesTodas from './LocacionesTodas'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -33,10 +33,10 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='mt-24'
+        className='mt-24 pb-3'
         id='locaciones'
       >
-        <section className='px-6 lg:px-12 pt-20'>
+        <section className='px-6 lg:px-12'>
           <header className='row grid lg:grid-cols-2 gap-x-3 justify-between items-center mb-12'>
             <div className='col flex items-center gap-x-4'>
               <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[2][lan].title}</h1>

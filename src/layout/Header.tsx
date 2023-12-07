@@ -17,7 +17,7 @@ const Header = () => {
   }
 
   return (
-    <section className='header w-full px-6 lg:px-12 py-8 flex items-center justify-between z-30'>
+    <div className='header px-6 lg:px-12 py-8 flex items-center justify-between text-white'>
       <div>
         <Link href='/'>
           <a className='link-primary logo-header'>
@@ -38,7 +38,7 @@ const Header = () => {
         </div>
         <Languages />
       </div>
-    </section>
+    </div>
   )
 }
 

@@ -35,7 +35,7 @@ const Formulario = () => {
   return (
     <Layout>
       <section
-        className='my-24 max-w-6xl m-auto px-6 pt-20 grid lg:grid-cols-2 gap-12'
+        className='my-24 max-w-6xl m-auto px-6 grid lg:grid-cols-2 gap-12'
         id='registro-produccion'
       >
         <div className='col flex flex-col gap-y-6 lg:pr-12'>

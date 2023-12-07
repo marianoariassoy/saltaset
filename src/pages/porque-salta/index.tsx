@@ -42,11 +42,8 @@ const Index = () => {
 
   return (
     <Layout>
-      <section
-        className='my-24'
-        id='porque-salta'
-      >
-        <section className='row w-full max-w-6xl m-auto px-6 pt-20 mb-12 flex gap-x-6 items-center'>
+      <section className='my-24'>
+        <section className='row w-full max-w-6xl m-auto px-6 mb-12 flex gap-x-6 items-center'>
           <div className='text-4xl lg:text-5xl'>
             <span className='block font-secondary uppercase'>{texts[lan].title}</span>
             <span className='block font-secondary-black uppercase'>{texts[lan].title2}</span>

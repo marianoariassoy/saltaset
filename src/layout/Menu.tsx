@@ -12,8 +12,8 @@ const Menu = () => {
   }
 
   return (
-    <section className='menu-mobile fixed top-0 fade-in h-screen w-full bg-primary -z-10 hidden'>
-      <div className='grid content-center w-full h-full text-center'>
+    <section className='menu-mobile fixed top-0 fade-in h-screen w-full bg-secondary -z-10 hidden'>
+      <div className='grid content-center w-full h-full text-center text-white'>
         <nav
           onClick={closeMenu}
           className=''

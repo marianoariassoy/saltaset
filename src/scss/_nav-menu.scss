@@ -16,5 +16,5 @@
   transition: all 0.3s ease;
 }
 .nav-menu.active > span {
-  background-color: rgba($color-secondary, 0.3);
+  opacity: 0.6;
 }

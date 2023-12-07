@@ -42,7 +42,7 @@ const Permisos = () => {
         className='my-24'
         id='filmar-en-salta'
       >
-        <section className='row w-full max-w-6xl m-auto px-6 lg:px-12 pt-20 flex flex-col items-start gap-y-6'>
+        <section className='row w-full max-w-6xl m-auto px-6 lg:px-12 flex flex-col items-start gap-y-6'>
           <div className='flex gap-x-6 items-center'>
             <div className='text-4xl lg:text-5xl'>
               <span className='block font-secondary uppercase'>{texts[lan].title}</span>

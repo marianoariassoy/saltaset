@@ -15,11 +15,7 @@ const Nav = () => {
           className={`flex justify-center relative ${data.id >= 2 && data.id <= 4 ? 'show-submenu' : ''}`}
         >
           <Link href={data.url}>
-            <a
-              className={`underline-offset-4 decoration-2 ${
-                location.slice(0, 8) === data.url.slice(0, 8) ? 'text-primary underline' : 'hover:underline'
-              } `}
-            >
+            <a className={`${location.slice(0, 8) === data.url.slice(0, 8) ? 'text-primary' : 'link-primary'} `}>
               {data[lan].title}
             </a>
           </Link>

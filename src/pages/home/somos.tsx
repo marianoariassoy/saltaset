@@ -29,7 +29,7 @@ const Somos = ({ lan }) => {
 
   return (
     <section id='somos-salta-set'>
-      <div className='row mb-8 '>
+      <div className='row mb-3'>
         <img src='/assets/social-bottom.svg' />
       </div>
       <section className='row w-full max-w-6xl m-auto px-6 grid lg:grid-cols-2 gap-6'>
@@ -42,7 +42,8 @@ const Somos = ({ lan }) => {
         </header>
         <div className='col lg:pt-6 reveal-on-scroll'>
           <div className='row'>{!loadingTexts && <HTML text={dataTexts[23].text} />}</div>
-          <div className='row grid grid-cols-2 lg:grid-cols-3 gap-6 mt-12 lg:gap-x-6 lg:mt-20 mb-24'>
+
+          <div className='row grid grid-cols-2 lg:grid-cols-3 gap-6 mt-12 lg:gap-x-6 mb-24'>
             <article className='flex gap-x-3 items-center'>
               <div className='w-12 h-12 lg:w-14 lg:h-14 aspect-square flex justify-center items-center bg-primary rounded-full text-xl'>
                 <Film />

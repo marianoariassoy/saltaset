@@ -24,7 +24,7 @@ const Locaciones = ({ lan, section }) => {
         setCategory={setCategory}
       />
 
-      <div className='row grid lg:grid-cols-3 gap-3 pb-12'>
+      <div className='row grid lg:grid-cols-3 gap-3'>
         {data.map(item => (
           <LocacionesItem
             key={item.id}

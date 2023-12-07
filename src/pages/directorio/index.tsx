@@ -49,10 +49,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <section
-        className='my-24 row w-full px-6 lg:px-12 pt-20'
-        id='directorio'
-      >
+      <section className='my-24 row w-full px-6 lg:px-12'>
         <section className='flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12'>
           <div className='col flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{texts.title}</h1>

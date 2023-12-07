@@ -35,7 +35,7 @@ const Hero = () => {
       id='hero'
     >
       {!loading && (
-        <div className='h-full overflow-hidden'>
+        <div className='h-full overflow-hidden -mt-32'>
           <ReactPlayer
             url={window.innerWidth > 768 ? data[0].video : data[0].image}
             playing={true}
@@ -46,21 +46,8 @@ const Hero = () => {
             autoplay={true}
             height='auto'
             width='100%'
-            className='object-cover'
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center'
-            }}
+            className='object-cover object-center w-full h-full'
           />
-          {/* <video
-            width={'100%'}
-            height={'auto'}
-            preload='auto'
-            autoPlay
-            loop
-            muted
-            src={window.innerWidth > 768 ? data[0].video : data[0].image}
-          ></video> */}
         </div>
       )}
 

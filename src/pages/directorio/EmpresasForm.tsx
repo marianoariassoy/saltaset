@@ -78,11 +78,8 @@ const Index = () => {
 
   return (
     <Layout>
-      <section
-        className='my-24'
-        id='empresas-form'
-      >
-        <section className='px-6 lg:px-12 pt-20 mb-6 lg:mb-12'>
+      <section className='my-24'>
+        <section className='px-6 lg:px-12 mb-6 lg:mb-12'>
           <div className='flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[3][lan].categories[0].title}</h1>
             <span className='text-primary'>
