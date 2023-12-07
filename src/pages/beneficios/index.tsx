@@ -17,7 +17,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className='my-24 max-w-6xl m-auto px-6'>
+      <section className='my-12 lg:my-24 max-w-6xl m-auto px-6'>
         {loading ? (
           <div className='w-full flex justify-center items-center h-96'>
             <Loader />

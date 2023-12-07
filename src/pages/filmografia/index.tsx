@@ -23,7 +23,7 @@ const Index = () => {
   }
   return (
     <Layout>
-      <section className='my-24 px-6 lg:px-12'>
+      <section className='my-12 lg:my-24 px-6 lg:px-12'>
         <header className='row mb-12'>
           <div className='col flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[4][lan].title}</h1>

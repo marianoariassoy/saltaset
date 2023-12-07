@@ -51,7 +51,7 @@ const Listado = () => {
 
   return (
     <Layout>
-      <section className='my-24 px-6 lg:px-12'>
+      <section className='my-12 lg:my-24 px-6 lg:px-12'>
         <section className='flex flex-col items-start gap-3 lg:flex-row lg:justify-between lg:items-center mb-12'>
           <div className='col flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{options.title}</h1>

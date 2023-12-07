@@ -1,16 +1,16 @@
-import { useEffect } from 'react'
-import { useParams } from 'wouter'
+import { useEffect, useState } from 'react'
 import { HeadProvider, Title } from 'react-head'
+import NovedadesItem from './../home/NovedadesItem'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import useFetch from '../../hooks/useFetch'
 import Loader from '../../components/Loader'
-import DetallesComponent from './DetallesComponent'
+import { menu } from '../../data/data'
 
 const Index = () => {
   const { lan } = useDataContext()
-  const { id } = useParams()
-  const { data, loading } = useFetch(`/novedades/${id}/${lan}`)
+  const [show, setShow] = useState(4)
+  const { data, loading } = useFetch(`/novedades/${lan}`)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -18,36 +18,47 @@ const Index = () => {
 
   const texts = {
     ES: {
-      link: 'VER LINK',
-      error: 'No se encontraron resultados'
+      link: 'Ver noticias anteriores'
     },
     EN: {
-      link: 'VIEW LINK',
-      error: 'No results found'
+      link: 'View previous news'
     },
     FR: {
-      link: 'VOIR LE LIEN',
-      error: 'Aucun résultat'
+      link: 'Voir les anciennes nouvelles'
     }
   }
 
   return (
     <Layout>
-      <section
-        className='my-24'
-        id='novedades-detalles'
-      >
-        {loading ? (
-          <Loader />
-        ) : (
-          data && (
-            <DetallesComponent
-              data={data[0]}
-              texts={texts[lan]}
-              lan={lan}
-            />
-          )
-        )}
+      <section className='bg-primary py-12 lg:py-24'>
+        <div className='w-full max-w-6xl m-auto px-6'>
+          <div className='row text-4xl lg:text-5xl mb-12'>
+            <span className='block font-secondary-black uppercase'>{menu[6][lan].title}</span>
+          </div>
+          <div className='row flex flex-col gap-y-6'>
+            {loading ? (
+              <Loader />
+            ) : (
+              data.slice(0, show).map(item => (
+                <NovedadesItem
+                  key={item.id}
+                  data={item}
+                  lan={lan}
+                />
+              ))
+            )}
+          </div>
+          <div className='row border-t border-black mt-8 pt-12 flex justify-center'>
+            {!loading && show < data.length && (
+              <button
+                className='bg-secondary py-3 px-12 rounded-full font-bold inline-block button-secondary text-primary text-sm uppercase'
+                onClick={() => setShow(show + 2)}
+              >
+                + {texts[lan].link}
+              </button>
+            )}
+          </div>
+        </div>
       </section>
       <HeadProvider>
         <Title>Salta Set {data && '• ' + data[0].title}</Title>

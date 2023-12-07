@@ -1,5 +1,5 @@
 import { Route, Switch } from 'wouter'
-import Home from './pages/home/index'
+import Home from './pages/home'
 
 import Locaciones from './pages/locaciones'
 import LocacionesDetalles from './pages/locaciones/Detalles'
@@ -9,17 +9,19 @@ import FilmarEnSaltaPermisos from './pages/filmar-en-salta/Permisos'
 import FilmarEnSaltaSostenibilidad from './pages/filmar-en-salta/Sostenibilidad'
 import FilmarEnSaltaFormulario from './pages/filmar-en-salta/Formulario'
 
-import Directorio from './pages/directorio/index'
+import Directorio from './pages/directorio'
 import DirectorioListado from './pages/directorio/Listado'
 import DirectorioDetalles from './pages/directorio/Detalles'
 import EmpresasForm from './pages/directorio/EmpresasForm'
 import ProfesionalesForm from './pages/directorio/ProfesionalesForm'
 
-import Filmografia from './pages/filmografia/index'
-import Beneficios from './pages/beneficios/index'
+import Filmografia from './pages/filmografia'
+import Beneficios from './pages/beneficios'
 
-import PorqueSalta from './pages/porque-salta/index'
-import NovedadesDetalles from './pages/novedades/index'
+import PorqueSalta from './pages/porque-salta'
+
+import Novedades from './pages/novedades'
+import NovedadesDetalles from './pages/novedades/Detalles'
 
 import Error from './pages/error/index'
 
@@ -111,7 +113,7 @@ function App() {
 
       <Route
         path='/novedades'
-        component={Home}
+        component={Novedades}
       />
       <Route
         path='/novedades/:id/:title'

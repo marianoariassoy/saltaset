@@ -38,7 +38,7 @@ const NovedadesItem = ({ data, lan }) => {
               </Link>
             </h2>
           </div>
-          <p className='text-wrap mb-4'>{data.text}</p>
+          <p className='text-wrap mb-2'>{data.text}</p>
         </div>
         <div>
           <Link href={`/novedades/${data.id}/${sanitizeTitleForURL(data.title)}`}>

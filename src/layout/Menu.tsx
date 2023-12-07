@@ -27,6 +27,17 @@ const Menu = () => {
                 <Link href={data.url}>
                   <a className={`underline-offset-4 ${location === data.url ? 'underline' : ''}`}>{data[lan].title}</a>
                 </Link>
+                {data.id === 2 &&
+                  data[lan].categories.map(category => (
+                    <Link
+                      href={category.url}
+                      key={category.id}
+                    >
+                      <a className={`underline-offset-4 ${location === category.url ? 'underline' : ''}`}>
+                        {category.title}
+                      </a>
+                    </Link>
+                  ))}
                 {data.id === 4 &&
                   data[lan].categories.map(category => (
                     <Link

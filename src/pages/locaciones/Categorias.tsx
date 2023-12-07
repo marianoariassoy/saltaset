@@ -34,7 +34,7 @@ const Categorias = ({ lan, section, category, setCategory }) => {
         {data.map(item => (
           <button
             key={item.id}
-            className={`rounded-full w-52 py-3 uppercase text-xm font-bold border-black border  ${
+            className={`rounded-full w-52 py-1 uppercase text-xm font-bold border-black border  ${
               category === item.id ? 'bg-zinc-300 border-0' : 'hover:border-0 hover:bg-zinc-300'
             }`}
             onClick={() => handleCategories(item.id)}

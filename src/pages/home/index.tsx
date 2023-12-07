@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useLocation } from 'wouter'
 import { HeadProvider, Title } from 'react-head'
 import Layout from '../../layout/Layout'
 import Hero from './hero'
@@ -11,17 +10,11 @@ import Novedades from './novedades'
 import { useDataContext } from '../../context/useDataContext'
 
 const Index = () => {
-  const [location] = useLocation()
   const { lan } = useDataContext()
 
   useEffect(() => {
-    if (location === '/novedades') {
-      const targetElement = document.querySelector('#novedades') as HTMLElement
-      window.scrollTo(0, targetElement.offsetTop)
-    } else {
-      window.scrollTo(0, 0)
-    }
-  }, [location])
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Layout>

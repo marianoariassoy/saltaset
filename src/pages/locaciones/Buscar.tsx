@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <Layout>
       <section
-        className='my-24'
+        className='my-12 lg:my-24'
         id='locaciones-buscar'
       >
         <section className='row w-full px-6 lg:px-12 pb-6'>

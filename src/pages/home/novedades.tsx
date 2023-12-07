@@ -7,7 +7,7 @@ import Loader from '../../components/Loader'
 
 const Novedades = ({ lan }) => {
   const [show, setShow] = useState(2)
-  const { data: data, loading: loading } = useFetch(`/novedades/${lan}`)
+  const { data, loading } = useFetch(`/novedades/${lan}`)
 
   const texts = {
     ES: {

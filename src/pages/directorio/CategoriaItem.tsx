@@ -19,7 +19,7 @@ const DirectorioItem = ({ id, title, lan, type }) => {
               key={item.id}
               to={`/directorio/${type}/listado/${item.id}`}
             >
-              <a className='link-primary'>{item.title}</a>
+              <a className='hover:opacity-50'>{item.title}</a>
             </Link>
           ))}
         </div>

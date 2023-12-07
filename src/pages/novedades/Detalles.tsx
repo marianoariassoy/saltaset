@@ -1,17 +1,16 @@
 import { useEffect } from 'react'
 import { useParams } from 'wouter'
 import { HeadProvider, Title } from 'react-head'
-import { menu } from '../../data/data'
 import { useDataContext } from '../../context/useDataContext'
 import Layout from '../../layout/Layout'
 import useFetch from '../../hooks/useFetch'
-import BeatLoader from 'react-spinners/BeatLoader'
+import Loader from '../../components/Loader'
 import DetallesComponent from './DetallesComponent'
 
 const Detalles = () => {
   const { lan } = useDataContext()
   const { id } = useParams()
-  const { data, loading } = useFetch(`/locaciones/detalles/${id}/${lan}`)
+  const { data, loading } = useFetch(`/novedades/${id}/${lan}`)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -34,17 +33,18 @@ const Detalles = () => {
 
   return (
     <Layout>
-      <section className='my-12 lg:my-24'>
+      <section
+        className='my-12 lg:my-24'
+        id='novedades-detalles'
+      >
         {loading ? (
-          <div>
-            <BeatLoader />
-          </div>
+          <Loader />
         ) : (
           data && (
             <DetallesComponent
               data={data[0]}
-              title={menu[2][lan].title}
               texts={texts[lan]}
+              lan={lan}
             />
           )
         )}

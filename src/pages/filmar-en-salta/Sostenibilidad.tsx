@@ -42,10 +42,7 @@ const Sostenibilidad = () => {
 
   return (
     <Layout>
-      <section
-        className='my-24'
-        id='filmar-en-salta'
-      >
+      <section className='mt-12 lg:my-24'>
         <section className='row w-full max-w-6xl m-auto px-6 lg:px-12 flex flex-col items-start gap-y-6'>
           <header className='flex gap-x-6 items-center mb-6'>
             <div className='text-4xl lg:text-5xl'>

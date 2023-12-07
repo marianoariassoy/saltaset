@@ -32,10 +32,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <section
-        className='mt-24 pb-3'
-        id='locaciones'
-      >
+      <section className='mt-12 lg:mt-24 pb-3'>
         <section className='px-6 lg:px-12'>
           <header className='row grid lg:grid-cols-2 gap-x-3 justify-between items-center mb-12'>
             <div className='col flex items-center gap-x-4'>
