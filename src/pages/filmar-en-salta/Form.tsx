@@ -18,9 +18,8 @@ const Form = ({ lan }) => {
 
   const onSubmit = data => {
     setSending(true)
-    // window.scrollTo(0, 0)
     const sender = {
-      to: 'hola@marianoarias.soy',
+      to: 'saltaset@edusalta.gov.ar',
       from: 'no-reply@saltaset.gob.ar',
       from_name: 'Salta Set',
       subject: 'Registro de producción'

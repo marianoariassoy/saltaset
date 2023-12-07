@@ -24,7 +24,7 @@ const Index = () => {
   const onSubmit = data => {
     setSending(true)
     const sender = {
-      to: 'hola@marianoarias.soy',
+      to: 'saltaset@edusalta.gov.ar',
       from: 'no-reply@saltaset.gob.ar',
       from_name: 'Salta Set',
       subject: 'Registro de empresas'
