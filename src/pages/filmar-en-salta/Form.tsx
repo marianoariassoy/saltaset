@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import BeatLoader from 'react-spinners/BeatLoader'
-import { productionTypes, genere, exhibition } from '../../data/data'
+import { productionTypes, gender, exhibition } from '../../data/data'
 import { Right } from '../../icons/icons'
 
 const Form = ({ lan }) => {
@@ -47,7 +47,7 @@ const Form = ({ lan }) => {
       title: 'Registro de',
       title2: 'Producción',
       production: 'Tipo de producción',
-      genere: 'Género',
+      gender: 'Género',
       exhibition: 'Exhibición',
       location: 'Localidad de origen de la producción',
       country: 'País',
@@ -79,7 +79,7 @@ const Form = ({ lan }) => {
       title: 'Production',
       title2: 'Record',
       production: 'Production type',
-      genere: 'Genere',
+      gender: 'Genere',
       exhibition: 'Exhibition',
       location: 'Origin city',
       country: 'Country',
@@ -111,7 +111,7 @@ const Form = ({ lan }) => {
       title: 'Dossier de',
       title2: 'production',
       production: 'Type de production',
-      genere: 'Género',
+      gender: 'Género',
       exhibition: 'Exhibition',
       location: "Ville d'origine",
       country: 'Pays',
@@ -140,7 +140,6 @@ const Form = ({ lan }) => {
       required: 'Ce champ est obligatoire'
     }
   }
-
   const Error = () => {
     return <div className='text-primary mt-1'>{texts[lan].required}</div>
   }
@@ -194,20 +193,20 @@ const Form = ({ lan }) => {
           <div>
             <select
               className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              {...register('genere', { required: true })}
+              {...register('gender', { required: true })}
             >
               <option
                 disabled
                 selected
                 value=''
               >
-                {texts[lan].genere}
+                {texts[lan].gender}
               </option>
-              {genere.map((item, index) => {
+              {gender.map((item, index) => {
                 return <option key={index}>{item[lan].title}</option>
               })}
             </select>
-            {errors.genere && <Error />}
+            {errors.gender && <Error />}
           </div>
 
           <div>
@@ -253,6 +252,7 @@ const Form = ({ lan }) => {
           </div>
 
           <div className='border-b border-black h-10 font-bold'>{texts[lan].owner}</div>
+
           <div className='grid grid-cols-2 gap-3'>
             <div>
               <input
@@ -317,7 +317,7 @@ const Form = ({ lan }) => {
             />
 
             <input
-              type='email'
+              type='text'
               name='email_referent'
               className='w-full border border-black h-10 px-2 rounded-none'
               placeholder={texts[lan].email}
@@ -348,6 +348,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].day}
               </option>
@@ -362,6 +363,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].month}
               </option>
@@ -376,6 +378,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].year}
               </option>
@@ -395,6 +398,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].day}
               </option>
@@ -409,6 +413,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].month}
               </option>
@@ -423,6 +428,7 @@ const Form = ({ lan }) => {
               <option
                 disabled
                 selected
+                value=''
               >
                 {texts[lan].year}
               </option>
@@ -432,35 +438,43 @@ const Form = ({ lan }) => {
             </select>
           </div>
 
-          <select
-            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-            {...register('peopleArrived')}
-          >
-            <option
-              disabled
-              selected
+          <div>
+            <select
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              {...register('peopleArrived', { required: true })}
             >
-              {texts[lan].peopleArrived}
-            </option>
-            {people.map((item, index) => {
-              return <option key={index}>{item}</option>
-            })}
-          </select>
+              <option
+                disabled
+                selected
+                value=''
+              >
+                {texts[lan].peopleArrived}
+              </option>
+              {people.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
+            {errors.description && <Error />}
+          </div>
 
-          <select
-            className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-            {...register('people')}
-          >
-            <option
-              disabled
-              selected
+          <div>
+            <select
+              className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+              {...register('people', { required: true })}
             >
-              {texts[lan].people}
-            </option>
-            {people.map((item, index) => {
-              return <option key={index}>{item}</option>
-            })}
-          </select>
+              <option
+                disabled
+                selected
+                value=''
+              >
+                {texts[lan].people}
+              </option>
+              {people.map((item, index) => {
+                return <option key={index}>{item}</option>
+              })}
+            </select>
+            {errors.description && <Error />}
+          </div>
 
           <div className='border-b border-black h-10 font-bold'>{texts[lan].messageTitle}</div>
 
@@ -472,7 +486,7 @@ const Form = ({ lan }) => {
 
           <div className='flex justify-end mt-3'>
             {sending ? (
-              <BeatLoader className='mt-6' />
+              <BeatLoader />
             ) : (
               <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
                 {texts[lan].send}

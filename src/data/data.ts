@@ -383,7 +383,7 @@ export const productionTypes = [
   }
 ]
 
-export const genere = [
+export const gender = [
   {
     ES: {
       title: 'Ficción'

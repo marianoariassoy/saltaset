@@ -1,17 +1,50 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
 import { HeadProvider, Title } from 'react-head'
-import { useDataContext } from '../../context/useDataContext'
+import { useForm } from 'react-hook-form'
+import axios from 'axios'
 import Layout from '../../layout/Layout'
+import { useDataContext } from '../../context/useDataContext'
 import { Line, Right } from '../../icons/icons'
 import { menu, activities } from '../../data/data'
 import ImageComponent from '../../components/Image'
+import BeatLoader from 'react-spinners/BeatLoader'
 
 const Index = () => {
   const { lan } = useDataContext()
+  const [sended, setSended] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm()
+
+  const onSubmit = data => {
+    setSending(true)
+    const sender = {
+      to: 'hola@marianoarias.soy',
+      from: 'no-reply@saltaset.gob.ar',
+      from_name: 'Salta Set',
+      subject: 'Registro de profesionales'
+    }
+
+    axios
+      .post('https://api.saltaset.gob.ar/send-email-profesionals.php', {
+        ...data,
+        ...sender
+      })
+      .then(data => {
+        if (data.data === 'success') {
+          setSended(true)
+          setSending(false)
+        } else {
+          setError(true)
+          setSending(false)
+        }
+      })
+  }
 
   const texts = {
     ES: {
@@ -31,8 +64,9 @@ const Index = () => {
       messageTitle: 'Otro aporte o comentario',
       message: 'Comentario',
       send: 'Enviar',
-      thanks: '¡El formulario fue enviado! Muchas gracias por contactarnos.',
-      error: 'Se produjo un error al enviar el formulario.'
+      thanks: 'El formulario fue enviado con éxito.',
+      error: 'Se produjo un error al enviar el formulario.',
+      required: 'Este campo es obligatorio'
     },
     EN: {
       name: 'Name and surname as it appears in DNI*',
@@ -51,8 +85,9 @@ const Index = () => {
       messageTitle: 'Other contribution or comment',
       message: 'Comment',
       send: 'Send',
-      thanks: 'The form was sent! Thank you for contacting us.',
-      error: 'An error occurred while sending the form.'
+      thanks: 'The form was sent. Thank you for contacting us.',
+      error: 'An error occurred while sending the form.',
+      required: 'This field is required'
     },
     FR: {
       name: 'Nom et pr dismissing comme figurant dans le DNI*',
@@ -72,213 +107,254 @@ const Index = () => {
       message: 'Commentaire',
       send: 'Envoyer',
       thanks: 'Le formulaire a été envoyé. Merci pour votre contact.',
-      error: "Une erreur est survenue lors de l'envoi du formulaire."
+      error: "Une erreur est survenue lors de l'envoi du formulaire.",
+      required: 'Ce champ est obligatoire'
     }
+  }
+
+  const Error = () => {
+    return <div className='text-primary mt-1'>{texts[lan].required}</div>
   }
 
   return (
     <Layout>
       <section className='my-24'>
-        <section className='row w-full px-6 lg:px-12 mb-6 lg:mb-12'>
+        <header className='row w-full px-6 lg:px-12 mb-6 lg:mb-12'>
           <div className='flex items-center gap-x-4'>
             <h1 className='text-3xl lg:text-5xl font-secondary-black uppercase'>{menu[3][lan].categories[1].title}</h1>
             <span className='text-primary'>
               <Line />
             </span>
           </div>
-        </section>
+        </header>
 
-        <section className='row w-full aspect-video h-[50vh]'>
+        <div className='w-full aspect-video h-[50vh]'>
           <ImageComponent
-            src='http://marianoarias.soy/sites/saltaset-backend/images-statics/formulario.webp'
+            src='https://api.saltaset.gob.ar/images-statics/formulario.webp'
             alt='Imagen para el formulario'
           />
-        </section>
+        </div>
+
+        {error && <div className='p-6 lg:p-12 text-4xl font-bold'>{texts[lan].error}</div>}
+        {sended && <div className='p-6 lg:p-12 text-4xl font-bold'>{texts[lan].thanks}</div>}
 
         <form
-          action=''
-          method='post'
+          onSubmit={handleSubmit(onSubmit)}
+          className={`${error || sended ? 'hidden' : 'block'}`}
         >
           <section className='m-auto w-full px-6 max-w-6xl mt-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
-              <input
-                type='text'
-                name='name'
-                placeholder={texts[lan].name}
-                className='px-2 h-10 border border-black rounded-none'
-                required
-              />
-              <input
-                type='email'
-                name='email'
-                placeholder={texts[lan].email}
-                className='px-2 h-10 border border-black rounded-none'
-                required
-              />
-              <input
-                type='text'
-                name='phone'
-                placeholder={texts[lan].phone}
-                className='px-2 h-10 border border-black rounded-none'
-                required
-              />
-              <input
-                type='date'
-                name='date'
-                placeholder={texts[lan].date}
-                className='px-2 h-10 border border-black rounded-none'
-                required
-              />
-              <input
-                type='text'
-                name='location'
-                placeholder={texts[lan].location}
-                className='px-2 h-10 border border-black rounded-none'
-                required
-              />
+              <div>
+                <input
+                  type='text'
+                  placeholder={texts[lan].name}
+                  className='w-full px-2 h-10 border border-black rounded-none'
+                  {...register('name', { required: true })}
+                />
+                {errors.name && <Error />}
+              </div>
+              <div>
+                <input
+                  type='email'
+                  placeholder={texts[lan].email}
+                  className='w-full px-2 h-10 border border-black rounded-none'
+                  {...register('email', { required: true })}
+                />
+                {errors.email && <Error />}
+              </div>
+              <div>
+                <input
+                  type='text'
+                  placeholder={texts[lan].phone}
+                  className='w-full px-2 h-10 border border-black rounded-none'
+                  {...register('phone', { required: true })}
+                />
+                {errors.phone && <Error />}
+              </div>
+              <div>
+                <input
+                  type='date'
+                  placeholder={texts[lan].date}
+                  className='w-full px-2 h-10 border border-black rounded-none'
+                  {...register('date', { required: true })}
+                />
+                {errors.date && <Error />}
+              </div>
+              <div>
+                <input
+                  type='text'
+                  placeholder={texts[lan].location}
+                  className='w-full px-2 h-10 border border-black rounded-none'
+                  {...register('location', { required: true })}
+                />
+                {errors.location && <Error />}
+              </div>
+
               <div className='border-b border-black h-10 font-bold'> {texts[lan].languages[0]}</div>
+
               <div className='flex flex-col gap-y-2'>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='spanish'
                     type='checkbox'
-                    className='h-4 w-4 border-gray-300 '
+                    className='h-4 w-4 border-gray-300'
+                    {...register('spanish')}
                   />
                   <label> {texts[lan].languages[1]}</label>
                 </div>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='english'
                     type='checkbox'
-                    className='h-4 w-4 border-gray-300 '
+                    className='h-4 w-4 border-gray-300'
+                    {...register('english')}
                   />
                   <label>{texts[lan].languages[2]}</label>
                 </div>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='portuguese'
                     type='checkbox'
-                    className='h-4 w-4 border-gray-300 '
+                    className='h-4 w-4 border-gray-300'
+                    {...register('portuguese')}
                   />
                   <label>{texts[lan].languages[3]}</label>
                 </div>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='french'
                     type='checkbox'
-                    className='h-4 w-4 border-gray-300 '
+                    className='h-4 w-4 border-gray-300'
+                    {...register('french')}
                   />
                   <label>{texts[lan].languages[4]}</label>
                 </div>
                 <div className='flex items-center gap-x-3 mb-3'>
                   <label>{texts[lan].languages[5]}</label>
                   <input
-                    name='other'
                     type='text'
                     className='w-full border-b border-black'
+                    {...register('other')}
                   />
                 </div>
               </div>
             </div>
 
             <div className='flex flex-col gap-y-3'>
-              <select
-                name='actity1'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
+              <div>
+                <select
+                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+                  {...register('actity1', { required: true })}
                 >
-                  {texts[lan].activity1}
-                </option>
-                {activities.map(item => (
                   <option
-                    key={item}
-                    value={item}
+                    disabled
+                    selected
                   >
-                    {item}
+                    {texts[lan].activity1}
                   </option>
-                ))}
-              </select>
-              <select
-                name='actity2'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
+                  {activities.map(item => (
+                    <option
+                      key={item}
+                      value={item}
+                    >
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                {errors.actity1 && <Error />}
+              </div>
+              <div>
+                <select
+                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+                  {...register('actity2', { required: true })}
                 >
-                  {texts[lan].activity2}
-                </option>
-                {activities.map(item => (
                   <option
-                    key={item}
-                    value={item}
+                    disabled
+                    selected
                   >
-                    {item}
+                    {texts[lan].activity2}
                   </option>
-                ))}
-              </select>
-              <select
-                name='actity3'
-                className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-              >
-                <option
-                  disabled
-                  selected
+                  {activities.map(item => (
+                    <option
+                      key={item}
+                      value={item}
+                    >
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                {errors.actity2 && <Error />}
+              </div>
+              <div>
+                <select
+                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
+                  {...register('actity3', { required: true })}
                 >
-                  {texts[lan].activity3}
-                </option>
-                {activities.map(item => (
                   <option
-                    key={item}
-                    value={item}
+                    disabled
+                    selected
                   >
-                    {item}
+                    {texts[lan].activity3}
                   </option>
-                ))}
-              </select>
+                  {activities.map(item => (
+                    <option
+                      key={item}
+                      value={item}
+                    >
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                {errors.actity3 && <Error />}
+              </div>
 
-              <textarea
-                name='experience'
-                placeholder={texts[lan].experience}
-                className='p-2 h-20 border border-black rounded-none'
-                required
-              ></textarea>
+              <div>
+                <textarea
+                  placeholder={texts[lan].experience}
+                  className='w-full p-2 h-20 border border-black rounded-none'
+                  {...register('experience', { required: true })}
+                ></textarea>
+                {errors.experience && <Error />}
+              </div>
 
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
+
               <div className='flex items-center gap-x-6'>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='auth'
                     type='radio'
                     checked
+                    value='Si'
                     className='h-4 w-4 border-gray-300'
+                    {...register('auth')}
                   />
                   <label>{texts[lan].auth[1]}</label>
                 </div>
                 <div className='flex items-center gap-x-2'>
                   <input
-                    name='auth'
                     type='radio'
+                    value='No'
                     className='h-4 w-4 border-gray-300'
+                    {...register('auth')}
                   />
                   <label>{texts[lan].auth[2]}</label>
                 </div>
               </div>
+
               <div className='border-b border-black h-10 font-bold'>{texts[lan].messageTitle}</div>
+
               <textarea
                 name='message'
                 placeholder={texts[lan].message}
                 className='p-2 h-20 border border-black rounded-none'
-                required
+                {...register('message')}
               ></textarea>
+
               <div className='flex justify-end mt-3'>
-                <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
-                  {texts[lan].send}
-                  <Right />
-                </button>
+                {sending ? (
+                  <BeatLoader />
+                ) : (
+                  <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
+                    {texts[lan].send}
+                    <Right />
+                  </button>
+                )}
               </div>
             </div>
           </section>
