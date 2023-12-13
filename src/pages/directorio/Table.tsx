@@ -7,21 +7,21 @@ const Table = ({ data, section, lan }) => {
       title2: 'Municipio',
       title3: 'Télefono',
       title4: 'E-Mail',
-      title5: 'Web'
+      web: 'Web'
     },
     EN: {
       title1: 'Title',
       title2: 'Location',
       title3: 'Phone',
       title4: 'E-Mail',
-      title5: 'Web'
+      web: 'Web'
     },
     FR: {
       title1: 'Titre',
       title2: 'Municipalité',
       title3: 'Téléphone',
       title4: 'E-Mail',
-      title5: 'Web'
+      web: 'Web'
     }
   }
 
@@ -41,7 +41,7 @@ const Table = ({ data, section, lan }) => {
               <th className='text-left uppercase'>{texts[lan].title2}</th>
               <th className='text-left uppercase'>{texts[lan].title3}</th>
               <th className='text-left uppercase'>{texts[lan].title4}</th>
-              <th className='text-left uppercase'>{texts[lan].title5}</th>
+              <th className='text-left uppercase'>{texts[lan].web}</th>
             </tr>
           </thead>
           <tbody className='[&>tr>td]:py-2'>
@@ -72,10 +72,10 @@ const Table = ({ data, section, lan }) => {
                   {item.url && (
                     <a
                       href={item.url}
-                      className='link-primary'
+                      className='inline-block rounded-full px-6 py-3 uppercase font-bold text-sm bg-secondary text-white button-primary-hover'
                       target='_blank'
                     >
-                      {item.url}
+                      {texts[lan].web}
                     </a>
                   )}
                 </td>

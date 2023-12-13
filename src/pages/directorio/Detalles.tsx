@@ -17,17 +17,17 @@ const Listado = () => {
   const texts = {
     ES: {
       link: 'Volver',
-      link2: 'Sitio web',
+      link2: 'Web',
       error: 'No se encontraron resultados'
     },
     EN: {
       link: 'Back',
-      link2: 'Web site',
+      link2: 'Web',
       error: 'No results found'
     },
     FR: {
       link: 'Retour',
-      link2: 'Site internet',
+      link2: 'Site',
       error: 'Aucun résultat'
     }
   }
