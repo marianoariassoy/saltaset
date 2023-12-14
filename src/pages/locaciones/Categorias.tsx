@@ -30,15 +30,28 @@ const Categorias = ({ lan, section, category, setCategory }) => {
 
   return (
     <div className='mb-12 px-6 lg:px-12'>
-      <div>
+      <div className='flex-wrap gap-4 hidden lg:flex'>
+        {data.map(item => (
+          <button
+            key={item.id}
+            className={`rounded-full w-52 py-[0.4rem] uppercase text-xm font-bold border-black border  ${
+              category === item.id ? 'bg-zinc-300 border-0' : 'hover:border-0 hover:bg-zinc-300'
+            }`}
+            onClick={() => handleCategories(item.id)}
+          >
+            {item.title}
+          </button>
+        ))}
+      </div>
+      <div className='lg:hidden'>
         <select
           name='category'
-          className='rounded-full py-3 font-bold text-xm appearance-none select px-14 uppercase cursor-pointer'
+          className='w-full font-bold px-6 py-3 rounded-full mb-3 appearance-none select'
         >
           {data.map(item => (
             <option
               key={item.id}
-              className={`${item.id === category ? 'bg-black text-white' : 'text-black '}`}
+              className={`text-sm ${item.id === category ? 'bg-black text-white' : 'text-black '}`}
               onClick={() => handleCategories(item.id)}
             >
               {item.title}
