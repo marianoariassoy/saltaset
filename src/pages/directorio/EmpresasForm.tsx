@@ -8,6 +8,7 @@ import Layout from '../../layout/Layout'
 import { menu, iva, production, servicesList, complementarieServices, otherServices } from '../../data/data'
 import { Line, Right } from '../../icons/icons'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { Input, Select, Textarea, ButtonForm } from '../../ui/index'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -145,107 +146,81 @@ const Index = () => {
           <section className='m-auto w-full px-6 max-w-6xl mt-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].company}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('company', { required: true })}
+                  register={register('company', { required: true })}
                 />
                 {errors.company && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
-                  name='name'
                   placeholder={texts[lan].name}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('name', { required: true })}
+                  register={register('name', { required: true })}
                 />
                 {errors.name && <Error />}
               </div>
 
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].location}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('location', { required: true })}
+                  register={register('location', { required: true })}
                 />
                 {errors.location && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].municipio}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('municipio', { required: true })}
+                  register={register('municipio', { required: true })}
                 />
                 {errors.municipio && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].cp}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('cp', { required: true })}
+                  register={register('cp', { required: true })}
                 />
                 {errors.cp && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='email'
                   placeholder={texts[lan].email}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('email', { required: true })}
+                  register={register('email', { required: true })}
                 />
                 {errors.email && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].phone}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('phone', { required: true })}
+                  register={register('phone', { required: true })}
                 />
                 {errors.phone && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].web}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('web')}
+                  register={register('web')}
                 />
               </div>
             </div>
-
             <div className='flex flex-col gap-y-3'>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('iva', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                    value=''
-                  >
-                    {texts[lan].iva}
-                  </option>
-                  {iva.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('iva', { required: true })}
+                  name={texts[lan].iva}
+                  options={iva}
+                  lan=''
+                />
                 {errors.iva && <Error />}
               </div>
-
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
-
               <div className='flex items-center gap-x-6'>
                 <div className='flex items-center gap-x-2'>
                   <input
@@ -267,101 +242,47 @@ const Index = () => {
                   <label>{texts[lan].auth[2]}</label>
                 </div>
               </div>
-
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('production', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].production}
-                  </option>
-                  {production.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('production', { required: true })}
+                  name={texts[lan].production}
+                  options={production}
+                  lan=''
+                />
                 {errors.production && <Error />}
               </div>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('servicesList', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].servicesList}
-                  </option>
-                  {servicesList.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('servicesList', { required: true })}
+                  name={texts[lan].servicesList}
+                  options={servicesList}
+                  lan=''
+                />
                 {errors.servicesList && <Error />}
               </div>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('complementarieServices', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].complementarieServices}
-                  </option>
-                  {complementarieServices.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('complementarieServices', { required: true })}
+                  name={texts[lan].complementarieServices}
+                  options={complementarieServices}
+                  lan=''
+                />
                 {errors.complementarieServices && <Error />}
               </div>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('otherServices', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].otherServices}
-                  </option>
-                  {otherServices.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('otherServices', { required: true })}
+                  name={texts[lan].otherServices}
+                  options={otherServices}
+                  lan=''
+                />
                 {errors.otherServices && <Error />}
               </div>
               <div>
-                <textarea
+                <Textarea
                   placeholder={texts[lan].services}
-                  className='w-full p-2 h-20 border border-black rounded-none'
-                  {...register('services', { required: true })}
-                ></textarea>
+                  register={register('services', { required: true })}
+                />
                 {errors.services && <Error />}
               </div>
 
@@ -369,10 +290,10 @@ const Index = () => {
                 {sending ? (
                   <BeatLoader />
                 ) : (
-                  <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
+                  <ButtonForm>
                     {texts[lan].send}
                     <Right />
-                  </button>
+                  </ButtonForm>
                 )}
               </div>
             </div>

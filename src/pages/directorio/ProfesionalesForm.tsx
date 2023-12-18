@@ -8,6 +8,7 @@ import { Line, Right } from '../../icons/icons'
 import { menu, activities } from '../../data/data'
 import ImageComponent from '../../components/Image'
 import BeatLoader from 'react-spinners/BeatLoader'
+import { Input, Select, Textarea, ButtonForm } from '../../ui/index'
 
 const Index = () => {
   const { lan } = useDataContext()
@@ -145,53 +146,46 @@ const Index = () => {
           <section className='m-auto w-full px-6 max-w-6xl mt-12 grid lg:grid-cols-2 gap-x-6 gap-y-3'>
             <div className='flex flex-col gap-y-3'>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].name}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('name', { required: true })}
+                  register={register('name', { required: true })}
                 />
                 {errors.name && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='email'
                   placeholder={texts[lan].email}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('email', { required: true })}
+                  register={register('email', { required: true })}
                 />
                 {errors.email && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].phone}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('phone', { required: true })}
+                  register={register('phone', { required: true })}
                 />
                 {errors.phone && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='date'
                   placeholder={texts[lan].date}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('date', { required: true })}
+                  register={register('date', { required: true })}
                 />
                 {errors.date && <Error />}
               </div>
               <div>
-                <input
+                <Input
                   type='text'
                   placeholder={texts[lan].location}
-                  className='w-full px-2 h-10 border border-black rounded-none'
-                  {...register('location', { required: true })}
+                  register={register('location', { required: true })}
                 />
                 {errors.location && <Error />}
               </div>
-
               <div className='border-b border-black h-10 font-bold'> {texts[lan].languages[0]}</div>
-
               <div className='flex flex-col gap-y-2'>
                 <div className='flex items-center gap-x-2'>
                   <input
@@ -238,83 +232,41 @@ const Index = () => {
 
             <div className='flex flex-col gap-y-3'>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('actity1', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].activity1}
-                  </option>
-                  {activities.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('actity1', { required: true })}
+                  name={texts[lan].activity1}
+                  options={activities}
+                  lan=''
+                />
                 {errors.actity1 && <Error />}
               </div>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('actity2', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].activity2}
-                  </option>
-                  {activities.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('actity2', { required: true })}
+                  name={texts[lan].activity2}
+                  options={activities}
+                  lan=''
+                />
                 {errors.actity2 && <Error />}
               </div>
               <div>
-                <select
-                  className='w-full border-b border-black h-10 bg-white cursor-pointer rounded-none font-bold'
-                  {...register('actity3', { required: true })}
-                >
-                  <option
-                    disabled
-                    selected
-                  >
-                    {texts[lan].activity3}
-                  </option>
-                  {activities.map(item => (
-                    <option
-                      key={item}
-                      value={item}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  register={register('actity3', { required: true })}
+                  name={texts[lan].activity3}
+                  options={activities}
+                  lan=''
+                />
                 {errors.actity3 && <Error />}
               </div>
 
               <div>
-                <textarea
+                <Textarea
                   placeholder={texts[lan].experience}
-                  className='w-full p-2 h-20 border border-black rounded-none'
-                  {...register('experience', { required: true })}
-                ></textarea>
+                  register={register('experience', { required: true })}
+                />
                 {errors.experience && <Error />}
               </div>
-
               <div className='border-b border-black pb-2 lg:h-10 font-bold'>{texts[lan].auth[0]}</div>
-
               <div className='flex items-center gap-x-6'>
                 <div className='flex items-center gap-x-2'>
                   <input
@@ -336,24 +288,19 @@ const Index = () => {
                   <label>{texts[lan].auth[2]}</label>
                 </div>
               </div>
-
               <div className='border-b border-black h-10 font-bold'>{texts[lan].messageTitle}</div>
-
-              <textarea
-                name='message'
+              <Textarea
                 placeholder={texts[lan].message}
-                className='p-2 h-20 border border-black rounded-none'
-                {...register('message')}
-              ></textarea>
-
+                register={register('message')}
+              />
               <div className='flex justify-end mt-3'>
                 {sending ? (
                   <BeatLoader />
                 ) : (
-                  <button className='bg-primary py-3 px-12 rounded-full font-bold button-black-hover text-sm flex items-center gap-x-2 uppercase'>
+                  <ButtonForm>
                     {texts[lan].send}
                     <Right />
-                  </button>
+                  </ButtonForm>
                 )}
               </div>
             </div>
