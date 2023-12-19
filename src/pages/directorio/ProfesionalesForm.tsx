@@ -169,10 +169,11 @@ const Index = () => {
                 />
                 {errors.phone && <Error />}
               </div>
-              <div>
+              <div className='flex flex-col gap-y-3'>
+                <div>{texts[lan].date}</div>
                 <Input
-                  type='date'
-                  placeholder={texts[lan].date}
+                  type='datetime-local'
+                  placeholder=''
                   register={register('date', { required: true })}
                 />
                 {errors.date && <Error />}

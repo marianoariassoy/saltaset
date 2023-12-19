@@ -285,46 +285,18 @@ const Form = ({ lan }) => {
             {errors.description && <Error />}
           </div>
           <div className='border-b border-black h-10 font-bold'>{texts[lan].dateTitle}</div>
-          <div className='grid lg:grid-cols-4 gap-3 items-center'>
+          <div className='flex gap-6 items-center'>
             <div>{texts[lan].from}</div>
-            <Select
-              register={register('day_from')}
-              name={texts[lan].day}
-              options={days}
-              lan=''
+            <Input
+              type='datetime-local'
+              placeholder=''
+              register={register('date_from')}
             />
-            <Select
-              register={register('month_from')}
-              name={texts[lan].month}
-              options={months}
-              lan=''
-            />
-            <Select
-              register={register('year_from')}
-              name={texts[lan].year}
-              options={years}
-              lan=''
-            />
-          </div>
-          <div className='grid lg:grid-cols-4 gap-3 items-center'>
             <div>{texts[lan].to}</div>
-            <Select
-              register={register('day_to')}
-              name={texts[lan].day}
-              options={days}
-              lan=''
-            />
-            <Select
-              register={register('month_to')}
-              name={texts[lan].month}
-              options={months}
-              lan=''
-            />
-            <Select
-              register={register('year_to')}
-              name={texts[lan].year}
-              options={years}
-              lan=''
+            <Input
+              type='datetime-local'
+              placeholder=''
+              register={register('date_to')}
             />
           </div>
           <div>
