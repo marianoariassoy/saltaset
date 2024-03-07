@@ -56,7 +56,7 @@ export const menu = [
       categories: [
         { title: 'Categorías ', url: '/locaciones/categorias', id: 1 },
         { title: 'Regiones', url: '/locaciones/regiones', id: 2 },
-        { title: 'Rutas turisticas', url: '/locaciones/rutas-turisticas', id: 3 }
+        { title: 'Rutas turísticas', url: '/locaciones/rutas-turisticas', id: 3 }
       ]
     },
     EN: {

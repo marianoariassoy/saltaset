@@ -16,15 +16,18 @@ const Formulario = () => {
   const texts = {
     ES: {
       title: 'Registro de',
-      title2: 'Producción'
+      title2: 'Producción',
+      link: 'Conocé más sobre los permisos de filmación.'
     },
     EN: {
       title: 'Production',
-      title2: 'Record'
+      title2: 'Record',
+      link: 'Know more about production permissions.'
     },
     FR: {
       title: 'Dossier de',
-      title2: 'production'
+      title2: 'production',
+      link: 'En savoir plus sur les permis de tournage.'
     }
   }
 
@@ -48,7 +51,16 @@ const Formulario = () => {
               <Line />
             </div>
           </header>
-          <p className='text-wrap mb-6'>{loading ? <BeatLoader /> : <HTML text={data[83].text} />}</p>
+          <p className='text-wrap mb-6'>
+            {loading ? <BeatLoader /> : <HTML text={data[83].text} />}
+
+            <a
+              href='https://saltaset.gob.ar/filmar-en-salta/permisos'
+              className='underline hover:opacity-70'
+            >
+              {texts[lan].link}
+            </a>
+          </p>
           <div className='aspect-[5/7]'>
             <ImageComponent
               src='https://api.saltaset.gob.ar/images-statics/registro-produccion.webp'

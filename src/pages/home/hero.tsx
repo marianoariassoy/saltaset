@@ -19,7 +19,7 @@ const Hero = () => {
 
   const texts = {
     ES: {
-      hero_title: 'Desliza'
+      hero_title: 'Deslizá'
     },
     EN: {
       hero_title: 'Swipe'

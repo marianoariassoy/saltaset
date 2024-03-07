@@ -9,7 +9,7 @@ const Somos = ({ lan }) => {
   const texts = {
     ES: {
       title: 'Somos',
-      link1: 'Registra tu producción',
+      link1: 'Registrá tu producción',
       link2: 'Sugiere una locación',
       link3: 'Sumate al directorio'
     },

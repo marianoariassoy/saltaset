@@ -11,7 +11,7 @@ const Locaciones = ({ lan }) => {
 
   const texts = {
     ES: {
-      link: 'VER MAS LOCACIONES'
+      link: 'VER MÁS LOCACIONES'
     },
     EN: {
       link: 'VIEW MORE LOCATIONS'

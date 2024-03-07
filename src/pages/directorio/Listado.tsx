@@ -62,7 +62,6 @@ const Listado = () => {
           <div>
             <Link href={`/directorio/${options.type}`}>
               <a className='rounded-full px-6 py-3 uppercase font-bold bg-primary text-sm button-black-hover flex justify-between items-center gap-x-2'>
-                <Left />
                 <span>{texts[lan].link}</span>
               </a>
             </Link>

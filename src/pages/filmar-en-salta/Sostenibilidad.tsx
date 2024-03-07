@@ -17,7 +17,7 @@ const Sostenibilidad = () => {
     ES: {
       title: 'Cómo rodar',
       title2: 'En Salta',
-      title3: 'DECALOGO DE BUENAS PRÁCTICAS',
+      title3: 'DECÁLOGO DE BUENAS PRÁCTICAS',
       title4: 'EN LA PRODUCCIÓN AUDIOVISUAL',
       title5: 'CRITERIOS GENERALES',
       text1: 'Fuente'
@@ -56,7 +56,9 @@ const Sostenibilidad = () => {
 
           <h2 className='uppercase font-bold text-xl'>{menu[1][lan]['categories'][1]['title']}</h2>
 
-          <div className='text-wrap mb-6'>{!loadingTexts && <HTML text={dataTexts[306].text} />}</div>
+          <div className='text-wrap mb-6 [&>div>a]:underline [&>div>a:hover]:opacity-70'>
+            {!loadingTexts && <HTML text={dataTexts[306].text} />}
+          </div>
 
           <header className='flex gap-x-6 items-center'>
             <div className='text-2xl lg:text-3xl'>
